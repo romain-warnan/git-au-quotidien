@@ -1,0 +1,2 @@
+git config --global http.proxy http://proxy-orange.http.insee.fr:8080
+git clone https://github.com/Insee-CNIP/formation-spring-mvc.git
