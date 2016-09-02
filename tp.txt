@@ -2,7 +2,7 @@
 
 + Terminal
 
-cd "/d/idep/Mes Documents/eclipse_workspace"
+cd /d/idep/Mes\ Documents/eclipse_workspace
 git config --global http.proxy http://proxy-orange.http.insee.fr:8080
 git clone https://github.com/Insee-CNIP/formation-spring-mvc.git
 
