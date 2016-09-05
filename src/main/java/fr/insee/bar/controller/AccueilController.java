@@ -6,8 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.View;
-import org.springframework.web.servlet.view.RedirectView;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 @PropertySource("classpath:application.properties")
@@ -17,10 +16,9 @@ public class AccueilController {
 	private String name;
 
 	@RequestMapping("/")
-	public View welcome(RedirectView view) {
-		view.setUrl("/accueil");
-		view.setStatusCode(HttpStatus.MOVED_PERMANENTLY);
-		return view;
+	@ResponseStatus(HttpStatus.MOVED_PERMANENTLY)
+	public String welcome() {
+		return "redirect:/accueil";
 	}
 
 	@RequestMapping("/accueil")
