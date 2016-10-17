@@ -1,0 +1,27 @@
+html {
+	font-family: Arial;
+	margin: 20px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td, th {
+	border: solid black 1px;
+	padding: 5px;
+}
+
+label {
+	font-weight: bold;
+}
+
+ul {
+	list-style-type: none;
+}
+
+ul > li:before {
+	content: "-";
+	position: absolute;
+	margin-left: -1.1em; 
+}
