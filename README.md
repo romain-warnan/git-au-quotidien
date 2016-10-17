@@ -1,6 +1,5 @@
 # Introduction à Spring MVC
 
-  * [Introduction à Spring MVC](#introduction-à-spring-mvc)
     * [Récupérer le code source du TP](#récupérer-le-code-source-du-tp)
     * [Importer le projet dans Eclipse](#importer-le-projet-dans-eclipse)
     * [Créer une configuration de lancement](#créer-une-configuration-de-lancement)
