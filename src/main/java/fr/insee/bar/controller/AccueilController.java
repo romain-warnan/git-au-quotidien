@@ -21,7 +21,7 @@ public class AccueilController {
 		return "redirect:/accueil";
 	}
 
-	@RequestMapping("/accueil")
+	@RequestMapping(value = "/accueil")
 	public String hello(Model model) {
 		model.addAttribute("message", this.message());
 		return "accueil";
