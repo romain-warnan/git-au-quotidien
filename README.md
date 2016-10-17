@@ -1,5 +1,23 @@
 # Introduction à Spring MVC
 
+  * [Introduction à Spring MVC](#introduction-à-spring-mvc)
+    * [Récupérer le code source du TP](#récupérer-le-code-source-du-tp)
+    * [Importer le projet dans Eclipse](#importer-le-projet-dans-eclipse)
+    * [Créer une configuration de lancement](#créer-une-configuration-de-lancement)
+    * [TP1 : Mise en place](#tp1--mise-en-place)
+      * [Ajouter les dépendances Maven](#ajouter-les-dépendances-maven)
+      * [Créer le fichier de contexte de l’application](#créer-le-fichier-de-contexte-de-lapplication)
+      * [Charger le contexte de l’application au démarage du serveur](#charger-le-contexte-de-lapplication-au-démarage-du-serveur)
+      * [Créer le fichier de contexte web](#créer-le-fichier-de-contexte-web)
+      * [Ajouter la servlet de Spring MVC et diriger toutes les requêtes vers cette servlet](#ajouter-la-servlet-de-spring-mvc-et-diriger-toutes-les-requêtes-vers-cette-servlet)
+      * [Créer le dossier contenant les vues](#créer-le-dossier-contenant-les-vues)
+      * [Déclarer et paramétrer le viewResolver](#déclarer-et-paramétrer-le-viewresolver)
+      * [Créer le package contenant les contrôleurs](#créer-le-package-contenant-les-contrôleurs)
+      * [Créer le contrôleur AccueilController](#créer-le-contrôleur-accueilcontroller)
+      * [Utiliser un fichier de propriétés](#utiliser-un-fichier-de-propriétés)
+      * [Rediriger l’URL racine vers la page d’accueil](#rediriger-lurl-racine-vers-la-page-daccueil)
+
+
 ## Récupérer le code source du TP
 
 > Terminal
@@ -182,7 +200,7 @@ Créer la JSP « views/accueil.jsp » et afficher l’objet « message ».
 
 Tester.
 
-### Utiliser un fichier de propriété
+### Utiliser un fichier de propriétés
 
 > AccueilController.java
 

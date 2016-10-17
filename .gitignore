@@ -15,3 +15,4 @@ target/
 .settings/
 .classpath
 .project
+gh-md-toc
