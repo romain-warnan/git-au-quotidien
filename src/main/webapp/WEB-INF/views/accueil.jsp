@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="${requestScope.contaextPath}/static/css/application.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/application.css">
 	</head>
 	<body>
 		<h1><c:out value="${message}" /></h1>

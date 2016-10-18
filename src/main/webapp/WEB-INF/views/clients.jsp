@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="${requestScope.contaextPath}/static/css/application.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/application.css">
 	</head>
 	<body>
 		<h1>Liste des clients</h1>
@@ -20,7 +20,6 @@
 			<tr>
 				<td><a href="${url}">${client.nom}</a></td>
 				<td>${client.email}</td>
-				<td><fmt:formatDate value="${client.dateNaissance}" pattern="dd/MM/yyyy"/></td>
 			</tr>
 		</c:forEach>
 		</table>

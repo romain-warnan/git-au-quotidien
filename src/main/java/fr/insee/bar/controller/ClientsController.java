@@ -17,7 +17,7 @@ public class ClientsController {
 	private ClientDao clientDao;
 
 	@RequestMapping("/clients")
-	public String client(Model model) {
+	public String clients(Model model) {
 		List<Client> clients = clientDao.findAll();
 		model.addAttribute("clients", clients);
 		return "clients";

@@ -202,6 +202,128 @@ Tester.
 > AccueilController.java
 
 Créer une nouvelle méthode qui se déclenche quand on accède à l’URL « / ».
-À l’aide d'une RedirectView rediriger cette URL vers l’URL « /accueil ».
+À l’aide de l’instruction `"redirect:/accueil"` rediriger cette URL vers l’URL « /accueil ».
 Utiliser un code 301 (redirection permanente) pour effectuer la redirection (important pour le référencement).
 Tester et vérifier avec les outils de développement du navigateur que le code est bien 301.
+
+## TP2 : Navigation
+
+### Liste de tous les clients
+
+#### Créer un contrôleur qui permet d’afficher la liste de tous les clients
+
+> ClientsController.java
+
+Ce contrôleur possède une méthode qui est appelée à l’URL « /clients ».
+Il récupère la liste de tous les clients dans la base de donnée et l’ajoute au modèle.
+
+```java
+	@Autowired
+	private ClientDao clientDao;
+	…
+	List<Client> clients = clientDao.findAll();
+```
+
+Il lance la génération de la vue `/jsp/clients.jsp`.
+
+#### Afficher la liste des clients
+
+> clients.jsp
+
+En itérant sur la liste des clients avec le tag `<c:forEach>`, afficher la liste de tous les clients (nom et email) dans un tableau :
+
+> Rappel : structure d’un tableau HTML
+
+```html
+	<table>
+		<tr> <!-- Ligne entête -->
+			<th>Entête 1</th>
+			<th>Entête 2</th>
+			<th>Entête 3</th>
+		</tr>
+		<tr> <!-- Ligne 1 -->
+			<td>Cellule 1.1</td>
+			<td>Cellule 1.2</td>
+			<td>Cellule 1.3</td>
+		</tr>
+		<tr> <!-- Ligne 2 -->
+			<td>Cellule 2.1</td>
+			<td>Cellule 2.2</td>
+			<td>Cellule 2.3</td>
+		</tr>
+	</table>
+```
+
+#### Ajouter un lien vers la page d’accueil
+
+> clients.jsp
+
+Grace au tag `<c:url>` créer une variable qui pointe vers la page d’accueil.
+Utiliser cette variable dans un lien qui redirige vers la page d’accueil.
+
+#### Sur la page d’accueil, ajouter un lien vers la page de la liste des clients
+
+> accueil.jsp
+
+### Détails pour un client donné
+
+#### Créer un contrôleur qui permet d’afficher les informations concernant un client donné
+
+> ClientController.java
+
+Ce contrôleur possède une méthode qui est appelée à l’URL « /client/{id} ».
+À l’aide de l’annotation `@PathVariable`, récupérer la valeur de l’identifiant passé dans l’URL.
+Dans la base, récupérer le client associé à cet identifiant.
+Ajouter le client au modèle.
+Diriger vers la page `/jsp/client.jsp`.
+
+#### Créer la page client.jsp
+
+> client.jsp
+
+Y afficher les informations relatives au client : identifiant, nom, email et date de naissance.
+Pour formater la date, utiliser le tag `<fmt:formatDate>` et le format `dd/MMMM/yyyy`.
+Ajouter un lien vers la page d’accueil.
+
+#### Faire le lien entre la page clients et les sous-pages client
+
+> clients.jsp
+
+Autour de chaque nom de client, ajouter un lien qui pointe vers l’URL `/client/{id}`.
+De cette manière, l’utilisateur peut cliquer sur le nom d’un client pour en voir le détail.
+
+### Utilisation d'un convertisseur
+
+#### Créer le nouveau convertisseur
+
+> ClientConverter
+
+Dans  le package fr.insee.bar.converter, créer une classe `ClientConverter` qui implémente de l’interface `Converter<String, Client>`.
+Ne pas oublier le stéréotype `@Component` sur la classe. 
+Implémenter la méthode `convert` avec un appel à `ClientDao.find`.
+
+#### Simplifier le contrôleur
+
+> ClientController
+
+Modifier la signature de la méthode pour remplacer le `Short` par un `Client`.
+Supprimer le DAO du contrôleur.
+
+#### Enregistrer le convertissuer
+
+> dispatcher-servlet.xml
+
+Déclarer ce nouveau convertisseur auprès de la servlet de Spring MVC :
+
+```xml
+<mvc:annotation-driven conversion-service="conversionService" />
+<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+	<property name="converters">
+		<set>
+			<bean class="fr.insee.bar.converter.ClientConverter" />
+		</set>
+	</property>
+</bean>
+ ```
+ 
+ Tester que l’application fonctionne toujours.
