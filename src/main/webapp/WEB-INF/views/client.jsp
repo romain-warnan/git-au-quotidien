@@ -7,24 +7,14 @@
 		<link rel="stylesheet" type="text/css" href="/static/css/application.css">
 	</head>
 	<body>
-		<h1>Liste des clients</h1>
-		<table>
-		<tr>
-			<th>Id</th>
-			<th>Nom</th>
-			<th>Email</th>
-			<th>Date de naissance</th>
-		</tr>
-		<c:forEach items="${clients}" var="client">
-			<c:url var="url" value="client/${client.id}" />
-			<tr>
-				<td><a href="${url}">${client.nom}</a></td>
-				<td>${client.email}</td>
-			</tr>
-		</c:forEach>
-		</table>
+		<h1>Informations client</h1>
+		<strong>Client n<sup>o</sup> ${client.id}</strong>
+		<ul>
+			<li><label>Nom :</label> ${client.nom}</li>
+			<li><label>Email :</label> ${client.email}</li>
+			<li><label>Date de naissance :</label> <fmt:formatDate value="${client.dateNaissance}" pattern="dd MMMM yyyy"/></li>
+		</ul>
 		<c:url var="url" value="/accueil" />
 		<p><a href="${url}">Accueil</a></p>
 	</body>
 </html>
-

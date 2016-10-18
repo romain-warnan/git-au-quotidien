@@ -8,5 +8,7 @@
 	</head>
 	<body>
 		<h1><c:out value="${message}" /></h1>
+		<c:url var="url" value="clients" />
+		<p><a href="${url}">Liste des clients</a></p>
 	</body>
 </html>
