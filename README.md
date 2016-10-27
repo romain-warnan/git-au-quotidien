@@ -335,3 +335,7 @@ Déclarer ce nouveau convertisseur auprès de la servlet de Spring MVC :
  ```
  
  Tester que l’application fonctionne toujours.
+ 
+ ## 3. Intercepteurs
+ 
+ ### 3.1. 
