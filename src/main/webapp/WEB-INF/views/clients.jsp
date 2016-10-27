@@ -22,7 +22,6 @@
 			</tr>
 		</c:forEach>
 		</table>
-		<c:url var="url" value="/accueil" />
-		<p><a href="${url}">Accueil</a></p>
+		<p><a href="<c:url value="/accueil" />">Accueil</a> | <a href="<c:url value="/nouveau-client" />">Nouveau client</a></p>
 	</body>
 </html>
