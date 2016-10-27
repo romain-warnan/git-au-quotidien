@@ -9,3 +9,10 @@ insert into clients (id, nom, email, date_naissance) values (7, 'William Day', '
 insert into clients (id, nom, email, date_naissance) values (8, 'Cheryl Woods', 'cwoods7@storify.com', date '1981-04-08');
 insert into clients (id, nom, email, date_naissance) values (9, 'Richard Cox', 'rcox8@dailymotion.com', date '1996-04-25');
 insert into clients (id, nom, email, date_naissance) values (10, 'Bobby Morris', 'bmorris9@intel.com', date '1990-03-30');
+
+insert into roles (id, libelle) values (1, 'Serveurs');
+insert into roles (id, libelle) values (2, 'Responsables');
+
+insert into employes (id, nom, idrole) values (1, 'Katherine Peters', 1);
+insert into employes (id, nom, idrole) values (2, 'Jimmy Simmons', 1);
+insert into employes (id, nom, idrole) values (3, 'Annie Diaz', 2);
