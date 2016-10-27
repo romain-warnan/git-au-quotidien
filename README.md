@@ -304,7 +304,7 @@ De cette manière, l’utilisateur peut cliquer sur le nom d’un client pour en
 
 #### 2.3.1. Créer le nouveau convertisseur
 
-> ClientConverter
+> ClientConverter.java
 
 Dans  le package `fr.insee.bar.converter`, créer une classe `ClientConverter` qui implémente de l’interface `Converter<String, Client>`.
 Ne pas oublier le stéréotype `@Component` sur la classe. 
@@ -312,7 +312,7 @@ Implémenter la méthode `convert` avec un appel à `clientDao.find(id)`.
 
 #### 2.3.2. Simplifier le contrôleur
 
-> ClientController
+> ClientController.java
 
 Modifier la signature de la méthode pour remplacer le `Short` par un `Client`.
 Supprimer le DAO du contrôleur.
