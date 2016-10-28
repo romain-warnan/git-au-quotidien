@@ -33,22 +33,5 @@
 	<!-- MVC -->
 	<mvc:resources mapping="/static/**" location="/static/" />
 	
-	<mvc:annotation-driven conversion-service="conversionService">
-		<mvc:argument-resolvers>
-			<bean class="fr.insee.bar.resolver.EmployeResolver" />
-		</mvc:argument-resolvers>
-	</mvc:annotation-driven>
-	
-	<mvc:interceptors>
-		<mvc:interceptor>
-			<mvc:mapping path="/**"/>
-			<mvc:exclude-mapping path="/static/**"/>
-			<bean class="fr.insee.bar.interceptor.TimerInterceptor" />
-		</mvc:interceptor>
-		<mvc:interceptor>
-			<mvc:mapping path="/**"/>
-			<mvc:exclude-mapping path="/static/**"/>
-			<bean class="fr.insee.bar.interceptor.EmployeInterceptor" />
-		</mvc:interceptor>
-	</mvc:interceptors>
+	<mvc:annotation-driven conversion-service="conversionService" />
 </beans>
