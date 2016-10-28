@@ -402,8 +402,8 @@ Sur la page de la liste des clients, ajouter un lien qui dirige vers la nouvelle
 > NouveauClientController.java
 
 Dans la signature de la méthode, ajouter un objet `Employe`.
-Grace au service `EmployeService`, vérifier que l’employe possède le rôle de responsable.
-Si oui, le diriger vers la nouvelle page nouveau-client.jsp, sinon, le rediriger vers la page clients.jsp.
+Grace au service `EmployeService`, vérifier que l’employé possède le rôle de responsable.
+Si oui, le diriger vers la nouvelle page `nouveau-client.jsp`, sinon, le rediriger vers la page `clients.jsp`.
 
 #### 3.5.2. Créer et déclarer un résolveur d’argument pour la classe `Employe`
 
@@ -439,6 +439,7 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 ```
 
 > Quand on change le profile dans le fichier web.xml, Spring instancie une autre implémentation de la l’interface `EmployeProvider` au chargement du contexte. Il y a en effet deux versions de la classe :
-> - `ResponsableProvider` qui fournit un responsable
-> - et `ServeurProvider` qui fournit un serveur.
-> La première est annotée avec `@Profile("responsable")` et la seconde avec `@Profile("serveur")`.
+> - `ResponsableProvider` annotée `@Profile("responsable")`, qui fournit un responsable
+> - et `ServeurProvider` annotée `@Profile("serveur")` qui fournit un serveur.
+
+> Seule une seule des deux versions existe dans le contexte Spring. L’annotation `@Autowired` peut donc être utilisée sans problème pour injecter un `EmployeProvider`.
