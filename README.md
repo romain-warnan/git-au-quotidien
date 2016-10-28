@@ -439,7 +439,7 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 ```
 
 > Quand on change le profile dans le fichier web.xml, Spring instancie une autre implémentation de l’interface `EmployeProvider` au chargement du contexte. Il y a en effet deux versions de la classe :
-> - `ResponsableProvider` annotée `@Profile("responsable")`, qui fournit un employé ayant le rôle de « responsable »,
-> - `ServeurProvider` annotée `@Profile("serveur")`, qui fournit un employé ayant le rôle de « serveur ».
+> - `ResponsableProvider` annotée `@Profile("responsable")`, qui fournit un employé ayant le rôle de *responsable*,
+> - `ServeurProvider` annotée `@Profile("serveur")`, qui fournit un employé ayant le rôle de *serveur*.
 
 > Seule une seule des deux versions existe dans le contexte Spring. L’annotation `@Autowired` peut donc être utilisée sans problème pour injecter un `EmployeProvider`.
