@@ -10,6 +10,7 @@
 cd /d/idep/Mes\ Documents/eclipse_workspace
 git config --global http.proxy http://proxy-orange.http.insee.fr:8080
 git clone https://github.com/Insee-CNIP/formation-spring-mvc.git
+git checkout -b tp1 tp1
 ```
 
 ### 0.2. Importer le projet dans Eclipse
@@ -213,7 +214,8 @@ Tester et vérifier avec les outils de développement du navigateur que le code 
 > Terminal
 
 ```bash
-git checkout -b tp2 tp2
+git commit -a -m "TP1 <idep>"
+git checkout -b tp2 tp2b
 ```
 
 ### 2.1. Liste de tous les clients
@@ -334,8 +336,109 @@ Déclarer ce nouveau convertisseur auprès de la servlet de Spring MVC :
 </bean>
  ```
  
- Tester que l’application fonctionne toujours.
+Tester que l’application fonctionne toujours.
  
- ## 3. Intercepteurs
+## 3. Intercepteurs
+
+> Terminal
+
+```bash
+git commit -a -m "TP2 <idep>"
+git checkout -b tp3 tp3b
+```
+
+### 3.1. Créer un intercepteur qui mesure la durée de la requête
  
- ### 3.1. 
+> TimerInterceptor.java
+ 
+L’intercepteur implémente l’interface `HandlerInterceptor`.
+Démarrer un chronomètre (`Stopwatch` de la librairie guava) dans la méthode `preHandle`.
+Enregistrer ce chronomètre en tant qu’attribut de la requête.
+Dans la méthode `postHandle`, imprimer dans la console l’URI de la requête et le temps écoulé.
+
+### 3.2. Enregistrer l’intercepteur
+
+> dispatcher-servlet.xml
+
+Déclarer l’intercepteur auprès de la servlet de Spring MVC.
+Penser à exclure les URL commençant par « /static », car sinon on passe aussi dans l’intercepteur pour le fichier CSS.
+
+```xml
+<mvc:interceptors>
+	<mvc:interceptor>
+		<mvc:mapping path="/**"/>
+		<mvc:exclude-mapping path="/static/**"/>
+		<bean class="fr.insee.bar.interceptor.TimerInterceptor" />
+	</mvc:interceptor>
+</mvc:interceptors>
+```
+
+### 3.3. Placer l’employé connecté en session
+
+> EmployeInterceptor.java
+
+Créer et enregistrer un intercepteur `EmployeInterceptor`.
+Dans l’intercepteur, récupèrer l’employé connecté dans la session.
+Si aucun employé n’est présent en session, récupérer le grâce au service `EmployeProvider` et sa méthode `provide()` et placer l’objet obtenu dans la session.
+
+### 3.4. Créer une nouvelle page pour l’ajout d’un client
+
+> nouveau-client.jsp
+
+Créer une nouvelle JSP qui ne contient qu’un titre.
+
+> NouveauClientController.java
+
+Créer un nouveau contrôleur qui dirige vers cette page.
+
+> clients.jsp
+
+Sur la page de la liste des clients, ajouter un lien qui dirige vers la nouvelle page.
+
+### 3.5. Vérifier que l’employé connecté a le droit de se rendre sur la page d’ajout d’un nouveau client
+
+#### 3.5.1. Vérifier les droits dans le contrôleur 
+
+> NouveauClientController.java
+
+Dans la signature de la méthode, ajouter un objet `Employe`.
+Grace au service `EmployeService`, vérifier que l’employe possède le rôle de responsable.
+Si oui, le diriger vers la nouvelle page nouveau-client.jsp, sinon, le rediriger vers la page clients.jsp.
+
+#### 3.5.2. Créer et déclarer un résolveur d’argument pour la classe `Employe`
+
+> EmployeResolver.java
+
+Dans la méthode `resolveArgument`, on récupère l’objet `Employe` qui est dans la session.
+
+> dispatcher-servlet.xml
+
+Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC.
+
+```xml
+<mvc:annotation-driven conversion-service="conversionService">
+	<mvc:argument-resolvers>
+		<bean class="fr.insee.bar.resolver.EmployeResolver" />
+	</mvc:argument-resolvers>
+</mvc:annotation-driven>
+```
+
+### 3.6. Tester
+
+1. Démarrer le serveur tel quel et vérifier qu’on peut se rendre sur la page.
+2. Dans le fichier web.xml, activer le profile de serveur à la place du profile de responsable.
+3. Démarrer le serveur et vérifier qu’on ne peut pas se rendre sur la page.
+
+> web.xml
+
+```xml
+<context-param>
+	<param-name>spring.profiles.active</param-name>
+	<param-value>serveur</param-value>
+</context-param>
+```
+
+> Quand on change le profile dans le fichier web.xml, Spring instancie une autre implémentation de la l’interface `EmployeProvider` au chargement du contexte. Il y a en effet deux versions de la classe :
+> - `ResponsableProvider` qui fournit un responsable
+> - et `ServeurProvider` qui fournit un serveur.
+> La première est annotée avec `@Profile("responsable")` et la seconde avec `@Profile("serveur")`.
