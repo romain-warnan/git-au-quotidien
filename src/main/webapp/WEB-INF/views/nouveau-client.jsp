@@ -10,5 +10,12 @@
 	</head>
 	<body>
 		<h1>Nouveau client</h1>
+		<c:url value="nouveau-client" var="url" />
+		<form:form action="${url}" modelAttribute="client" method="post" >
+			<label>Nom&nbsp;:</label><input type="text" name="nom" /><br/>
+			<label>Email&nbsp;:</label><input type="text" name="email" /><br/>
+			<label>Date de naissance&nbsp;:</label><input type="text" name="dateNaissance" /> <em>jj/mm/aaaa</em><br/>
+			<button type="submit">Créer</button>
+		</form:form>
 	</body>
 </html>

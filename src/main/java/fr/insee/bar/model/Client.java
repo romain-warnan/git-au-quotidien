@@ -2,6 +2,8 @@ package fr.insee.bar.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 
@@ -22,6 +24,7 @@ public class Client {
 
 	private String email;
 
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateNaissance;
 
 	public Short getId() {

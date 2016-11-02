@@ -1,3 +1,5 @@
+create sequence seq as integer start with 100 increment by 1;
+
 create table clients (
 	id integer primary key,
 	nom varchar(30),

@@ -32,6 +32,7 @@ public class ClientDao {
 
 	private static final String SQL_FIND = "select * from clients where id = :id";
 	private static final String SQL_FIND_ALL = "select * from clients";
+	private static final String SQL_INSERT = "insert into clients (id, nom, email, date_naissance) values (next value for seq, :nom, :email, :dateNaissance)";
 
 	@PostConstruct
 	private void postConstruct() {
@@ -51,6 +52,13 @@ public class ClientDao {
 
 	public List<Client> findAll() {
 		return template.query(SQL_FIND_ALL, rowMapper);
+	}
+
+	public void insert(Client client) {
+		template.update(SQL_INSERT, ImmutableMap.of(
+			"nom", client.getNom(),
+			"email", client.getEmail(),
+			"dateNaissance", client.getDateNaissance()));
 	}
 
 	@Component
