@@ -409,7 +409,7 @@ Si oui, le diriger vers la nouvelle page `nouveau-client.jsp`, sinon, le redirig
 
 > EmployeResolver.java
 
-Dans la méthode `resolveArgument`, on récupère l’objet `Employe` qui est dans la session.
+Dans la méthode `resolveArgument`, récupérer l’objet `Employe` qui est dans la session.
 
 > dispatcher-servlet.xml
 
