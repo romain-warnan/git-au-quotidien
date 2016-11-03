@@ -19,6 +19,6 @@
 			<li><label>Date de naissance :</label> <fmt:formatDate value="${client.dateNaissance}" pattern="dd MMMM yyyy"/></li>
 		</ul>
 		<c:url var="url" value="/accueil" />
-		<p><a href="${url}">Accueil</a>
+		<p><a href="${url}">Accueil</a> | <a href="<c:url value="/client/modification/${client.id}" />">Modifier client</a></p>
 	</body>
 </html>
