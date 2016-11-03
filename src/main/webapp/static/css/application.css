@@ -1,6 +1,11 @@
 html {
 	font-family: Arial;
+	font-size: 16px;
 	margin: 20px;
+}
+
+h1 {
+	font-size: 22px;
 }
 
 table {
@@ -10,6 +15,15 @@ table {
 td, th {
 	border: solid black 1px;
 	padding: 5px;
+}
+
+a {
+	color: darkslateblue;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 label {
@@ -24,4 +38,58 @@ ul > li:before {
 	content: "-";
 	position: absolute;
 	margin-left: -1.1em; 
+}
+
+form {
+	width: 500px;
+	position: relative;
+}
+
+form label {
+	display: inline-block;
+	width: 150px;
+	text-alignr: right;
+	margin: 10px;
+}
+
+select, input[type='text'] {
+	display: inline-block;
+	border-radius: 3px;
+	border: solid black 1px;
+	padding: 4px;
+}
+
+select {
+	width: 210px;
+	margin: 10px 0px 10px 10px;
+
+}
+
+input[type='text'] {
+	display: inline-block;
+	width: 200px;
+	margin: 10px;
+	border-radius: 3px;
+	border: solid black 1px;
+	padding: 4px;
+}
+
+button {
+	border: 0;
+	background: none;
+	box-shadow:none;
+	border-radius: 5px;
+	margin-top: 20px;
+	padding: 5px;
+	border: solid black 2px;
+	font-weight: bold;
+	font-size: 16px;
+	position: absolute;
+	right: 10px;
+	width: 100px;
+}
+
+button:hover {
+	background-color: black;
+	color: white;
 }

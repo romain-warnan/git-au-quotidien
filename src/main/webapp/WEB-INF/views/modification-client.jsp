@@ -7,30 +7,29 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="/static/css/application.css">
-		<title>Spring MVC &ndash; Nouveau client</title>
+		<title>Spring MVC &ndash; Modification client</title>
 	</head>
 	<body>
-		<h1>Nouveau client</h1>
-		<c:url value="/client/nouveau" var="url" />
+		<h1>Modification client</h1>
+		<c:url value="/client/modification/${client.id}" var="url" />
 		<form:form action="${url}" modelAttribute="client" method="post" >
-		
-			<label>Titre&nbsp;</label>
-			<select name="titre" >
-				<c:forEach items="${titres}" var="titre">
-					<option value="${titre}"><c:out value="${titre.libelle}" /></option>
-				</c:forEach>
-			</select><br/>
+			<form:hidden path="id"/>
+			
+			<label>Titre&nbsp;:</label>
+			<form:select type="text" path="titre" >
+				<form:options itemLabel="libelle" />
+			</form:select><br/>
 			
 			<label>Nom&nbsp;:</label>
-			<input type="text" name="nom" /><br/>
+			<form:input type="text" path="nom" /><br/>
 			
 			<label>Email&nbsp;:</label>
-			<input type="text" name="email" />
-			<br/>
-			<label>Date de naissance&nbsp;:</label>
-			<input type="text" name="dateNaissance" /> <em>jj/mm/aaaa</em><br/>
+			<form:input type="text" path="email" /><br/>
 			
-			<button type="submit">Créer</button>
+			<label>Date de naissance&nbsp;:</label>
+			<form:input type="text" path="dateNaissance" /> <em>jj/mm/aaaa</em><br/>
+			
+			<button type="submit">Modifier</button>
 		</form:form>
 	</body>
 </html>

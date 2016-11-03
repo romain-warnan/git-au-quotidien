@@ -7,6 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="/static/css/application.css">
+		<title>Spring MVC &ndash; Clients</title>
 	</head>
 	<body>	
 		<h1>Liste des clients</h1>
@@ -23,6 +24,6 @@
 			</tr>
 		</c:forEach>
 		</table>
-		<p><a href="<c:url value="/accueil" />">Accueil</a> | <a href="<c:url value="/nouveau-client" />">Nouveau client</a></p>
+		<p><a href="<c:url value="/accueil" />">Accueil</a> | <a href="<c:url value="/client/nouveau" />">Nouveau client</a></p>
 	</body>
 </html>

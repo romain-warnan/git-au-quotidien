@@ -7,6 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="/static/css/application.css">
+		<title>Spring MVC &ndash; Accueil</title>
 	</head>
 	<body>
 		<h1><c:out value="${message}" /></h1>

@@ -18,6 +18,7 @@ import org.springframework.stereotype.Repository;
 import com.google.common.collect.ImmutableMap;
 
 import fr.insee.bar.model.Client;
+import fr.insee.bar.model.Client.Titre;
 
 @Repository
 public class ClientDao {
@@ -32,6 +33,8 @@ public class ClientDao {
 
 	private static final String SQL_FIND = "select * from clients where id = :id";
 	private static final String SQL_FIND_ALL = "select * from clients";
+	private static final String SQL_INSERT = "insert into clients (id, nom, email, date_naissance, titre) values (next value for seq, :nom, :email, :dateNaissance, :titre)";
+	private static final String SQL_UPDATE = "update clients set nom = :nom, email = :email, date_naissance = :dateNaissance, titre = :titre where id = :id";
 
 	@PostConstruct
 	private void postConstruct() {
@@ -53,6 +56,23 @@ public class ClientDao {
 		return template.query(SQL_FIND_ALL, rowMapper);
 	}
 
+	public void insert(Client client) {
+		template.update(SQL_INSERT, ImmutableMap.of(
+			"nom", client.getNom(),
+			"email", client.getEmail(),
+			"dateNaissance", client.getDateNaissance(),
+			"titre", client.getTitre().getCode()));
+	}
+
+	public void update(Client client) {
+		template.update(SQL_UPDATE, ImmutableMap.of(
+			"nom", client.getNom(),
+			"email", client.getEmail(),
+			"dateNaissance", client.getDateNaissance(),
+			"titre", client.getTitre().getCode(),
+			"id", client.getId()));
+	}
+
 	@Component
 	public class ClientRowMapper implements RowMapper<Client> {
 
@@ -63,6 +83,7 @@ public class ClientDao {
 			client.setNom(rs.getString("nom"));
 			client.setEmail(rs.getString("email"));
 			client.setDateNaissance(rs.getDate("date_naissance"));
+			client.setTitre(Titre.of(rs.getShort("titre")));
 			return client;
 		}
 
