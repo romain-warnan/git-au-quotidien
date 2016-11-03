@@ -443,3 +443,27 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 > - `ServeurProvider` annotée `@Profile("serveur")`, qui fournit un employé ayant le rôle de *serveur*.
 
 > Seule une seule des deux versions existe dans le contexte Spring. L’annotation `@Autowired` peut donc être utilisée sans problème pour injecter un `EmployeProvider`.
+
+## 4. Formulaire
+
+:black_medium_small_square: Terminal
+
+```bash
+git commit -a -m "TP3 <idep>"
+git checkout -b tp4 tp4b
+```
+
+### 4.1. Compléter la page qui permet de créer un nouveau client
+
+:page_facing_up: nouveau-client.jsp
+
+La page doit comprendre un formulaire `<form:form>` associé à un `modelAttribute` qui servira à receuillir les données postées.
+Le formulaire comprend les éléments suivants :
+1. un menu déroulant (`<select>`) pour le titre (Monsieur ou Madame) ;
+2. un champ de texte pour le nom ;
+3. un champ de texte pour l'adresse email ;
+4. un champ de texte pour la date de naissance au format *jj/mm/aaaa* ;
+5. un bouton « Créer » qui poste les données du formulaire vers le serveur (`<button type="submit">`).
+
+![Formulaire nouveau client](images/formulaire-nouveau-client.png)
+
