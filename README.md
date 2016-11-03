@@ -10,7 +10,7 @@
 cd /d/idep/Mes\ Documents/eclipse_workspace
 git config --global http.proxy http://proxy-orange.http.insee.fr:8080
 git clone https://github.com/Insee-CNIP/formation-spring-mvc.git
-git checkout -b tp1 tp1
+git checkout -b tp1b tp1
 ```
 
 ### 0.2. Importer le projet dans Eclipse
@@ -215,7 +215,7 @@ Tester et vérifier avec les outils de développement du navigateur que le code 
 
 ```bash
 git commit -a -m "TP1 <idep>"
-git checkout -b tp2 tp2b
+git checkout -b tp2b tp2
 ```
 
 ### 2.1. Liste de tous les clients
@@ -344,7 +344,7 @@ Tester que l’application fonctionne toujours.
 
 ```bash
 git commit -a -m "TP2 <idep>"
-git checkout -b tp3 tp3b
+git checkout -b tp3b tp3
 ```
 
 ### 3.1. Créer un intercepteur qui mesure la durée de la requête
@@ -450,7 +450,7 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 
 ```bash
 git commit -a -m "TP3 <idep>"
-git checkout -b tp4 tp4b
+git checkout -b tp4b tp4
 ```
 
 ### 4.1. Ajouter un nouveau client
