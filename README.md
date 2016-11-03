@@ -444,7 +444,7 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 
 > Seule une seule des deux versions existe dans le contexte Spring. L’annotation `@Autowired` peut donc être utilisée sans problème pour injecter un `EmployeProvider`.
 
-## 4. Formulaire
+## 4. Formulaires
 
 :black_medium_small_square: Terminal
 
@@ -453,12 +453,23 @@ git commit -a -m "TP3 <idep>"
 git checkout -b tp4 tp4b
 ```
 
-### 4.1. Compléter la page qui permet de créer un nouveau client
+### 4.1. Ajouter un nouveau client
+
+#### 4.1.1. Créer un contrôlleur qui dirige vers le formulaire de saisie d'un nouveau client
+
+:page_facing_up: NouveauClientController.java
+
+Pour le moment il comporte deux méthodes :
+
+* une annotée `@ModelAttribute` qui retourne les modalités de l'énumeration `Client.Titre`,
+* l'autre associée à l'URL `GET /client/nouveau` et qui dirige vers le formulaire d'ajout d'un nouveau client.
+ 
+#### 4.2.1. Compléter la page qui permet de créer un nouveau client
 
 :page_facing_up: nouveau-client.jsp
 
-La page doit comprendre un formulaire `<form:form>` associé à un `modelAttribute` qui servira à receuillir les données postées.
-Le formulaire comprend les éléments suivants :
+La page doit comprendre un formulaire `<form:form>` possédant un attribut `modelAttribute` qui servira à recueillir les données postées.
+Le formulaire possède les éléments suivants :
 
 * un menu déroulant (`<select>`) pour le titre (Monsieur ou Madame) ;
 * un champ de texte pour le nom ;
@@ -466,5 +477,57 @@ Le formulaire comprend les éléments suivants :
 * un champ de texte pour la date de naissance au format *jj/mm/aaaa* ;
 * un bouton « Créer » qui poste les données du formulaire vers le serveur (`<button type="submit">`).
 
+> Pour remplir le menu déroulant, utiliser la balise <c:forEach>. Pour le reste, utiliser des balises HTML natives.
+
 ![Formulaire nouveau client](images/formulaire-nouveau-client.png)
+
+#### 4.3.1. Enregistrer le nouveau client en base de données
+
+:page_facing_up: NouveauClientController.java
+
+Ajouter une nouvelle méthode associée à l'URL `POST /client/nouveau` qui prend en paramètre un objet `Client` annoté `@ModelAttribute` et qui encapsule les données postées depuis le formulaire.
+
+> Pour que le format de la date soit bien pris en compte par Spring MVC, penser à ajouter une annotation `@DateTimeFormat(pattern = "dd/MM/yyyy")` dans la classe `Client`.
+
+Sans contrôles préalables, insérer le nouveau client en base (méthode `ClientDao.insert)`.
+Rediriger vers la liste des clients.
+
+### 4.2. Modifier un client existant
+
+#### 4.2.1 Créer le contrôlleur adéquat
+
+:page_facing_up: ModificationClientController.java
+
+Comme précédemment, il contient trois méthodes :
+
+* une pour la liste des titres,
+* une associée à l'URL `GET /client/modification`,
+* et une associée à l'URL `POST /client/modification`.
+
+Attention, cette fois, la méthode qui affiche le formulaire doit le pré-remplir et donc prendre en argument le client issu de la base pour l'ajouter au modèle.
+
+Pour faire la modification en base, utiliser sans contrôles préalables, la méthode `ClientDao.update`.
+Ensuite rediriger vers la page d'information du client.
+
+#### 4.2.2 Ajouter un lien vers le formulaire de modification d'un client
+
+:page_facing_up: client.jsp
+
+Le lien est paramétré par l'identifiant du client à modifier.
+
+#### 4.2.3 Créer la page du formulaire pré-rempli
+
+:page_facing_up: ModificationClientController.java
+
+Cette fois ci, pour que les champs soient pré-remplis avec les données issues de la base, utiliser des balises `<form:...` dont l'attribut `path` est renseigné relativement à l'objet client du modèle.
+
+> Il ne faut pas oublier d'ajouter un champ caché qui contient l'identifiant du client qu'on est en train de modifier.
+
+![Formulaire modification client](images/formulaire-modification-client.png)
+
+#### 4.2.4 Supprimer la méthode qui retourne la liste des titres
+
+:page_facing_up: ModificationClientController.java
+
+Il s'agit de la méthode annotée `@ModelAttribute`. Constater que le menu déroulant est toujours correctement rempli malgré l'absence de cette méthode.
 

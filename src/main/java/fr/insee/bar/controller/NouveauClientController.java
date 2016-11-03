@@ -10,15 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import fr.insee.bar.dao.ClientDao;
 import fr.insee.bar.model.Client;
 import fr.insee.bar.model.Client.Titre;
-import fr.insee.bar.model.Employe;
-import fr.insee.bar.service.EmployeService;
 
 @Controller
 @RequestMapping("/client")
 public class NouveauClientController {
-
-	@Autowired
-	private EmployeService employeService;
 
 	@Autowired
 	private ClientDao clientDao;
@@ -29,18 +24,13 @@ public class NouveauClientController {
 	}
 
 	@GetMapping("/nouveau")
-	public String nouveauClient(Employe employe) {
-		if (employeService.estResponsable(employe)) {
-			return "nouveau-client";
-		}
-		return "redirect:/clients";
+	public String nouveauClient() {
+		return "nouveau-client";
 	}
 
 	@PostMapping("/nouveau")
-	public String nouveauClientPost(Employe employe, @ModelAttribute("client") Client client) {
-		if (employeService.estResponsable(employe)) {
-			clientDao.insert(client);
-		}
+	public String nouveauClientPost(@ModelAttribute("client") Client client) {
+		clientDao.insert(client);
 		return "redirect:/clients";
 	}
 }
