@@ -455,14 +455,14 @@ git checkout -b tp4b tp4
 
 ### 4.1. Ajouter un nouveau client
 
-#### 4.1.1. Créer un contrôlleur qui dirige vers le formulaire de saisie d'un nouveau client
+#### 4.1.1. Créer un contrôlleur qui dirige vers le formulaire de saisie d’un nouveau client
 
 :page_facing_up: NouveauClientController.java
 
 Pour le moment il comporte deux méthodes :
 
-* une annotée `@ModelAttribute` qui retourne les modalités de l'énumeration `Client.Titre`,
-* l'autre associée à l'URL `GET /client/nouveau` et qui dirige vers le formulaire d'ajout d'un nouveau client.
+* une annotée `@ModelAttribute` qui retourne les modalités de l’énumeration `Client.Titre`,
+* l’autre associée à l’URL `GET /client/nouveau` et qui dirige vers le formulaire d’ajout d’un nouveau client.
  
 #### 4.2.1. Compléter la page qui permet de créer un nouveau client
 
@@ -473,11 +473,11 @@ Le formulaire possède les éléments suivants :
 
 * un menu déroulant (`<select>`) pour le titre (Monsieur ou Madame) ;
 * un champ de texte pour le nom ;
-* un champ de texte pour l'adresse email ;
+* un champ de texte pour l’adresse email ;
 * un champ de texte pour la date de naissance au format *jj/mm/aaaa* ;
 * un bouton « Créer » qui poste les données du formulaire vers le serveur (`<button type="submit">`).
 
-> Pour remplir le menu déroulant, utiliser la balise <c:forEach>. Pour le reste, utiliser des balises HTML natives.
+> Pour remplir le menu déroulant, utiliser la balise `<c:forEach>`. Pour le reste, utiliser des balises HTML natives.
 
 ![Formulaire nouveau client](images/formulaire-nouveau-client.png)
 
@@ -485,7 +485,7 @@ Le formulaire possède les éléments suivants :
 
 :page_facing_up: NouveauClientController.java
 
-Ajouter une nouvelle méthode associée à l'URL `POST /client/nouveau` qui prend en paramètre un objet `Client` annoté `@ModelAttribute` et qui encapsule les données postées depuis le formulaire.
+Ajouter une nouvelle méthode associée à l’URL `POST /client/nouveau` qui prend en paramètre un objet `Client` annoté `@ModelAttribute` et qui encapsule les données postées depuis le formulaire.
 
 > Pour que le format de la date soit bien pris en compte par Spring MVC, penser à ajouter une annotation `@DateTimeFormat(pattern = "dd/MM/yyyy")` dans la classe `Client`.
 
@@ -498,30 +498,30 @@ Rediriger vers la liste des clients.
 
 :page_facing_up: ModificationClientController.java
 
-Comme précédemment, il contient trois méthodes :
+Comme précédemment, le contrôleur contient trois méthodes :
 
 * une pour la liste des titres,
-* une associée à l'URL `GET /client/modification`,
-* et une associée à l'URL `POST /client/modification`.
+* une associée à l’URL `GET /client/modification`,
+* et une associée à l’URL `POST /client/modification`.
 
-Attention, cette fois, la méthode qui affiche le formulaire doit le pré-remplir et donc prendre en argument le client issu de la base pour l'ajouter au modèle.
+Attention, cette fois, la méthode qui affiche le formulaire doit le pré-remplir et donc prendre en argument le client issu de la base pour l’ajouter au modèle.
 
 Pour faire la modification en base, utiliser sans contrôles préalables, la méthode `ClientDao.update`.
-Ensuite rediriger vers la page d'information du client.
+Ensuite rediriger vers la page d’information du client.
 
-#### 4.2.2 Ajouter un lien vers le formulaire de modification d'un client
+#### 4.2.2 Ajouter un lien vers le formulaire de modification d’un client
 
 :page_facing_up: client.jsp
 
-Le lien est paramétré par l'identifiant du client à modifier.
+Le lien est paramétré par l’identifiant du client à modifier.
 
 #### 4.2.3 Créer la page du formulaire pré-rempli
 
 :page_facing_up: ModificationClientController.java
 
-Cette fois ci, pour que les champs soient pré-remplis avec les données issues de la base, utiliser des balises `<form:...` dont l'attribut `path` est renseigné relativement à l'objet client du modèle.
+Cette fois ci, pour que les champs soient pré-remplis avec les données issues de la base, utiliser des balises `<form:...` plutôt que les balises HTML natives. Renseigner l’attribut `path` de ces balises.
 
-> Il ne faut pas oublier d'ajouter un champ caché qui contient l'identifiant du client qu'on est en train de modifier.
+> Il ne faut pas oublier d’ajouter un champ caché qui contient l’identifiant du client qu’on est en train de modifier.
 
 ![Formulaire modification client](images/formulaire-modification-client.png)
 
@@ -529,5 +529,5 @@ Cette fois ci, pour que les champs soient pré-remplis avec les données issues 
 
 :page_facing_up: ModificationClientController.java
 
-Il s'agit de la méthode annotée `@ModelAttribute`. Constater que le menu déroulant est toujours correctement rempli malgré l'absence de cette méthode.
+Il s’agit de la méthode annotée `@ModelAttribute`. Constater que le menu déroulant est toujours correctement rempli malgré l’absence de cette méthode.
 
