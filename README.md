@@ -459,11 +459,12 @@ git checkout -b tp4 tp4b
 
 La page doit comprendre un formulaire `<form:form>` associé à un `modelAttribute` qui servira à receuillir les données postées.
 Le formulaire comprend les éléments suivants :
-1. un menu déroulant (`<select>`) pour le titre (Monsieur ou Madame) ;
-2. un champ de texte pour le nom ;
-3. un champ de texte pour l'adresse email ;
-4. un champ de texte pour la date de naissance au format *jj/mm/aaaa* ;
-5. un bouton « Créer » qui poste les données du formulaire vers le serveur (`<button type="submit">`).
+
+ 1. un menu déroulant (`<select>`) pour le titre (Monsieur ou Madame) ;
+ 2. un champ de texte pour le nom ;
+ 3. un champ de texte pour l'adresse email ;
+ 4. un champ de texte pour la date de naissance au format *jj/mm/aaaa* ;
+ 5. un bouton « Créer » qui poste les données du formulaire vers le serveur (`<button type="submit">`).
 
 ![Formulaire nouveau client](images/formulaire-nouveau-client.png)
 
