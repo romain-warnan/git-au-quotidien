@@ -4,6 +4,10 @@ html {
 	margin: 20px;
 }
 
+h1 {
+	font-size: 22px;
+}
+
 table {
 	border-collapse: collapse;
 }
@@ -41,11 +45,24 @@ form {
 	position: relative;
 }
 
-label {
+form label {
 	display: inline-block;
 	width: 150px;
 	text-alignr: right;
 	margin: 10px;
+}
+
+select, input[type='text'] {
+	display: inline-block;
+	border-radius: 3px;
+	border: solid black 1px;
+	padding: 4px;
+}
+
+select {
+	width: 210px;
+	margin: 10px 0px 10px 10px;
+
 }
 
 input[type='text'] {
