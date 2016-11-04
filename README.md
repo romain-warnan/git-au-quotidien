@@ -438,7 +438,7 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 </context-param>
 ```
 
-> :question Quand on change le profile dans le fichier web.xml, Spring instancie une autre implémentation de l’interface `EmployeProvider` au chargement du contexte. Il y a en effet deux versions de la classe :
+> :question: Quand on change le profile dans le fichier web.xml, Spring instancie une autre implémentation de l’interface `EmployeProvider` au chargement du contexte. Il y a en effet deux versions de la classe :
 > - `ResponsableProvider` annotée `@Profile("responsable")`, qui fournit un employé ayant le rôle de *responsable*,
 > - `ServeurProvider` annotée `@Profile("serveur")`, qui fournit un employé ayant le rôle de *serveur*.
 
@@ -464,7 +464,7 @@ Pour le moment il comporte deux méthodes :
 * une annotée `@ModelAttribute` qui retourne les modalités de l’énumeration `Client.Titre`,
 * l’autre associée à l’URL `GET /client/nouveau` et qui dirige vers le formulaire d’ajout d’un nouveau client.
  
-#### 4.2.1. Compléter la page qui permet de créer un nouveau client
+#### 4.1.2. Compléter la page qui permet de créer un nouveau client
 
 > nouveau-client.jsp
 
@@ -477,11 +477,11 @@ Le formulaire possède les éléments suivants :
 * un champ de texte pour la date de naissance au format *jj/mm/aaaa* ;
 * un bouton « Créer » qui poste les données du formulaire vers le serveur (`<button type="submit">`).
 
-:question Pour remplir le menu déroulant, utiliser la balise `<c:forEach>`. Pour le reste, utiliser des balises HTML natives.
+:question: Pour remplir le menu déroulant, utiliser la balise `<c:forEach>`. Pour le reste, utiliser des balises HTML natives.
 
 ![Formulaire nouveau client](images/formulaire-nouveau-client.png)
 
-#### 4.3.1. Enregistrer le nouveau client en base de données
+#### 4.1.3. Enregistrer le nouveau client en base de données
 
 > NouveauClientController.java
 
@@ -492,9 +492,21 @@ Ajouter une nouvelle méthode associée à l’URL `POST /client/nouveau` qui pr
 Sans contrôles préalables, insérer le nouveau client en base (méthode `ClientDao.insert)`.
 Rediriger vers la liste des clients.
 
+#### 4.1.4. Afficher un message au dessus de la liste des clients
+
+> NouveauClientController.java
+
+Placer le client nouvellement créé dans un *flashAttribute* de manière à pouvoir y accéder après la redirection. 
+
+> clients.jsp
+
+Si un client est accessible dans le modèle, afficher un message de succès de la forme : « Le client *mail* a été créé avec succès ».
+
+:question: Pour obtenir un message de succès, utiliser la class CSS `class="success"`.
+
 ### 4.2. Modifier un client existant
 
-#### 4.2.1 Créer le contrôlleur adéquat
+#### 4.2.1. Créer le contrôlleur adéquat
 
 > ModificationClientController.java
 
@@ -509,13 +521,13 @@ Comme précédemment, le contrôleur contient trois méthodes :
 Pour faire la modification en base, utiliser sans contrôles préalables, la méthode `ClientDao.update`.
 Ensuite rediriger vers la page d’information du client.
 
-#### 4.2.2 Ajouter un lien vers le formulaire de modification d’un client
+#### 4.2.2. Ajouter un lien vers le formulaire de modification d’un client
 
 > client.jsp
 
 Le lien est paramétré par l’identifiant du client à modifier.
 
-#### 4.2.3 Créer la page du formulaire pré-rempli
+#### 4.2.3. Créer la page du formulaire pré-rempli
 
 > ModificationClientController.java
 
@@ -525,7 +537,17 @@ Cette fois ci, pour que les champs soient pré-remplis avec les données issues 
 
 ![Formulaire modification client](images/formulaire-modification-client.png)
 
-#### 4.2.4 Supprimer la méthode qui retourne la liste des titres
+#### 4.2.4. Afficher un message au dessus de la liste des clients
+
+> ModificationClientController.java
+
+Placer un booléen `modification=true` dans un *flashAttribute* de manière à pouvoir y accéder après la redirection. 
+
+> client.jsp
+
+Si un un booléen `modification` est accessible dans le modèle, afficher un message de succès de la forme : « Le client a été modifié avec succès ».
+
+#### 4.2.5. Supprimer la méthode qui retourne la liste des titres
 
 > ModificationClientController.java
 
