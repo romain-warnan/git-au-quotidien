@@ -11,9 +11,6 @@
 	</head>
 	<body>
 		<h1>Informations client</h1>
-		<c:if test="${not empty modification}">
-			<p class="success">Le client a été modifié avec succès.</p>
-		</c:if>
 		<br />
 		<strong>Client n<sup>o</sup> ${client.id}</strong>
 		<ul>
@@ -23,6 +20,6 @@
 			<li><label>Date de naissance :</label> <fmt:formatDate value="${client.dateNaissance}" pattern="dd MMMM yyyy"/></li>
 		</ul>
 		<c:url var="url" value="/accueil" />
-		<p><a href="${url}">Accueil</a> | <a href="<c:url value="/client/modification/${client.id}" />">Modifier client</a></p>
+		<p><a href="${url}">Accueil</a>
 	</body>
 </html>

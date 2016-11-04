@@ -11,26 +11,5 @@
 	</head>
 	<body>
 		<h1>Nouveau client</h1>
-		<c:url value="/client/nouveau" var="url" />
-		<form:form action="${url}" modelAttribute="client" method="post" >
-		
-			<label>Titre&nbsp;</label>
-			<select name="titre" >
-				<c:forEach items="${titres}" var="titre">
-					<option value="${titre}"><c:out value="${titre.libelle}" /></option>
-				</c:forEach>
-			</select><br/>
-			
-			<label>Nom&nbsp;:</label>
-			<input type="text" name="nom" /><br/>
-			
-			<label>Email&nbsp;:</label>
-			<input type="text" name="email" />
-			<br/>
-			<label>Date de naissance&nbsp;:</label>
-			<input type="text" name="dateNaissance" /> <em>jj/mm/aaaa</em><br/>
-			
-			<button type="submit">Créer</button>
-		</form:form>
 	</body>
 </html>

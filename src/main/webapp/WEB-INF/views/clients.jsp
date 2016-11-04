@@ -11,9 +11,7 @@
 	</head>
 	<body>	
 		<h1>Liste des clients</h1>
-		<c:if test="${not empty nouveauClient}">
-			<p class="success">Le client <c:out value="${nouveauClient.email}" /> a été créé avec succès.</p>
-		</c:if>
+		<br />
 		<table>
 		<tr>
 			<th>Id</th>
