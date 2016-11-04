@@ -4,7 +4,7 @@
 
 ### 0.1. Cloner le dépot git
 
-:black_medium_small_square: Terminal
+> Terminal
 
 ```bash
 cd /d/idep/Mes\ Documents/eclipse_workspace
@@ -15,7 +15,7 @@ git checkout -b tp1b tp1
 
 ### 0.2. Importer le projet dans Eclipse
 
-:globe_with_meridians: Eclipse
+> Eclipse
 
 * File
 * Import…
@@ -25,7 +25,7 @@ git checkout -b tp1b tp1
 
 ### 0.3. Créer une configuration de lancement
 
-:globe_with_meridians: Eclipse
+> Eclipse
 
 * Run configuration…
 * Maven build > New
@@ -38,7 +38,7 @@ git checkout -b tp1b tp1
 
 ### 1.1. Ajouter les dépendances Maven
 
-:page_facing_up: pom.xml
+> pom.xml
 
 ```xml
 <properties>
@@ -76,7 +76,7 @@ git checkout -b tp1b tp1
 
 ### 1.2. Créer le fichier de contexte de l’application
 
-:page_facing_up: src/main/resources/applicationContext.xml
+> src/main/resources/applicationContext.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -93,7 +93,7 @@ git checkout -b tp1b tp1
 
 ### 1.3. Charger le contexte de l’application au démarage du serveur
 
-:page_facing_up: web.xml
+> web.xml
 
 ```xml
 <context-param>
@@ -107,7 +107,7 @@ git checkout -b tp1b tp1
 
 ### 1.4. Créer le fichier de contexte web
 
-:page_facing_up: src/main/resources/servlet-dispatcher.xml 
+> src/main/resources/servlet-dispatcher.xml 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -126,7 +126,7 @@ git checkout -b tp1b tp1
 
 ### 1.5. Ajouter la servlet de Spring MVC et diriger toutes les requêtes vers cette servlet
 
-:page_facing_up: web.xml
+> web.xml
 
 ```xml
 <servlet>
@@ -146,11 +146,11 @@ git checkout -b tp1b tp1
 
 ### 1.6. Créer le dossier contenant les vues
 
-:page_facing_up: src/main/webapp/WEB-INF/views/
+> src/main/webapp/WEB-INF/views/
 
 ### 1.7. Déclarer et paramétrer le viewResolver
 
-:page_facing_up: servlet-dispatcher.xml
+> servlet-dispatcher.xml
 
 ```xml
 <bean id="viewResolver"	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -165,18 +165,18 @@ git checkout -b tp1b tp1
 
 ### 1.8. Créer le package contenant les contrôleurs
 
-:page_facing_up: fr.insee.bar.controller
+> fr.insee.bar.controller
 
 ### 1.9. Créer le contrôleur `AccueilController`
 
-:page_facing_up: AccueilController.java
+> AccueilController.java
 
 Ajouter l’annotation `@Controller`.
 Créer une méthode qui dirige vers la vue « accueil.jsp » quand on accède à l’URL « /accueil ».
 Cette méthode ajoute au modèle un objet « message » de type qui vaut "Hello world".
 Créer la JSP « views/accueil.jsp » et afficher l’objet « message ».
 
-:page_facing_up: accueil.jsp
+> accueil.jsp
 
 ```jsp
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -187,13 +187,13 @@ Tester.
 
 ### 1.10. Utiliser un fichier de propriétés
 
-:page_facing_up: src/main/resources/application-properties
+> src/main/resources/application-properties
 
 ```properties
 name=Spring MVC
 ```
 
-:page_facing_up: AccueilController.java
+> AccueilController.java
 
 Ajouter l’annotation `@PropertySource("classpath:application.properties")` pour charger le fichier de propriétés.
 Ajouter un attribute de type `String` dans le contrôleur et l’annoter avec `@Value("${name}")` pour récupérer la valeur de la clé « name »
@@ -202,7 +202,7 @@ Tester.
 
 ### 1.11. Rediriger l’URL racine vers la page d’accueil
 
-:page_facing_up: AccueilController.java
+> AccueilController.java
 
 Créer une nouvelle méthode qui se déclenche quand on accède à l’URL « / ».
 À l’aide de l’instruction `"redirect:/accueil"` rediriger cette URL vers l’URL « /accueil ».
@@ -211,7 +211,7 @@ Tester et vérifier avec les outils de développement du navigateur que le code 
 
 ## 2. Navigation
 
-:black_medium_small_square: Terminal
+> Terminal
 
 ```bash
 git commit -a -m "TP1 <idep>"
@@ -222,7 +222,7 @@ git checkout -b tp2b tp2
 
 #### 2.1.1. Créer un contrôleur qui permet d’afficher la liste de tous les clients
 
-:page_facing_up: ClientsController.java
+> ClientsController.java
 
 Ce contrôleur possède une méthode qui est appelée à l’URL « /clients ».
 Il récupère la liste de tous les clients dans la base de donnée et l’ajoute au modèle.
@@ -238,11 +238,11 @@ Il lance la génération de la vue `/jsp/clients.jsp`.
 
 #### 2.1.2. Afficher la liste des clients
 
-:page_facing_up: clients.jsp
+> clients.jsp
 
 En itérant sur la liste des clients avec le tag `<c:forEach>`, afficher la liste de tous les clients (nom et email) dans un tableau :
 
-> Rappel : structure d’un tableau HTML
+> :grey_question: Rappel : structure d’un tableau HTML
 
 ```html
 	<table>
@@ -266,20 +266,20 @@ En itérant sur la liste des clients avec le tag `<c:forEach>`, afficher la list
 
 #### 2.1.3. Ajouter un lien vers la page d’accueil
 
-:page_facing_up: clients.jsp
+> clients.jsp
 
 Grace au tag `<c:url>` créer une variable qui pointe vers la page d’accueil.
 Utiliser cette variable dans un lien qui redirige vers la page d’accueil.
 
 #### 2.1.4. Sur la page d’accueil, ajouter un lien vers la page de la liste des clients
 
-:page_facing_up: accueil.jsp
+> accueil.jsp
 
 ### 2.2. Détails pour un client donné
 
 #### 2.2.1. Créer un contrôleur qui permet d’afficher les informations concernant un client donné
 
-:page_facing_up: ClientController.java
+> ClientController.java
 
 Ce contrôleur possède une méthode qui est appelée à l’URL « /client/{id} ».
 À l’aide de l’annotation `@PathVariable`, récupérer la valeur de l’identifiant passé dans l’URL.
@@ -289,7 +289,7 @@ Diriger vers la page `/jsp/client.jsp`.
 
 #### 2.2.2. Créer la page client.jsp
 
-:page_facing_up: client.jsp
+> client.jsp
 
 Y afficher les informations relatives au client : identifiant, nom, email et date de naissance.
 Pour formater la date, utiliser le tag `<fmt:formatDate>` et le format `dd/MMMM/yyyy`.
@@ -297,7 +297,7 @@ Ajouter un lien vers la page d’accueil.
 
 #### 2.2.3. Faire le lien entre la page clients et les sous-pages client
 
-:page_facing_up: clients.jsp
+> clients.jsp
 
 Autour de chaque nom de client, ajouter un lien qui pointe vers l’URL `/client/{id}`.
 De cette manière, l’utilisateur peut cliquer sur le nom d’un client pour en voir le détail.
@@ -306,7 +306,7 @@ De cette manière, l’utilisateur peut cliquer sur le nom d’un client pour en
 
 #### 2.3.1. Créer le nouveau convertisseur
 
-:page_facing_up: ClientConverter.java
+> ClientConverter.java
 
 Dans  le package `fr.insee.bar.converter`, créer une classe `ClientConverter` qui implémente de l’interface `Converter<String, Client>`.
 Ne pas oublier le stéréotype `@Component` sur la classe. 
@@ -314,14 +314,14 @@ Implémenter la méthode `convert` avec un appel à `clientDao.find(id)`.
 
 #### 2.3.2. Simplifier le contrôleur
 
-:page_facing_up: ClientController.java
+> ClientController.java
 
 Modifier la signature de la méthode pour remplacer le `Short` par un `Client`.
 Supprimer le DAO du contrôleur.
 
 #### 2.3.3. Enregistrer le convertissuer
 
-:page_facing_up: dispatcher-servlet.xml
+> dispatcher-servlet.xml
 
 Déclarer ce nouveau convertisseur auprès de la servlet de Spring MVC :
 
@@ -340,7 +340,7 @@ Tester que l’application fonctionne toujours.
  
 ## 3. Intercepteurs
 
-:black_medium_small_square: Terminal
+> Terminal
 
 ```bash
 git commit -a -m "TP2 <idep>"
@@ -349,7 +349,7 @@ git checkout -b tp3b tp3
 
 ### 3.1. Créer un intercepteur qui mesure la durée de la requête
  
-:page_facing_up: TimerInterceptor.java
+> TimerInterceptor.java
  
 L’intercepteur implémente l’interface `HandlerInterceptor`.
 Démarrer un chronomètre (`Stopwatch` de la librairie guava) dans la méthode `preHandle`.
@@ -358,7 +358,7 @@ Dans la méthode `postHandle`, imprimer dans la console l’URI de la requête e
 
 ### 3.2. Enregistrer l’intercepteur
 
-:page_facing_up: dispatcher-servlet.xml
+> dispatcher-servlet.xml
 
 Déclarer l’intercepteur auprès de la servlet de Spring MVC.
 Penser à exclure les URL commençant par « /static », car sinon on passe aussi dans l’intercepteur pour le fichier CSS.
@@ -375,7 +375,7 @@ Penser à exclure les URL commençant par « /static », car sinon on passe auss
 
 ### 3.3. Placer l’employé connecté en session
 
-:page_facing_up: EmployeInterceptor.java
+> EmployeInterceptor.java
 
 Créer et enregistrer un intercepteur `EmployeInterceptor`.
 Dans l’intercepteur, récupèrer l’employé connecté dans la session.
@@ -383,15 +383,15 @@ Si aucun employé n’est présent en session, récupérer le grâce au service 
 
 ### 3.4. Créer une nouvelle page pour l’ajout d’un client
 
-:page_facing_up: nouveau-client.jsp
+> nouveau-client.jsp
 
 Créer une nouvelle JSP qui ne contient qu’un titre.
 
-:page_facing_up: NouveauClientController.java
+> NouveauClientController.java
 
 Créer un nouveau contrôleur qui dirige vers cette page.
 
-:page_facing_up: clients.jsp
+> clients.jsp
 
 Sur la page de la liste des clients, ajouter un lien qui dirige vers la nouvelle page.
 
@@ -399,7 +399,7 @@ Sur la page de la liste des clients, ajouter un lien qui dirige vers la nouvelle
 
 #### 3.5.1. Vérifier les droits dans le contrôleur 
 
-:page_facing_up: NouveauClientController.java
+> NouveauClientController.java
 
 Dans la signature de la méthode, ajouter un objet `Employe`.
 Grace au service `EmployeService`, vérifier que l’employé possède le rôle de responsable.
@@ -407,11 +407,11 @@ Si oui, le diriger vers la nouvelle page `nouveau-client.jsp`, sinon, le redirig
 
 #### 3.5.2. Créer et déclarer un résolveur d’argument pour la classe `Employe`
 
-:page_facing_up: EmployeResolver.java
+> EmployeResolver.java
 
 Dans la méthode `resolveArgument`, récupérer l’objet `Employe` qui est dans la session.
 
-:page_facing_up: dispatcher-servlet.xml
+> dispatcher-servlet.xml
 
 Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC.
 
@@ -429,7 +429,7 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 2. Dans le fichier web.xml, activer le profile de serveur à la place du profile de responsable.
 3. Démarrer le serveur et vérifier qu’on ne peut pas se rendre sur la page.
 
-:page_facing_up: web.xml
+> web.xml
 
 ```xml
 <context-param>
@@ -438,7 +438,7 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 </context-param>
 ```
 
-> Quand on change le profile dans le fichier web.xml, Spring instancie une autre implémentation de l’interface `EmployeProvider` au chargement du contexte. Il y a en effet deux versions de la classe :
+> :grey_question: Quand on change le profile dans le fichier web.xml, Spring instancie une autre implémentation de l’interface `EmployeProvider` au chargement du contexte. Il y a en effet deux versions de la classe :
 > - `ResponsableProvider` annotée `@Profile("responsable")`, qui fournit un employé ayant le rôle de *responsable*,
 > - `ServeurProvider` annotée `@Profile("serveur")`, qui fournit un employé ayant le rôle de *serveur*.
 
@@ -446,7 +446,7 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 
 ## 4. Formulaires
 
-:black_medium_small_square: Terminal
+> Terminal
 
 ```bash
 git commit -a -m "TP3 <idep>"
@@ -457,7 +457,7 @@ git checkout -b tp4b tp4
 
 #### 4.1.1. Créer un contrôlleur qui dirige vers le formulaire de saisie d’un nouveau client
 
-:page_facing_up: NouveauClientController.java
+> NouveauClientController.java
 
 Pour le moment il comporte deux méthodes :
 
@@ -466,7 +466,7 @@ Pour le moment il comporte deux méthodes :
  
 #### 4.2.1. Compléter la page qui permet de créer un nouveau client
 
-:page_facing_up: nouveau-client.jsp
+> nouveau-client.jsp
 
 La page doit comprendre un formulaire `<form:form>` possédant un attribut `modelAttribute` qui servira à recueillir les données postées.
 Le formulaire possède les éléments suivants :
@@ -477,17 +477,17 @@ Le formulaire possède les éléments suivants :
 * un champ de texte pour la date de naissance au format *jj/mm/aaaa* ;
 * un bouton « Créer » qui poste les données du formulaire vers le serveur (`<button type="submit">`).
 
-> Pour remplir le menu déroulant, utiliser la balise `<c:forEach>`. Pour le reste, utiliser des balises HTML natives.
+>  :grey_question: Pour remplir le menu déroulant, utiliser la balise `<c:forEach>`. Pour le reste, utiliser des balises HTML natives.
 
 ![Formulaire nouveau client](images/formulaire-nouveau-client.png)
 
 #### 4.3.1. Enregistrer le nouveau client en base de données
 
-:page_facing_up: NouveauClientController.java
+> NouveauClientController.java
 
 Ajouter une nouvelle méthode associée à l’URL `POST /client/nouveau` qui prend en paramètre un objet `Client` annoté `@ModelAttribute` et qui encapsule les données postées depuis le formulaire.
 
-> Pour que le format de la date soit bien pris en compte par Spring MVC, penser à ajouter une annotation `@DateTimeFormat(pattern = "dd/MM/yyyy")` dans la classe `Client`.
+> :grey_question: Pour que le format de la date soit bien pris en compte par Spring MVC, penser à ajouter une annotation `@DateTimeFormat(pattern = "dd/MM/yyyy")` dans la classe `Client`.
 
 Sans contrôles préalables, insérer le nouveau client en base (méthode `ClientDao.insert)`.
 Rediriger vers la liste des clients.
@@ -496,7 +496,7 @@ Rediriger vers la liste des clients.
 
 #### 4.2.1 Créer le contrôlleur adéquat
 
-:page_facing_up: ModificationClientController.java
+> ModificationClientController.java
 
 Comme précédemment, le contrôleur contient trois méthodes :
 
@@ -504,30 +504,30 @@ Comme précédemment, le contrôleur contient trois méthodes :
 * une associée à l’URL `GET /client/modification`,
 * et une associée à l’URL `POST /client/modification`.
 
-Attention, cette fois, la méthode qui affiche le formulaire doit le pré-remplir et donc prendre en argument le client issu de la base pour l’ajouter au modèle.
+:exclamation: Attention, cette fois, la méthode qui affiche le formulaire doit le pré-remplir et donc prendre en argument le client issu de la base pour l’ajouter au modèle.
 
 Pour faire la modification en base, utiliser sans contrôles préalables, la méthode `ClientDao.update`.
 Ensuite rediriger vers la page d’information du client.
 
 #### 4.2.2 Ajouter un lien vers le formulaire de modification d’un client
 
-:page_facing_up: client.jsp
+> client.jsp
 
 Le lien est paramétré par l’identifiant du client à modifier.
 
 #### 4.2.3 Créer la page du formulaire pré-rempli
 
-:page_facing_up: ModificationClientController.java
+> ModificationClientController.java
 
 Cette fois ci, pour que les champs soient pré-remplis avec les données issues de la base, utiliser des balises `<form:...` plutôt que les balises HTML natives. Renseigner l’attribut `path` de ces balises.
 
-> Il ne faut pas oublier d’ajouter un champ caché qui contient l’identifiant du client qu’on est en train de modifier.
+>  :grey_exclamation: Il ne faut pas oublier d’ajouter un champ caché qui contient l’identifiant du client qu’on est en train de modifier.
 
 ![Formulaire modification client](images/formulaire-modification-client.png)
 
 #### 4.2.4 Supprimer la méthode qui retourne la liste des titres
 
-:page_facing_up: ModificationClientController.java
+> ModificationClientController.java
 
 Il s’agit de la méthode annotée `@ModelAttribute`. Constater que le menu déroulant est toujours correctement rempli malgré l’absence de cette méthode.
 
