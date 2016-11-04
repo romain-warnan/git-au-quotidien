@@ -12,7 +12,7 @@
 	<body>
 		<h1>Nouveau client</h1>
 		<c:url value="/client/nouveau" var="url" />
-		<form:form action="${url}" modelAttribute="client" method="post" >
+		<form action="${url}" method="post" >
 		
 			<label>Titre&nbsp;</label>
 			<select name="titre" >
@@ -31,6 +31,6 @@
 			<input type="text" name="dateNaissance" /> <em>jj/mm/aaaa</em><br/>
 			
 			<button type="submit">Créer</button>
-		</form:form>
+		</form>
 	</body>
 </html>

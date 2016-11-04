@@ -30,7 +30,7 @@ public class NouveauClientController {
 	}
 
 	@PostMapping("/nouveau")
-	public String nouveauClientPost(@ModelAttribute("client") Client client, RedirectAttributes redirectAttributes) {
+	public String nouveauClientPost(@ModelAttribute Client client, RedirectAttributes redirectAttributes) {
 		clientDao.insert(client);
 		redirectAttributes.addFlashAttribute("nouveauClient", client);
 		return "redirect:/clients";

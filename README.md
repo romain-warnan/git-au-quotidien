@@ -8,6 +8,8 @@
 
 ```bash
 cd /d/idep/Mes\ Documents/eclipse_workspace
+git config --global user.name "<Prénom Nom>"
+git config --global user.email "<email>"
 git config --global http.proxy http://proxy-orange.http.insee.fr:8080
 git clone https://github.com/Insee-CNIP/formation-spring-mvc.git
 git checkout -b tp1b tp1
@@ -468,7 +470,7 @@ Pour le moment il comporte deux méthodes :
 
 > nouveau-client.jsp
 
-La page doit comprendre un formulaire `<form:form>` possédant un attribut `modelAttribute` qui servira à recueillir les données postées.
+La page doit comprendre un formulaire `<form>` qui servira à poster les données.
 Le formulaire possède les éléments suivants :
 
 * un menu déroulant (`<select>`) pour le titre (Monsieur ou Madame) ;
@@ -529,9 +531,9 @@ Le lien est paramétré par l’identifiant du client à modifier.
 
 #### 4.2.3. Créer la page du formulaire pré-rempli
 
-> ModificationClientController.java
+> modification-client.jsp
 
-Cette fois ci, pour que les champs soient pré-remplis avec les données issues de la base, utiliser des balises `<form:...` plutôt que les balises HTML natives. Renseigner l’attribut `path` de ces balises.
+Cette fois ci, pour que les champs soient pré-remplis avec les données issues de la base, utiliser des balises `<form:...` plutôt que les balises HTML natives.
 
 :exclamation: Il ne faut pas oublier d’ajouter un champ caché qui contient l’identifiant du client qu’on est en train de modifier.
 

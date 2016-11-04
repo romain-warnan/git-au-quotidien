@@ -27,7 +27,7 @@ public class ModificationClientController {
 	}
 
 	@PostMapping("/modification/{client}")
-	public String modificationClientPost(@ModelAttribute("client") Client client, RedirectAttributes redirectAttributes) {
+	public String modificationClientPost(@ModelAttribute Client client, RedirectAttributes redirectAttributes) {
 		clientDao.update(client);
 		redirectAttributes.addFlashAttribute("modification", true);
 		return "redirect:/client/" + client.getId();
