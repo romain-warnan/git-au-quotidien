@@ -438,7 +438,7 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 </context-param>
 ```
 
-> :grey_question: Quand on change le profile dans le fichier web.xml, Spring instancie une autre implémentation de l’interface `EmployeProvider` au chargement du contexte. Il y a en effet deux versions de la classe :
+> :question Quand on change le profile dans le fichier web.xml, Spring instancie une autre implémentation de l’interface `EmployeProvider` au chargement du contexte. Il y a en effet deux versions de la classe :
 > - `ResponsableProvider` annotée `@Profile("responsable")`, qui fournit un employé ayant le rôle de *responsable*,
 > - `ServeurProvider` annotée `@Profile("serveur")`, qui fournit un employé ayant le rôle de *serveur*.
 
@@ -477,7 +477,7 @@ Le formulaire possède les éléments suivants :
 * un champ de texte pour la date de naissance au format *jj/mm/aaaa* ;
 * un bouton « Créer » qui poste les données du formulaire vers le serveur (`<button type="submit">`).
 
->  :grey_question: Pour remplir le menu déroulant, utiliser la balise `<c:forEach>`. Pour le reste, utiliser des balises HTML natives.
+:question Pour remplir le menu déroulant, utiliser la balise `<c:forEach>`. Pour le reste, utiliser des balises HTML natives.
 
 ![Formulaire nouveau client](images/formulaire-nouveau-client.png)
 
@@ -487,7 +487,7 @@ Le formulaire possède les éléments suivants :
 
 Ajouter une nouvelle méthode associée à l’URL `POST /client/nouveau` qui prend en paramètre un objet `Client` annoté `@ModelAttribute` et qui encapsule les données postées depuis le formulaire.
 
-> :grey_question: Pour que le format de la date soit bien pris en compte par Spring MVC, penser à ajouter une annotation `@DateTimeFormat(pattern = "dd/MM/yyyy")` dans la classe `Client`.
+:question: Pour que le format de la date soit bien pris en compte par Spring MVC, penser à ajouter une annotation `@DateTimeFormat(pattern = "dd/MM/yyyy")` dans la classe `Client`.
 
 Sans contrôles préalables, insérer le nouveau client en base (méthode `ClientDao.insert)`.
 Rediriger vers la liste des clients.
@@ -521,7 +521,7 @@ Le lien est paramétré par l’identifiant du client à modifier.
 
 Cette fois ci, pour que les champs soient pré-remplis avec les données issues de la base, utiliser des balises `<form:...` plutôt que les balises HTML natives. Renseigner l’attribut `path` de ces balises.
 
->  :grey_exclamation: Il ne faut pas oublier d’ajouter un champ caché qui contient l’identifiant du client qu’on est en train de modifier.
+:exclamation: Il ne faut pas oublier d’ajouter un champ caché qui contient l’identifiant du client qu’on est en train de modifier.
 
 ![Formulaire modification client](images/formulaire-modification-client.png)
 
