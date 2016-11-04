@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import fr.insee.bar.dao.ClientDao;
 import fr.insee.bar.model.Client;
@@ -26,8 +27,9 @@ public class ModificationClientController {
 	}
 
 	@PostMapping("/modification/{client}")
-	public String modificationClientPost(@ModelAttribute("client") Client client) {
+	public String modificationClientPost(@ModelAttribute("client") Client client, RedirectAttributes redirectAttributes) {
 		clientDao.update(client);
+		redirectAttributes.addFlashAttribute("modification", true);
 		return "redirect:/client/" + client.getId();
 	}
 }

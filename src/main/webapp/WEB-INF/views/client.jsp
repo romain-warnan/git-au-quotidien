@@ -11,6 +11,10 @@
 	</head>
 	<body>
 		<h1>Informations client</h1>
+		<c:if test="${not empty modification}">
+			<p class="success">Le client a été modifié avec succès.</p>
+		</c:if>
+		<br />
 		<strong>Client n<sup>o</sup> ${client.id}</strong>
 		<ul>
 			<li><label>Titre :</label> ${client.titre.libelle}</li>
