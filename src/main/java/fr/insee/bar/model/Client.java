@@ -2,6 +2,8 @@ package fr.insee.bar.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 
@@ -22,6 +24,9 @@ public class Client {
 
 	private String email;
 
+	private Titre titre;
+
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateNaissance;
 
 	public Short getId() {
@@ -54,6 +59,45 @@ public class Client {
 
 	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
+	}
+
+	public Titre getTitre() {
+		return titre;
+	}
+
+	public void setTitre(Titre titre) {
+		this.titre = titre;
+	}
+
+	public enum Titre {
+
+		M((short) 1, "Monsieur"),
+		MME((short) 2, "Madame");
+
+		private String libelle;
+		private Short code;
+
+		private Titre(Short code, String libelle) {
+			this.code = code;
+			this.libelle = libelle;
+		}
+
+		public String getLibelle() {
+			return libelle;
+		}
+
+		public Short getCode() {
+			return code;
+		}
+
+		public static Titre of(short titre) {
+			switch (titre) {
+				case 2:
+					return MME;
+				default:
+					return M;
+			}
+		}
 	}
 
 	@Override

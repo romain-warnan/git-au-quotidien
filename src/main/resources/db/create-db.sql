@@ -1,8 +1,11 @@
+create sequence seq as integer start with 100 increment by 1;
+
 create table clients (
 	id integer primary key,
 	nom varchar(30),
 	email varchar(50),
-	date_naissance date
+	date_naissance date,
+	titre integer
 );
 
 create table roles (

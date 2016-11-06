@@ -8,9 +8,11 @@
 
 ```bash
 cd /d/idep/Mes\ Documents/eclipse_workspace
+git config --global user.name "<Prénom Nom>"
+git config --global user.email "<email>"
 git config --global http.proxy http://proxy-orange.http.insee.fr:8080
 git clone https://github.com/Insee-CNIP/formation-spring-mvc.git
-git checkout -b tp1 tp1
+git checkout -b tp1b tp1
 ```
 
 ### 0.2. Importer le projet dans Eclipse
@@ -215,7 +217,7 @@ Tester et vérifier avec les outils de développement du navigateur que le code 
 
 ```bash
 git commit -a -m "TP1 <idep>"
-git checkout -b tp2 tp2b
+git checkout -b tp2b tp2
 ```
 
 ### 2.1. Liste de tous les clients
@@ -242,7 +244,7 @@ Il lance la génération de la vue `/jsp/clients.jsp`.
 
 En itérant sur la liste des clients avec le tag `<c:forEach>`, afficher la liste de tous les clients (nom et email) dans un tableau :
 
-> Rappel : structure d’un tableau HTML
+> :grey_question: Rappel : structure d’un tableau HTML
 
 ```html
 	<table>
@@ -344,7 +346,7 @@ Tester que l’application fonctionne toujours.
 
 ```bash
 git commit -a -m "TP2 <idep>"
-git checkout -b tp3 tp3b
+git checkout -b tp3b tp3
 ```
 
 ### 3.1. Créer un intercepteur qui mesure la durée de la requête
@@ -438,8 +440,118 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 </context-param>
 ```
 
-> Quand on change le profile dans le fichier web.xml, Spring instancie une autre implémentation de l’interface `EmployeProvider` au chargement du contexte. Il y a en effet deux versions de la classe :
+> :question: Quand on change le profile dans le fichier web.xml, Spring instancie une autre implémentation de l’interface `EmployeProvider` au chargement du contexte. Il y a en effet deux versions de la classe :
 > - `ResponsableProvider` annotée `@Profile("responsable")`, qui fournit un employé ayant le rôle de *responsable*,
 > - `ServeurProvider` annotée `@Profile("serveur")`, qui fournit un employé ayant le rôle de *serveur*.
 
 > Seule une seule des deux versions existe dans le contexte Spring. L’annotation `@Autowired` peut donc être utilisée sans problème pour injecter un `EmployeProvider`.
+
+## 4. Formulaires
+
+> Terminal
+
+```bash
+git commit -a -m "TP3 <idep>"
+git checkout -b tp4b tp4
+```
+
+### 4.1. Ajouter un nouveau client
+
+#### 4.1.1. Créer un contrôlleur qui dirige vers le formulaire de saisie d’un nouveau client
+
+> NouveauClientController.java
+
+Pour le moment il comporte deux méthodes :
+
+* une annotée `@ModelAttribute` qui retourne les modalités de l’énumeration `Client.Titre`,
+* l’autre associée à l’URL `GET /client/nouveau` et qui dirige vers le formulaire d’ajout d’un nouveau client.
+ 
+#### 4.1.2. Compléter la page qui permet de créer un nouveau client
+
+> nouveau-client.jsp
+
+La page doit comprendre un formulaire `<form>` qui servira à poster les données.
+Le formulaire possède les éléments suivants :
+
+* un menu déroulant (`<select>`) pour le titre (Monsieur ou Madame) ;
+* un champ de texte pour le nom ;
+* un champ de texte pour l’adresse email ;
+* un champ de texte pour la date de naissance au format *jj/mm/aaaa* ;
+* un bouton « Créer » qui poste les données du formulaire vers le serveur (`<button type="submit">`).
+
+:question: Pour remplir le menu déroulant, utiliser la balise `<c:forEach>`. Pour le reste, utiliser des balises HTML natives.
+
+![Formulaire nouveau client](images/formulaire-nouveau-client.png)
+
+#### 4.1.3. Enregistrer le nouveau client en base de données
+
+> NouveauClientController.java
+
+Ajouter une nouvelle méthode associée à l’URL `POST /client/nouveau` qui prend en paramètre un objet `Client` annoté `@ModelAttribute` et qui encapsule les données postées depuis le formulaire.
+
+:question: Pour que le format de la date soit bien pris en compte par Spring MVC, penser à ajouter une annotation `@DateTimeFormat(pattern = "dd/MM/yyyy")` dans la classe `Client`.
+
+Sans contrôles préalables, insérer le nouveau client en base (méthode `ClientDao.insert)`.
+Rediriger vers la liste des clients.
+
+#### 4.1.4. Afficher un message au dessus de la liste des clients
+
+> NouveauClientController.java
+
+Placer le client nouvellement créé dans un *flashAttribute* de manière à pouvoir y accéder après la redirection. 
+
+> clients.jsp
+
+Si un client est accessible dans le modèle, afficher un message de succès de la forme : « Le client *mail* a été créé avec succès ».
+
+:question: Pour obtenir un message de succès, utiliser la class CSS `class="success"`.
+
+### 4.2. Modifier un client existant
+
+#### 4.2.1. Créer le contrôlleur adéquat
+
+> ModificationClientController.java
+
+Comme précédemment, le contrôleur contient trois méthodes :
+
+* une pour la liste des titres,
+* une associée à l’URL `GET /client/modification`,
+* et une associée à l’URL `POST /client/modification`.
+
+:exclamation: Attention, cette fois, la méthode qui affiche le formulaire doit le pré-remplir et donc prendre en argument le client issu de la base pour l’ajouter au modèle.
+
+Pour faire la modification en base, utiliser sans contrôles préalables, la méthode `ClientDao.update`.
+Ensuite rediriger vers la page d’information du client.
+
+#### 4.2.2. Ajouter un lien vers le formulaire de modification d’un client
+
+> client.jsp
+
+Le lien est paramétré par l’identifiant du client à modifier.
+
+#### 4.2.3. Créer la page du formulaire pré-rempli
+
+> modification-client.jsp
+
+Cette fois ci, pour que les champs soient pré-remplis avec les données issues de la base, utiliser des balises `<form:...` plutôt que les balises HTML natives.
+
+:exclamation: Il ne faut pas oublier d’ajouter un champ caché qui contient l’identifiant du client qu’on est en train de modifier.
+
+![Formulaire modification client](images/formulaire-modification-client.png)
+
+#### 4.2.4. Afficher un message au dessus de la liste des clients
+
+> ModificationClientController.java
+
+Placer un booléen `modification=true` dans un *flashAttribute* de manière à pouvoir y accéder après la redirection. 
+
+> client.jsp
+
+Si un un booléen `modification` est accessible dans le modèle, afficher un message de succès de la forme : « Le client a été modifié avec succès ».
+
+#### 4.2.5. Supprimer la méthode qui retourne la liste des titres
+
+> ModificationClientController.java
+
+Il s’agit de la méthode annotée `@ModelAttribute`. Constater que le menu déroulant est toujours correctement rempli malgré l’absence de cette méthode.
+
