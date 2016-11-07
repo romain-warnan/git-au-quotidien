@@ -39,6 +39,7 @@ public class Client {
 	private Titre titre;
 
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@NotNull
 	@Past
 	private Date dateNaissance;
 
