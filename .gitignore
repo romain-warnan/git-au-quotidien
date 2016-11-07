@@ -16,3 +16,4 @@ target/
 .classpath
 .project
 gh-md-toc
+.git-credentials
