@@ -1,24 +1,31 @@
 package fr.insee.bar.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import fr.insee.bar.dao.ClientDao;
 import fr.insee.bar.model.Client;
+import fr.insee.bar.validator.ClientValidator;
 
 @Controller
 @RequestMapping("/client")
-public class ModificationClientController {
+public class ModificationClientController extends WebMvcConfigurerAdapter {
 
 	@Autowired
 	private ClientDao clientDao;
+
+	@Autowired
+	private ClientValidator clientValidator;
 
 	@GetMapping("/modification/{client}")
 	public String modificationClient(@PathVariable("client") Client client, Model model) {
@@ -27,9 +34,14 @@ public class ModificationClientController {
 	}
 
 	@PostMapping("/modification/{client}")
-	public String modificationClientPost(@ModelAttribute Client client, RedirectAttributes redirectAttributes) {
+	public String modificationClientPost(@Valid Client client, BindingResult result, Model model, RedirectAttributes attributes) {
+		clientValidator.validate(client, result);
+		if (result.hasErrors()) {
+			model.addAttribute("client", client);
+			return "modification-client";
+		}
 		clientDao.update(client);
-		redirectAttributes.addFlashAttribute("modification", true);
+		attributes.addFlashAttribute("modification", true);
 		return "redirect:/client/" + client.getId();
 	}
 }

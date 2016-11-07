@@ -32,6 +32,7 @@ public class ClientDao {
 	private NamedParameterJdbcTemplate template;
 
 	private static final String SQL_FIND = "select * from clients where id = :id";
+	private static final String SQL_FIND_BY_EMAIL = "select * from clients where email = :email";
 	private static final String SQL_FIND_ALL = "select * from clients";
 	private static final String SQL_INSERT = "insert into clients (id, nom, email, date_naissance, titre) values (next value for seq, :nom, :email, :dateNaissance, :titre)";
 	private static final String SQL_UPDATE = "update clients set nom = :nom, email = :email, date_naissance = :dateNaissance, titre = :titre where id = :id";
@@ -44,6 +45,17 @@ public class ClientDao {
 	public Optional<Client> find(Short id) {
 		try {
 			Client client = template.queryForObject(SQL_FIND, ImmutableMap.of("id", id), rowMapper);
+			return Optional.of(client);
+
+		}
+		catch (EmptyResultDataAccessException e) {
+			return Optional.empty();
+		}
+	}
+
+	public Optional<Client> findByEmail(String email) {
+		try {
+			Client client = template.queryForObject(SQL_FIND_BY_EMAIL, ImmutableMap.of("email", email), rowMapper);
 			return Optional.of(client);
 
 		}
