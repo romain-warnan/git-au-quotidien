@@ -654,3 +654,25 @@ NotNull.client.titre=Choisir un titre
 :exclamation: Ne pas oublier le message d'erreur de conversion de la date.
 
 Tester.
+
+### 5.2. Vérifier que l'email du client n'est pas déjà utilisé
+
+#### 5.2.1. Créer un validateur qui vérifie l'unicité de l'email
+
+> ClientValidator.java
+
+Utiliser la fonction `ClientService.emailDejaUtilise` pour faire le contrôle.
+En cas d'erreur, le message à afficher est défini par sa clé dans le fichier message_fr.properties.
+Pour cela, utiliser la fonction`Errors.rejectValue(String field, String errorCode)` et ajouter une ligne correspondant à `errorCode` dans le fichier de messages.
+
+#### 5.2.2. Utiliser le nouveau validateur dans le contrôleur
+
+> ModificationClientController.java
+
+Injecter le validator dans le contrôleur grâce à l'annotation `@Autowired`.
+
+### 5.3. Ajouter les contrôles au formulaire de création d'un nouveau client.
+
+> nouveau-client.jsp, NouveauClientController.java
+
+:question: Pour exploiter au mieux les mécanismes de Spring MVC, il faut remplacer les balises HTML natives par des balises `<form:…>`. Or on constate que si le `modelAttribute` du formulaire est nul, les attributs `path` génèrent une erreur. Il faut donc préparer le formulaire avec un nouveau client vide dans le contrôleur.
