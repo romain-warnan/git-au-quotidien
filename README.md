@@ -555,3 +555,102 @@ Si un un booléen `modification` est accessible dans le modèle, afficher un mes
 
 Il s’agit de la méthode annotée `@ModelAttribute`. Constater que le menu déroulant est toujours correctement rempli malgré l’absence de cette méthode.
 
+## 5. Validation
+
+> Terminal
+
+```bash
+git commit -a -m "TP4 <idep>"
+git checkout -b tp5b tp5
+```
+
+### 5.1. Validation élémentaire des objets de la classe `Client`
+
+#### 5.1.1. Ajouter les dépendances nécessaire
+
+> pom.xml
+
+```xml
+<dependency>
+    <groupId>javax.validation</groupId>
+    <artifactId>validation-api</artifactId>
+    <version>1.1.0.Final</version>
+</dependency>
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>5.3.1.Final</version>
+</dependency>
+```
+
+#### 5.1.2. Annoter la classe `Client`
+
+> Client.java
+
+Les règles sont les suivantes :
+ * l'identifiant doit être positif,
+ * la taille du nom doit être compris entre 5 et 300 caractères,
+ * l'email doit correspondre au patron suivant :  `[-_a-z0-9.]+@[-_a-z0-9]+\.[a-z]{2,4}`,
+ * le titre doit être non nul,
+ * la date doit être non nulle et située dans le passé.
+ 
+#### 5.1.3. Valider l'objet client dans le contrôleur de modification d'un client
+ 
+> ModificationClientController.java
+ 
+Déclencher la validation de l'objet client posté grace à l'annotation `@Valid`.
+Stocker le résultat de cette validation dans un objet de type `BindingResult`.
+Si l'objet n'est pas valide, renvoyer vers le formulaire de modification d'un client.
+Le formulaire devra être rempli avec les dernières données saisies par l'utilisateur.
+ 
+#### 5.1.4. Afficher les éventuelles erreurs de validation
+ 
+> modification-client.jsp
+ 
+Sous chaque champ du formulaire, ajouter la balise <form:errors> appropriée.
+On pourra utiliser l'attribut cssClass="error" pour avoir mieux voir les messages d'erreurs.
+Faire quelques tests pour vérifier que la validation fonctionne comme souhaité.
+Essayer par exemple avec une date dont le format n'est pas bon.
+
+#### 5.1.5. Personaliser les messages d'erreurs de validation
+
+> dispatcher-servlet.xml
+
+Ajouter une source de message internationalisée :
+
+```xml
+<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basenames">
+        <list>
+            <value>message</value>
+        </list>
+   </property>
+    <property name="defaultEncoding" value="UTF-8" />
+</bean>
+```
+
+Déclarer cette source de message auprès d'un validateur :
+
+```xml
+<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+    <property name="validationMessageSource" ref="messageSource"/>
+</bean>
+```
+Déclarer le validateur auprès de Spring MVC :
+
+```xml
+<mvc:annotation-driven conversion-service="conversionService" validator="validator">
+```
+
+> message_fr.properties
+
+En suivant les règles de nommage des clés, écrire des messages pour chaque erreur de validation possible.
+Par exemple : 
+
+```properties
+NotNull.client.titre=Choisir un titre
+```xml
+
+:exclamation: Ne pas oublier le message d'erreur de conversion de la date.
+
+Tester.
