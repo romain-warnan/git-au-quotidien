@@ -566,7 +566,7 @@ git checkout -b tp5b tp5
 
 ### 5.1. Validation élémentaire des objets de la classe `Client`
 
-#### 5.1.1. Ajouter les dépendances nécessaire
+#### 5.1.1. Ajouter les dépendances nécessaires
 
 > pom.xml
 
@@ -588,31 +588,31 @@ git checkout -b tp5b tp5
 > Client.java
 
 Les règles sont les suivantes :
- * l'identifiant doit être positif,
+ * l’identifiant doit être positif,
  * la taille du nom doit être compris entre 5 et 300 caractères,
- * l'email doit correspondre au patron suivant :  `[-_a-z0-9.]+@[-_a-z0-9]+\.[a-z]{2,4}`,
+ * l’email doit correspondre au patron suivant :  `[-_a-z0-9.]+@[-_a-z0-9]+\.[a-z]{2,4}`,
  * le titre doit être non nul,
  * la date doit être non nulle et située dans le passé.
  
-#### 5.1.3. Valider l'objet client dans le contrôleur de modification d'un client
+#### 5.1.3. Valider l’objet client dans le contrôleur de modification d’un client
  
 > ModificationClientController.java
  
-Déclencher la validation de l'objet client posté grace à l'annotation `@Valid`.
+Déclencher la validation de l’objet client posté grace à l’annotation `@Valid`.
 Stocker le résultat de cette validation dans un objet de type `BindingResult`.
-Si l'objet n'est pas valide, renvoyer vers le formulaire de modification d'un client.
-Le formulaire devra être rempli avec les dernières données saisies par l'utilisateur.
+Si l’objet n’est pas valide, renvoyer vers le formulaire de modification d’un client.
+Le formulaire devra être rempli avec les dernières données saisies par l’utilisateur.
  
 #### 5.1.4. Afficher les éventuelles erreurs de validation
  
 > modification-client.jsp
  
-Sous chaque champ du formulaire, ajouter la balise <form:errors> appropriée.
-On pourra utiliser l'attribut cssClass="error" pour avoir mieux voir les messages d'erreurs.
+Sous chaque champ du formulaire, ajouter la balise `<form:errors>` appropriée.
+On pourra utiliser l’attribut `cssClass="error"` pour avoir mieux voir les messages d’erreurs.
 Faire quelques tests pour vérifier que la validation fonctionne comme souhaité.
-Essayer par exemple avec une date dont le format n'est pas bon.
+Essayer par exemple avec une date dont le format n’est pas bon.
 
-#### 5.1.5. Personaliser les messages d'erreurs de validation
+#### 5.1.5. Personaliser les messages d’erreurs de validation
 
 > dispatcher-servlet.xml
 
@@ -629,13 +629,14 @@ Ajouter une source de message internationalisée :
 </bean>
 ```
 
-Déclarer cette source de message auprès d'un validateur :
+Déclarer cette source de message auprès d’un validateur :
 
 ```xml
 <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
     <property name="validationMessageSource" ref="messageSource"/>
 </bean>
 ```
+
 Déclarer le validateur auprès de Spring MVC :
 
 ```xml
@@ -651,27 +652,27 @@ Par exemple :
 NotNull.client.titre=Choisir un titre
 ```xml
 
-:exclamation: Ne pas oublier le message d'erreur de conversion de la date.
+:exclamation: Ne pas oublier le message d’erreur de conversion de la date.
 
 Tester.
 
-### 5.2. Vérifier que l'email du client n'est pas déjà utilisé
+### 5.2. Vérifier que l’email du client n’est pas déjà utilisé
 
-#### 5.2.1. Créer un validateur qui vérifie l'unicité de l'email
+#### 5.2.1. Créer un validateur qui vérifie l’unicité de l’email
 
 > ClientValidator.java
 
 Utiliser la fonction `ClientService.emailDejaUtilise` pour faire le contrôle.
-En cas d'erreur, le message à afficher est défini par sa clé dans le fichier message_fr.properties.
+En cas d’erreur, le message à afficher est défini par sa clé dans le fichier message_fr.properties.
 Pour cela, utiliser la fonction`Errors.rejectValue(String field, String errorCode)` et ajouter une ligne correspondant à `errorCode` dans le fichier de messages.
 
 #### 5.2.2. Utiliser le nouveau validateur dans le contrôleur
 
 > ModificationClientController.java
 
-Injecter le validator dans le contrôleur grâce à l'annotation `@Autowired`.
+Injecter le validator dans le contrôleur grâce à l’annotation `@Autowired`.
 
-### 5.3. Ajouter les contrôles au formulaire de création d'un nouveau client.
+### 5.3. Ajouter les contrôles au formulaire de création d’un nouveau client.
 
 > nouveau-client.jsp, NouveauClientController.java
 
