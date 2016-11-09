@@ -17,101 +17,101 @@ insert into employes (id, nom, idrole) values (1, 'Katherine Peters', 1);
 insert into employes (id, nom, idrole) values (2, 'Jimmy Simmons', 1);
 insert into employes (id, nom, idrole) values (3, 'Annie Diaz', 2);
 
-insert into cocktails (id, nom) values (next value for seq, 'Mojito');
-insert into cocktails (id, nom) values (next value for seq, 'Piña Colada');
-insert into cocktails (id, nom) values (next value for seq, 'Margarita');
-insert into cocktails (id, nom) values (next value for seq, 'Sex on the beach');
-insert into cocktails (id, nom) values (next value for seq, 'Caipirinha');
-insert into cocktails (id, nom) values (next value for seq, 'Cosmopolitan');
-insert into cocktails (id, nom) values (next value for seq, 'Blue Lagoon');
-insert into cocktails (id, nom) values (next value for seq, 'Tequila Sunrise');
-insert into cocktails (id, nom) values (next value for seq, 'Punch');
-insert into cocktails (id, nom) values (next value for seq, 'Bloody Mary');
-insert into cocktails (id, nom) values (next value for seq, 'Cuba libre');
-insert into cocktails (id, nom) values (next value for seq, 'Americano');
-insert into cocktails (id, nom) values (next value for seq, 'Daiquiri');
-insert into cocktails (id, nom) values (next value for seq, 'Gin Fizz');
-insert into cocktails (id, nom) values (next value for seq, 'Sangria');
-insert into cocktails (id, nom) values (next value for seq, 'Ti’ punch');
-insert into cocktails (id, nom) values (next value for seq, 'Long island Iced Tea');
-insert into cocktails (id, nom) values (next value for seq, 'White Russian');
-insert into cocktails (id, nom) values (next value for seq, 'Champagne cocktail');
-insert into cocktails (id, nom) values (next value for seq, 'Blue Hawaiian');
-insert into cocktails (id, nom) values (next value for seq, 'Russe Blanc');
-insert into cocktails (id, nom) values (next value for seq, 'Gin Tonic');
-insert into cocktails (id, nom) values (next value for seq, 'Black Russian');
-insert into cocktails (id, nom) values (next value for seq, 'Pisco sour');
-insert into cocktails (id, nom) values (next value for seq, 'Black Jack');
-insert into cocktails (id, nom) values (next value for seq, 'Vin chaud');
-insert into cocktails (id, nom) values (next value for seq, 'Screwdriver (Vodka orange)');
-insert into cocktails (id, nom) values (next value for seq, 'Amaretto Sour');
-insert into cocktails (id, nom) values (next value for seq, 'Pink lady');
-insert into cocktails (id, nom) values (next value for seq, 'Rusty Nail');
-insert into cocktails (id, nom) values (next value for seq, 'Negroni');
-insert into cocktails (id, nom) values (next value for seq, 'Mimosa');
-insert into cocktails (id, nom) values (next value for seq, 'Singapore Sling');
-insert into cocktails (id, nom) values (next value for seq, 'White Lady');
-insert into cocktails (id, nom) values (next value for seq, 'Tom Collins');
-insert into cocktails (id, nom) values (next value for seq, 'Agua de valencia');
-insert into cocktails (id, nom) values (next value for seq, 'Absinthe Cocktail');
-insert into cocktails (id, nom) values (next value for seq, 'Bloody caesar');
-insert into cocktails (id, nom) values (next value for seq, 'Alexandra');
-insert into cocktails (id, nom) values (next value for seq, 'Barbotage');
-insert into cocktails (id, nom) values (next value for seq, 'El Diablo');
-insert into cocktails (id, nom) values (next value for seq, 'Old Fashioned');
-insert into cocktails (id, nom) values (next value for seq, 'Hydromel');
-insert into cocktails (id, nom) values (next value for seq, 'Side-car');
-insert into cocktails (id, nom) values (next value for seq, 'Bleue');
-insert into cocktails (id, nom) values (next value for seq, 'Bronx');
-insert into cocktails (id, nom) values (next value for seq, 'Kir breton');
-insert into cocktails (id, nom) values (next value for seq, 'Black Velvet');
-insert into cocktails (id, nom) values (next value for seq, 'Daïquiri Floridita (Frozen Daïquiri)');
-insert into cocktails (id, nom) values (next value for seq, 'Zizi coincoin');
-insert into cocktails (id, nom) values (next value for seq, 'Jack rose');
-insert into cocktails (id, nom) values (next value for seq, 'Hemingway Spécial');
-insert into cocktails (id, nom) values (next value for seq, 'Balalaïka (Troïka)');
-insert into cocktails (id, nom) values (next value for seq, 'Stinger');
-insert into cocktails (id, nom) values (next value for seq, 'Godfather');
-insert into cocktails (id, nom) values (next value for seq, 'Screaming orgasm');
-insert into cocktails (id, nom) values (next value for seq, 'Pick me up');
-insert into cocktails (id, nom) values (next value for seq, 'Red lion');
-insert into cocktails (id, nom) values (next value for seq, 'Apple jack (Applejack)');
-insert into cocktails (id, nom) values (next value for seq, 'Saudade');
-insert into cocktails (id, nom) values (next value for seq, '42nd Street');
-insert into cocktails (id, nom) values (next value for seq, 'Porto flip');
-insert into cocktails (id, nom) values (next value for seq, 'Coco Cup');
-insert into cocktails (id, nom) values (next value for seq, 'Alaska');
-insert into cocktails (id, nom) values (next value for seq, 'Orange blossom');
-insert into cocktails (id, nom) values (next value for seq, 'Brandy Alexander');
-insert into cocktails (id, nom) values (next value for seq, 'Angel’s Kiss');
-insert into cocktails (id, nom) values (next value for seq, 'Algonquin');
-insert into cocktails (id, nom) values (next value for seq, 'Fun at the beach');
-insert into cocktails (id, nom) values (next value for seq, 'Macca');
-insert into cocktails (id, nom) values (next value for seq, 'Garibaldi');
-insert into cocktails (id, nom) values (next value for seq, 'Apple pekin');
-insert into cocktails (id, nom) values (next value for seq, 'Gimlet');
-insert into cocktails (id, nom) values (next value for seq, 'Harvey Wallbanger');
-insert into cocktails (id, nom) values (next value for seq, 'Amer Picon Cocktail');
-insert into cocktails (id, nom) values (next value for seq, 'Nuit de noces');
-insert into cocktails (id, nom) values (next value for seq, 'Godmother');
-insert into cocktails (id, nom) values (next value for seq, 'Banana bliss');
-insert into cocktails (id, nom) values (next value for seq, 'Brandy egg-nog');
-insert into cocktails (id, nom) values (next value for seq, 'Vieux carré');
-insert into cocktails (id, nom) values (next value for seq, 'Golden Dream');
-insert into cocktails (id, nom) values (next value for seq, 'Scotch sour');
-insert into cocktails (id, nom) values (next value for seq, 'Sazerac');
-insert into cocktails (id, nom) values (next value for seq, 'Silver Fizz');
-insert into cocktails (id, nom) values (next value for seq, 'Bull Shot');
-insert into cocktails (id, nom) values (next value for seq, 'Pink gin');
-insert into cocktails (id, nom) values (next value for seq, 'Cathedrale');
-insert into cocktails (id, nom) values (next value for seq, 'Brooklyn');
-insert into cocktails (id, nom) values (next value for seq, 'Bitters Highball');
-insert into cocktails (id, nom) values (next value for seq, 'Brandy Flip');
-insert into cocktails (id, nom) values (next value for seq, 'Golden Cadillac');
-insert into cocktails (id, nom) values (next value for seq, 'Bossom caresser (Bosom caresser)');
-insert into cocktails (id, nom) values (next value for seq, 'Pictonic');
-insert into cocktails (id, nom) values (next value for seq, 'Boulevardier');
-insert into cocktails (id, nom) values (next value for seq, 'Clover Club');
-insert into cocktails (id, nom) values (next value for seq, 'Margot');
-insert into cocktails (id, nom) values (next value for seq, 'Sling');
-insert into cocktails (id, nom) values (next value for seq, 'Champagne cocktail');
+insert into cocktails (id, nom, norm) values (next value for seq, 'Mojito', 'MOJITO')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Piña Colada', 'PINA COLADA')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Margarita', 'MARGARITA')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Sex on the beach', 'SEX ON THE BEACH')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Caipirinha', 'CAIPIRINHA')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Cosmopolitan', 'COSMOPOLITAN')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Blue Lagoon', 'BLUE LAGOON')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Tequila Sunrise', 'TEQUILA SUNRISE')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Punch', 'PUNCH')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Bloody Mary', 'BLOODY MARY')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Cuba libre', 'CUBA LIBRE')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Americano', 'AMERICANO')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Daiquiri', 'DAIQUIRI')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Gin Fizz', 'GIN FIZZ')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Sangria', 'SANGRIA')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Ti’ punch', 'TI PUNCH')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Long island Iced Tea', 'LONG ISLAND ICED TEA')
+insert into cocktails (id, nom, norm) values (next value for seq, 'White Russian', 'WHITE RUSSIAN')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Champagne cocktail', 'CHAMPAGNE COCKTAIL')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Blue Hawaiian', 'BLUE HAWAIIAN')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Russe Blanc', 'RUSSE BLANC')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Gin Tonic', 'GIN TONIC')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Black Russian', 'BLACK RUSSIAN')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Pisco sour', 'PISCO SOUR')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Black Jack', 'BLACK JACK')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Vin chaud', 'VIN CHAUD')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Screwdriver (Vodka orange)', 'SCREWDRIVER VODKA ORANGE')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Amaretto Sour', 'AMARETTO SOUR')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Pink lady', 'PINK LADY')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Rusty Nail', 'RUSTY NAIL')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Negroni', 'NEGRONI')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Mimosa', 'MIMOSA')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Singapore Sling', 'SINGAPORE SLING')
+insert into cocktails (id, nom, norm) values (next value for seq, 'White Lady', 'WHITE LADY')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Tom Collins', 'TOM COLLINS')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Agua de valencia', 'AGUA DE VALENCIA')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Absinthe Cocktail', 'ABSINTHE COCKTAIL')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Bloody caesar', 'BLOODY CAESAR')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Alexandra', 'ALEXANDRA')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Barbotage', 'BARBOTAGE')
+insert into cocktails (id, nom, norm) values (next value for seq, 'El Diablo', 'EL DIABLO')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Old Fashioned', 'OLD FASHIONED')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Hydromel', 'HYDROMEL')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Side-car', 'SIDECAR')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Bleue', 'BLEUE')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Bronx', 'BRONX')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Kir breton', 'KIR BRETON')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Black Velvet', 'BLACK VELVET')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Daïquiri Floridita (Frozen Daïquiri)', 'DAIQUIRI FLORIDITA FROZEN DAIQUIRI')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Zizi coincoin', 'ZIZI COINCOIN')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Jack rose', 'JACK ROSE')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Hemingway Spécial', 'HEMINGWAY SPECIAL')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Balalaïka (Troïka)', 'BALALAIKA TROIKA')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Stinger', 'STINGER')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Godfather', 'GODFATHER')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Screaming orgasm', 'SCREAMING ORGASM')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Pick me up', 'PICK ME UP')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Red lion', 'RED LION')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Apple jack (Applejack)', 'APPLE JACK APPLEJACK')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Saudade', 'SAUDADE')
+insert into cocktails (id, nom, norm) values (next value for seq, '42nd Street', '42ND STREET')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Porto flip', 'PORTO FLIP')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Coco Cup', 'COCO CUP')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Alaska', 'ALASKA')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Orange blossom', 'ORANGE BLOSSOM')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Brandy Alexander', 'BRANDY ALEXANDER')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Angel’s Kiss', 'ANGELS KISS')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Algonquin', 'ALGONQUIN')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Fun at the beach', 'FUN AT THE BEACH')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Macca', 'MACCA')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Garibaldi', 'GARIBALDI')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Apple pekin', 'APPLE PEKIN')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Gimlet', 'GIMLET')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Harvey Wallbanger', 'HARVEY WALLBANGER')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Amer Picon Cocktail', 'AMER PICON COCKTAIL')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Nuit de noces', 'NUIT DE NOCES')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Godmother', 'GODMOTHER')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Banana bliss', 'BANANA BLISS')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Brandy egg-nog', 'BRANDY EGGNOG')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Vieux carré', 'VIEUX CARRE')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Golden Dream', 'GOLDEN DREAM')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Scotch sour', 'SCOTCH SOUR')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Sazerac', 'SAZERAC')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Silver Fizz', 'SILVER FIZZ')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Bull Shot', 'BULL SHOT')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Pink gin', 'PINK GIN')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Cathedrale', 'CATHEDRALE')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Brooklyn', 'BROOKLYN')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Bitters Highball', 'BITTERS HIGHBALL')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Brandy Flip', 'BRANDY FLIP')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Golden Cadillac', 'GOLDEN CADILLAC')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Bossom caresser (Bosom caresser)', 'BOSSOM CARESSER BOSOM CARESSER')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Pictonic', 'PICTONIC')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Boulevardier', 'BOULEVARDIER')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Clover Club', 'CLOVER CLUB')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Margot', 'MARGOT')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Sling', 'SLING')
+insert into cocktails (id, nom, norm) values (next value for seq, 'Champagne cocktail', 'CHAMPAGNE COCKTAIL')
