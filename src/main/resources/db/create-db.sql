@@ -19,3 +19,8 @@ create table employes (
 	idrole integer
 );
 alter table employes add foreign key (idrole) references roles(id);
+
+create table cocktails (
+	id integer primary key,
+	nom varchar(200)
+);
