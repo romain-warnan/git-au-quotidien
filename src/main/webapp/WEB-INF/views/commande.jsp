@@ -14,18 +14,19 @@
 	<body>
 		<h1>Commande</h1>
 		<c:out value="${employe.nom}" /> &ndash; <c:out value="${employe.role.libelle}" />
+		<p><a href="<c:url value="/commande" />">Nouvelle commande</a></p>
 		<br/>
-			<div class="cocktail">
-				<div id="bloc-recherche">
-					<input id="champ-recherche" type="text" placeholder="Rechercher un cocktail" autocomplete="off" /><br/>
-					<ul id="suggestions"></ul>				
-				</div>
-				<div id="bloc-commande">
-					<p>Commande <span id="prix"></span></p>
-					<ul id="commande"></ul>				
-				</div>
+		<div class="cocktail">
+			<div id="bloc-recherche">
+				<input id="champ-recherche" type="text" placeholder="Rechercher un cocktail" autocomplete="off" /><br/>
+				<ul id="suggestions"></ul>				
 			</div>
-			<br />
-			<button id="bouton-commander">Commander</button>
+			<div id="bloc-commande">
+				<p>Commande <span id="prix"></span></p>
+				<ul id="commande"></ul>				
+			</div>
+		</div>
+		<br />
+		<button id="bouton-commander">Commander</button>
 	</body>
 </html>

@@ -60,6 +60,7 @@ $(document).ready(function() {
 	var choisir = function(id, nom){
 		var $item = $('<li>').append(nom);
 		$item.click(function() {
+			$(this).next().remove();
 			$(this).remove();
 		});
 		$commande.append($item);
