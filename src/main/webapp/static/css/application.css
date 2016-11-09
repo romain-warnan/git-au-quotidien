@@ -80,13 +80,17 @@ button {
 	box-shadow:none;
 	border-radius: 5px;
 	margin-top: 20px;
+	margin-left: 10px;
 	padding: 5px;
 	border: solid black 2px;
 	font-weight: bold;
 	font-size: 16px;
+	width: 120px;
+}
+
+button[type='submit'] {
 	position: absolute;
 	right: 10px;
-	width: 100px;
 }
 
 button:hover {
@@ -112,4 +116,61 @@ button:hover {
 	display: inline-block;
 	padding: 10px;
 	background-color: lightpink;
+}
+
+#cocktails {
+	display: table-row;
+}
+
+#bloc-recherche {
+	position: relative;
+	display: table-cell;
+}
+
+#bloc-commande {
+	display: table-cell;
+	text-align: right;
+	width: 200px;
+}
+
+#bloc-commande #commande {
+	text-align: left;
+	width: 230px;
+}
+
+#bloc-commande #commande li {
+	cursor: pointer;
+}
+
+#bloc-recherche #suggestions {
+	width: 208px;
+	position: absolute;
+	border: solid black 1px;
+	top: 23px;
+	left: 10px;
+	padding: 0;
+	background-color: white;
+}
+
+#bloc-recherche #suggestions > li {
+	padding: 5px;
+}
+
+#bloc-commande #commande > li.hidden,
+#bloc-recherche #suggestions > li.hidden {
+	display: none;
+}
+
+#bloc-recherche #suggestions > li:hover {
+	background-color: lightblue;
+	cursor: default;
+}
+
+#bloc-recherche #suggestions > li:before {
+	content: '';
+}
+
+#prix {
+	font-weight: bold;
+	font-size: 20px;
 }

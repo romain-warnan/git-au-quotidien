@@ -8,6 +8,7 @@ import java.util.Optional;
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
 
 import fr.insee.bar.model.Cocktail;
 import fr.insee.bar.search.Search;
@@ -51,7 +53,14 @@ public class CocktailDao {
 		}
 	}
 
+	public Cocktail fill(Cocktail cocktail) {
+		return template.queryForObject(SQL_FIND, ImmutableMap.of("id", cocktail.getId()), rowMapper);
+	}
+
 	public List<Cocktail> search(String search) {
+		if (StringUtils.isBlank(search)) {
+			return Lists.newArrayList();
+		}
 		String q = "%" + Search.normalize(search) + "%";
 		return template.query(SQL_FIND_BY_NAME, ImmutableMap.of("q", q), rowMapper);
 	}
@@ -68,6 +77,7 @@ public class CocktailDao {
 			Cocktail cocktail = new Cocktail();
 			cocktail.setId(rs.getShort("id"));
 			cocktail.setNom(rs.getString("nom"));
+			cocktail.setPrix(rs.getDouble("prix"));
 			return cocktail;
 		}
 

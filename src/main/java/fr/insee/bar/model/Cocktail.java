@@ -9,6 +9,8 @@ public class Cocktail {
 
 	private String nom;
 
+	private Double prix;
+
 	public Short getId() {
 		return id;
 	}
@@ -23,6 +25,14 @@ public class Cocktail {
 
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	public Double getPrix() {
+		return prix;
+	}
+
+	public void setPrix(Double prix) {
+		this.prix = prix;
 	}
 
 	@Override
@@ -44,6 +54,7 @@ public class Cocktail {
 		return MoreObjects.toStringHelper(this)
 			.add("id", id)
 			.add("nom", nom)
+			.add("prix", prix)
 			.toString();
 	}
 
