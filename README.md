@@ -735,7 +735,7 @@ Dans cette liste, les objets cocktails sont incomplets, il ne possèdent qu’un
 Utiliser la méthode CocktailDao.fill pour récupérer leur prix.
 En faire la somme et retourner le résultat tel quel.
 
-:question: C’est l’occasion idéale d’utiliser les fonctionnalités de Java 8 : *stream*, *map / reduce* et *fonction reference*.
+:question: C’est l’occasion idéale d’utiliser les fonctionnalités de Java 8 : *stream*, *map / reduce* et *method reference*.
 
 ### 6.3. Déclencher la commande d’une liste de cocktails
 
