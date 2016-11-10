@@ -13,7 +13,8 @@
 	</head>
 	<body>
 		<h1>Commande</h1>
-		<c:out value="${employe.nom}" /> &ndash; <c:out value="${employe.role.libelle}" />
+		<p><c:out value="${employe.nom}" /> &ndash; <c:out value="${employe.role.libelle}" /></p>
+		<div id="message"></div>
 		<p><a href="<c:url value="/commande" />">Nouvelle commande</a></p>
 		<br/>
 		<div class="cocktail">

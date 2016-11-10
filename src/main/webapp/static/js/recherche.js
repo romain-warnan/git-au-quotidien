@@ -6,6 +6,7 @@ $(document).ready(function() {
 	var $commande = $('#commande');
 	var $bouton = $('#bouton-commander');
 	var $prix = $('#prix');
+	var $message = $('#message');
 	
 	var initialiser = function(context){
 		$suggestions.hide();
@@ -39,7 +40,19 @@ $(document).ready(function() {
 			data: JSON.stringify(cocktails)
 		}).done(function(prix) {
 			afficherPrix(prix);
+		}).fail(function(response) {
+			afficherErreur(response.responseText);
 		});
+	};
+	
+	var effacerErreur = function(){
+		$message.empty();
+		$message.removeClass("error");
+	};
+	
+	var afficherErreur = function(message) {
+		$message.text(message);
+		$message.addClass("error");
 	};
 	
 	var afficherSuggestions = function(cocktails) {
@@ -73,6 +86,7 @@ $(document).ready(function() {
 	};
 	
 	var choisir = function(id, nom){
+		effacerErreur();
 		var $item = $('<li>').append(nom);
 		$item.click(function() {
 			$(this).next().remove();
