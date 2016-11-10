@@ -18,13 +18,15 @@ $(document).ready(function() {
 	};
 	
 	var rechercher = function(q){
-		$.ajax({
-			url: '/cocktails/recherche',
-			method: 'GET',
-			data: {'q': encodeURI(q)}
-		}).done(function(cocktails) {
-			afficherSuggestions(cocktails);
-		});
+		// Récupérer la liste des cocktails correspondants à la recherche "q"
+		// Appeler la méthode "afficherSuggestions" avec cette liste
+	};
+	
+	var commander = function() {
+		// Récupérer la liste des cocktails sélectionnés
+		// La poster vers le serveur
+		// Récupérer en retour le prix total de la commande
+		// Appeler la méthode "afficherPrix" avec cette valeur
 	};
 	
 	var afficherSuggestions = function(cocktails) {
@@ -69,21 +71,6 @@ $(document).ready(function() {
 		$suggestions.hide();
 		$champ.val('');
 		$champ.focus();
-	};
-	
-	var commander = function() {
-		var cocktails = [];
-		$('#commande li.hidden').each(function(index, item) {
-			cocktails.push({id: $(item).text()});
-		});
-		$.ajax({
-			url: '/cocktails/commande',
-			method: 'POST',
-			contentType : 'application/json; charset=utf-8',
-			data: JSON.stringify(cocktails)
-		}).done(function(prix) {
-			afficherPrix(prix);
-		});
 	};
 	
 	initialiser(context);
