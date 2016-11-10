@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import fr.insee.bar.dao.ClientDao;
+import fr.insee.bar.exception.BarDroitException;
 import fr.insee.bar.model.Client;
 import fr.insee.bar.model.Client.Titre;
+import fr.insee.bar.model.Employe;
+import fr.insee.bar.service.EmployeService;
 import fr.insee.bar.validator.ClientValidator;
 
 @Controller
@@ -27,13 +30,17 @@ public class NouveauClientController {
 	@Autowired
 	private ClientValidator clientValidator;
 
+	@Autowired
+	private EmployeService employeService;
+
 	@ModelAttribute("titres")
 	private Titre[] titres() {
 		return Titre.values();
 	}
 
 	@GetMapping("/nouveau")
-	public String nouveauClient(Model model) {
+	public String nouveauClient(Employe employe, Model model) throws BarDroitException {
+		employeService.verifierResponsable(employe);
 		model.addAttribute("client", new Client());
 		return "nouveau-client";
 	}

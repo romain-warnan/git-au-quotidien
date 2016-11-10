@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.google.common.base.Objects;
 
+import fr.insee.bar.exception.BarDroitException;
 import fr.insee.bar.model.Employe;
 import fr.insee.bar.model.Role;
 
@@ -18,5 +19,11 @@ public class EmployeService {
 			return false;
 		}
 		return Objects.equal(role.getId(), RESPONSABLE);
+	}
+
+	public void verifierResponsable(Employe employe) throws BarDroitException {
+		if (!this.estResponsable(employe)) {
+			throw new BarDroitException(employe);
+		}
 	}
 }
