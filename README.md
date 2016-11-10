@@ -677,3 +677,40 @@ Injecter le validator dans le contrôleur grâce à l’annotation `@Autowired`.
 > nouveau-client.jsp, NouveauClientController.java
 
 :question: Pour exploiter au mieux les mécanismes de Spring MVC, il faut remplacer les balises HTML natives par des balises `<form:…>`. Or on constate que si le `modelAttribute` du formulaire est nul, les attributs `path` génèrent une erreur. Il faut donc préparer le formulaire avec un nouveau client vide dans le contrôleur.
+
+## 6. Ajax
+
+### 6.1. Créer un contrôleur qui permet de passer une nouvelle commande
+
+> CommandeController.java, accueil.jsp
+
+Ce contrôleur récupère l'employé connecté (*cf.* TP3), l'ajoute au modèle et dirige vers la page existante `commande.jsp`.
+Ajouter un lien vers cette page sur la page d'accueil.
+
+### 6.2. Créer un contrôleur qui permet de rechercher un cocktail
+
+> CocktailController.java
+
+En fonction d'une chaîne de caractère `q`, le contrôleur recherche dans la liste des cocktails ceux qui correspondent.
+La chaine de caratère q est passée en paramètre de la requête : `?q=xxxx`, annotation `@RequestParam`.
+Utiliser pour cela la méthode `CocktailDao.search`.
+Le contrôleur retourne cette liste de cocktail en JSON grâce à l'annotation `@ResponseBody`.
+
+:exclamation: Ne pas oublier d'ajouter la librairie Jackson au classpath :
+
+```xml
+<dependency>
+	<groupId>com.fasterxml.jackson.core</groupId>
+	<artifactId>jackson-databind</artifactId>
+	<version>2.8.4</version>
+</dependency>
+```
+
+### 6.3. Déclencher la recherche d'un cocktail
+
+> recherche.js
+
+Écrire le corps de la fonction `rechercher`.
+Cette fonction est appelée à chaque fois que l'utilisateur appuie sur une touche dans le champ de recherche.
+
+La fonction doit faire un appel Ajax vers le contrôleur de recherche d'un cocktail.
