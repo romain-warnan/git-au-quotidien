@@ -680,6 +680,8 @@ Injecter le validator dans le contrôleur grâce à l’annotation `@Autowired`.
 
 ## 6. Ajax
 
+![Formulaire commande cocktails](images/ajax-commande.png)
+
 ### 6.1. Créer un contrôleur qui permet de passer une nouvelle commande
 
 > CommandeController.java, accueil.jsp
