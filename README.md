@@ -692,9 +692,9 @@ Ajouter un lien vers cette page sur la page d’accueil.
 > CocktailController.java
 
 En fonction d’une chaîne de caractère `q`, le contrôleur recherche dans la liste des cocktails ceux qui correspondent.
-La chaine de caratère q est passée en paramètre de la requête : `?q=xxxx`, annotation `@RequestParam`.
-Utiliser pour cela la méthode `CocktailDao.search`.
-Le contrôleur retourne cette liste de cocktail en JSON grâce à l’annotation `@ResponseBody`.
+La chaine de caratère `q` est passée en paramètre de la requête et récupérée dans le contrôleur avec annotation `@RequestParam`.
+Pour trouver la liste des suggestions correspondant au paramètre `q`, utiliser la méthode `CocktailDao.search`.
+Le contrôleur retourne la liste JSON des cocktails suggérés grâce à l’annotation `@ResponseBody`.
 
 :exclamation: Ne pas oublier d’ajouter la librairie Jackson au classpath :
 
@@ -706,7 +706,7 @@ Le contrôleur retourne cette liste de cocktail en JSON grâce à l’annotation
 </dependency>
 ```
 
-Tester l’apple à cette fonction en tapant l’URL dans le navigateur : `http://localhost/cocktails/recherche?q=russ`.
+Tester l’appel à cette fonction en tapant l’URL dans le navigateur : `http://localhost/cocktails/recherche?q=russ`.
 
 ### 6.3. Déclencher la recherche d’un cocktail
 
