@@ -684,19 +684,19 @@ Injecter le validator dans le contrôleur grâce à l’annotation `@Autowired`.
 
 > CommandeController.java, accueil.jsp
 
-Ce contrôleur récupère l'employé connecté (*cf.* TP3), l'ajoute au modèle et dirige vers la page existante `commande.jsp`.
-Ajouter un lien vers cette page sur la page d'accueil.
+Ce contrôleur récupère l’employé connecté (*cf.* TP3), l’ajoute au modèle et dirige vers la page existante `commande.jsp`.
+Ajouter un lien vers cette page sur la page d’accueil.
 
 ### 6.2. Créer un contrôleur qui permet de rechercher un cocktail
 
 > CocktailController.java
 
-En fonction d'une chaîne de caractère `q`, le contrôleur recherche dans la liste des cocktails ceux qui correspondent.
+En fonction d’une chaîne de caractère `q`, le contrôleur recherche dans la liste des cocktails ceux qui correspondent.
 La chaine de caratère q est passée en paramètre de la requête : `?q=xxxx`, annotation `@RequestParam`.
 Utiliser pour cela la méthode `CocktailDao.search`.
-Le contrôleur retourne cette liste de cocktail en JSON grâce à l'annotation `@ResponseBody`.
+Le contrôleur retourne cette liste de cocktail en JSON grâce à l’annotation `@ResponseBody`.
 
-:exclamation: Ne pas oublier d'ajouter la librairie Jackson au classpath :
+:exclamation: Ne pas oublier d’ajouter la librairie Jackson au classpath :
 
 ```xml
 <dependency>
@@ -706,11 +706,51 @@ Le contrôleur retourne cette liste de cocktail en JSON grâce à l'annotation `
 </dependency>
 ```
 
-### 6.3. Déclencher la recherche d'un cocktail
+Tester l’apple à cette fonction en tapant l’URL dans le navigateur : `http://localhost/cocktails/recherche?q=russ`.
+
+### 6.3. Déclencher la recherche d’un cocktail
 
 > recherche.js
 
 Écrire le corps de la fonction `rechercher`.
-Cette fonction est appelée à chaque fois que l'utilisateur appuie sur une touche dans le champ de recherche.
+Cette fonction est appelée à chaque fois que l’utilisateur appuie sur une touche dans le champ de recherche.
 
-La fonction doit faire un appel Ajax vers le contrôleur de recherche d'un cocktail.
+La fonction doit faire un appel Ajax vers le contrôleur de recherche d’un cocktail :
+ 
+ * vers l’URL `/cocktails/recherche` 
+ * avec la méthode `GET`,
+ * et le paramètre `q` URL encodé.
+ 
+Elle reçoit en retour une liste de cocktails.
+Dans la fonction `done`, appeler  la fonction `afficherSuggestions` avec en paramètre la liste de cocktails.
+
+### 6.2. Créer un contrôleur qui permet de calculer le montant d’une commande
+
+> CocktailController.java
+
+Ce contrôleur prend en paramètre une liste de cocktail qui sera postée en Ajax grâce à l’annotation `@RequestBody`.
+Dans cette liste, les objets cocktails sont incomplets, il ne possèdent qu’un identifiant.
+Utiliser la méthode CocktailDao.fill pour récupérer leur prix.
+En faire la somme et retourner le résultat tel quel.
+
+:question: C’est l’occasion idéale d’utiliser les fonctionnalités de Java 8 : *stream*, *map / reduce* et *fonction reference*.
+
+### 6.3. Déclencher la commande d’une liste de cocktails
+
+> recherche.js
+
+Écrire le corps de la fonction `commander`.
+Cette fonction est appelée à chaque fois que l’utilisateur appuie sur le bouton « Commander ».
+
+La fonction doit faire un appel Ajax vers le contrôleur de recherche d’un cocktail :
+ 
+ * vers l’URL `/cocktails/commande` 
+ * avec la méthode `POST`,
+ * et en paramètre, la liste des cocktails sélectionnés sous forme d’une chaine de caractère représentant du JSON.
+ 
+Elle reçoit en retour le prix de la commande.
+Dans la fonction `done`, appeler  la fonction `afficherPrix` avec en paramètre le prix.
+
+> :question: Toute la difficulté réside dans la création de la liste des cocktails sélectionnés. Il faut parcourir les éléments `li.hidden` du bloc `#commande` et ajouter leur contenu un à un à un tableau vide. Chaque élément est ajouté sous la forme `{id: valeur}`. Cette forme représente en JSON un objet de type cocktail qui ne conteint qu’un identifiant.
+
+Tester que tout fonctionne. On peut enlever un coktail de la liste en cliquant dessus.
