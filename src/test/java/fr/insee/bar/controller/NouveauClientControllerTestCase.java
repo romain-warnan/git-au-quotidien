@@ -23,7 +23,7 @@ import fr.insee.bar.model.Client;
 import fr.insee.bar.service.EmployeService;
 import fr.insee.bar.validator.ClientValidator;
 
-public class NouveauClientControllerTest {
+public class NouveauClientControllerTestCase {
 
 	@Mock
 	private ClientDao clientDao;
