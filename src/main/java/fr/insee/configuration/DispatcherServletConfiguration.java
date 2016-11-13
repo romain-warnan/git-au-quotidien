@@ -1,4 +1,4 @@
-package fr.insee.bar.config;
+package fr.insee.configuration;
 
 import java.util.List;
 
@@ -27,7 +27,7 @@ import fr.insee.bar.resolver.EmployeResolver;
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = "fr.insee.bar")
-public class ApplicationConfiguration extends WebMvcConfigurerAdapter implements WebMvcConfigurer {
+public class DispatcherServletConfiguration extends WebMvcConfigurerAdapter implements WebMvcConfigurer {
 
 	@Autowired
 	private ClientConverter clientConverter;
