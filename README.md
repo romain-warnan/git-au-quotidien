@@ -865,3 +865,48 @@ La nouvelle méthode doit lever une exception de type `BarCommandeException` si 
 > recherche.js
 
 Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel à la fonction `afficherErreur` avec le message d’erreur;
+
+## 8. Tests
+
+### 8.1. Ajouter les librairies nécessaires aux différent tests
+
+> pom.xml
+
+```xml
+<dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.12</version>
+	<scope>test</scope>
+</dependency>
+<dependency>
+	<groupId>org.mockito</groupId>
+	<artifactId>mockito-all</artifactId>
+	<version>1.10.19</version>
+	<scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-test</artifactId>
+    <version>${spring.version}</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+   <groupId>org.glassfish.web</groupId>
+   <artifactId>javax.el</artifactId>
+   <version>2.2.4</version>
+   <scope>test</scope>
+</dependency>
+```
+
+### 8.2. Écrire des tests unitaires
+
+Écrire des tests unitaires pour les méthodes de `AccueilController` et pour les méthodes `NouveauClientController` (à part pour `nouveauClient`).
+
+### 8.3. Écrire des tests d’intégration
+
+Écrire des tests d’intégration pour toutes les méthodes de `AccueilController` et pour les méthodes `NouveauClientController`.
+
+## 9. Configuration
+
+Remplacer toute la configuration xml par de la configuration Java. Penser à adapter le ficihier `web.xml`. Supprimer les fichiers `applicationContext.xml` et `dispatcher-servlet.xml`.
