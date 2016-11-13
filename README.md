@@ -12,7 +12,7 @@ git config --global user.name "<Prénom Nom>"
 git config --global user.email "<email>"
 git config --global http.proxy http://proxy-orange.http.insee.fr:8080
 git clone https://github.com/Insee-CNIP/formation-spring-mvc.git
-git checkout -b tp1b tp1
+git checkout tp1-enonce
 ```
 
 ### 0.2. Importer le projet dans Eclipse
@@ -211,13 +211,18 @@ Créer une nouvelle méthode qui se déclenche quand on accède à l’URL « /
 Utiliser un code 301 (redirection permanente) pour effectuer la redirection (important pour le référencement).
 Tester et vérifier avec les outils de développement du navigateur que le code est bien 301.
 
+```bash
+git checkout tp1-correction
+```
+
 ## 2. Navigation
 
 > Terminal
 
 ```bash
-git commit -a -m "TP1 <idep>"
-git checkout -b tp2b tp2
+git add .
+git commit -m "TP1 <idep>"
+git checkout tp2-enonce
 ```
 
 ### 2.1. Liste de tous les clients
@@ -339,14 +344,19 @@ Déclarer ce nouveau convertisseur auprès de la servlet de Spring MVC :
  ```
  
 Tester que l’application fonctionne toujours.
- 
+
+```bash
+git checkout tp2-correction
+```
+
 ## 3. Intercepteurs
 
 > Terminal
 
 ```bash
-git commit -a -m "TP2 <idep>"
-git checkout -b tp3b tp3
+git add .
+git commit -m "TP2 <idep>"
+git checkout tp3-enonce
 ```
 
 ### 3.1. Créer un intercepteur qui mesure la durée de la requête
@@ -446,13 +456,18 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 
 > Seule une seule des deux versions existe dans le contexte Spring. L’annotation `@Autowired` peut donc être utilisée sans problème pour injecter un `EmployeProvider`.
 
+```bash
+git checkout tp3-correction
+```
+
 ## 4. Formulaires
 
 > Terminal
 
 ```bash
-git commit -a -m "TP3 <idep>"
-git checkout -b tp4b tp4
+git add .
+git commit -m "TP3 <idep>"
+git checkout tp4-enonce
 ```
 
 ### 4.1. Ajouter un nouveau client
@@ -555,13 +570,18 @@ Si un un booléen `modification` est accessible dans le modèle, afficher un mes
 
 Il s’agit de la méthode annotée `@ModelAttribute`. Constater que le menu déroulant est toujours correctement rempli malgré l’absence de cette méthode.
 
+```bash
+git checkout tp4-correction
+```
+
 ## 5. Validation
 
 > Terminal
 
 ```bash
-git commit -a -m "TP4 <idep>"
-git checkout -b tp5b tp5
+git add .
+git commit -m "TP4 <idep>"
+git checkout tp5-enonce
 ```
 
 ### 5.1. Validation élémentaire des objets de la classe `Client`
@@ -678,7 +698,17 @@ Injecter le validator dans le contrôleur grâce à l’annotation `@Autowired`.
 
 :question: Pour exploiter au mieux les mécanismes de Spring MVC, il faut remplacer les balises HTML natives par des balises `<form:…>`. Or on constate que si le `modelAttribute` du formulaire est nul, les attributs `path` génèrent une erreur. Il faut donc préparer le formulaire avec un nouveau client vide dans le contrôleur.
 
+```bash
+git checkout tp5-correction
+```
+
 ## 6. Ajax
+
+```bash
+git add .
+git commit -m "TP5 <idep>"
+git checkout tp6-enonce
+```
 
 ![Formulaire commande cocktails](images/ajax-commande.png)
 
