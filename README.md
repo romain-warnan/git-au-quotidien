@@ -788,3 +788,80 @@ Dans la fonction `done`, appeler  la fonction `afficherPrix` avec en paramètre 
 > :question: Toute la difficulté réside dans la création de la liste des cocktails sélectionnés. Il faut parcourir les éléments `li.hidden` du bloc `#commande` et ajouter leur contenu un à un à un tableau vide. Chaque élément est ajouté sous la forme `{id: valeur}`. Cette forme représente en JSON un objet de type cocktail qui ne conteint qu’un identifiant.
 
 Tester que tout fonctionne.
+
+## 7. Exceptions
+
+```bash
+git add .
+git commit -m "TP6 <idep>"
+git checkout tp7-enonce
+```
+
+### 7.1. Vérifier que seul un responsable peut modifier ou créer un nouveau client
+
+#### 7.1.1. Créer une nouvelle exception `BarDroitException`
+
+> BarDroitException.java
+
+La faire hériter de `BarException` au travers de `BarHttpException`.
+
+#### 7.1.2. Créer une méthode qui vérifie que l’employé est un responsable
+
+> EmployeService.java
+
+La nouvelle méthode doit lever une exception de type `BarDroitException` si l’employé n’est pas un responsable.
+
+#### 7.1.3. Réaliser cette vérification dans les contrôleurs
+
+> NouveauClientController.java, ModificationClientController.java
+
+Utiliser cette méthode dans les deux contrôleurs de création et de modification d’un client.
+
+#### 7.1.4. Créer un contrôleur qui traite cette exception
+
+> ExceptionController.java
+
+Annoter ce contrôleur `ControllerAdvice`. Écrire une méthode qui est appelée dès qu’une exception de type `BarDroitException` est levée. Ce contrôleur dirige vers une JSP appelée exception.jsp. Cette JSP devra afficher le message d’erreur de l’exception.
+Le contrôleur doit en plus retourner un code HTTP 403 (Forbidden).
+
+#### 7.1.5. Créer une page d’erreur
+
+> exception.jsp
+
+Dans la nouvelle JSP, afficher le message d’erreur de l’exception.
+
+#### 7.1.6. Modifier le profile pour pouvoir vérifier que le contrôle fonctionne
+
+> web.xml
+
+Remplacer `responsable` par `serveur`.
+
+### 7.2. Vérifier qu’une commande comporte au moins un cocktail
+
+#### 7.2.1. Créer une nouvelle exception `BarCommandeException`
+
+> BarAjaxException.java
+
+La faire hériter de `BarException` au travers de `BarAjaxException`.
+
+#### 7.2.2. Créer une méthode qui vérifie qu’une commande n’est pas vide
+
+> CocktailService.java
+
+La nouvelle méthode doit lever une exception de type `BarCommandeException` si la commande ne contient pas de cocktail.
+
+#### 7.2.3. Réaliser cette vérification dans le contrôleur
+
+> CocktailControlleur.java
+
+#### 7.2.4. Créer un contrôleur qui traite cette exception
+
+> ExceptionController.java
+
+Écrire une méthode qui est appelée dès qu’une exception de type `BarCommandeException` est levée. Le contrôleur doit en plus retourner un code HTTP 400 (Bad request) et le message d’erreur dans un objet `HttpEntity`.
+
+#### 7.2.5. Afficher une erreur si la commande est passée sans contenir aucun cocktail
+
+> recherche.js
+
+Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel à la fonction `afficherErreur` avec le message d’erreur;
