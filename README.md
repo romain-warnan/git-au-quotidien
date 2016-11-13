@@ -821,7 +821,7 @@ Utiliser cette méthode dans les deux contrôleurs de création et de modificati
 
 > ExceptionController.java
 
-Annoter ce contrôleur `ControllerAdvice`. Écrire une méthode qui est appelée dès qu’une exception de type `BarDroitException` est levée. Ce contrôleur dirige vers une JSP appelée exception.jsp. Cette JSP devra afficher le message d’erreur de l’exception.
+Annoter ce contrôleur `ControllerAdvice`. Écrire une méthode qui est appelée dès qu’une exception de type `BarDroitException` est levée. Ce contrôleur dirige vers une JSP appelée `exception.jsp`. Cette JSP devra afficher le message d’erreur de l’exception.
 Le contrôleur doit en plus retourner un code HTTP 403 (Forbidden).
 
 #### 7.1.5. Créer une page d’erreur
