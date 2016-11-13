@@ -34,7 +34,7 @@ public class ModificationClientController {
 
 	@GetMapping("/modification/{client}")
 	public String modificationClient(@PathVariable("client") Client client, Employe employe, Model model) throws BarDroitException {
-		// employeService.verifierResponsable(employe);
+		employeService.verifierResponsable(employe);
 		model.addAttribute("client", client);
 		return "modification-client";
 	}
