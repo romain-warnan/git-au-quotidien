@@ -237,7 +237,7 @@ Il récupère la liste de tous les clients dans la base de donnée et l’ajoute
 	List<Client> clients = clientDao.findAll();
 ```
 
-Il lance la génération de la vue `/jsp/clients.jsp`.
+Il lance la génération de la vue `/WEB-INF/views/clients.jsp`.
 
 #### 2.1.2. Afficher la liste des clients
 
