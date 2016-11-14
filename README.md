@@ -189,7 +189,7 @@ Tester.
 
 ### 1.10. Utiliser un fichier de propriétés
 
-> src/main/resources/application-properties
+> src/main/resources/application.properties
 
 ```properties
 name=Spring MVC
