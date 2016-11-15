@@ -16,6 +16,18 @@ $(document).ready(function() {
 		$bouton.click(function() {
 			commander();
 		});
+		notifier();
+	};
+	
+	var notifier = function(){
+		$.ajax({
+			url: '/notification',
+			method: 'GET'
+		}).done(function(cocktail) {
+			console.log(cocktail);
+			$champ.val(cocktail.nom);
+			notifier();
+		});
 	};
 	
 	var rechercher = function(q){
