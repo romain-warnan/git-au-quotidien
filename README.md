@@ -13,6 +13,7 @@ git config --global user.email "<email>"
 git config --global http.proxy http://proxy-orange.http.insee.fr:8080
 git clone https://github.com/Insee-CNIP/formation-spring-mvc.git
 git checkout tp1-enonce
+git pull
 ```
 
 ### 0.2. Importer le projet dans Eclipse
@@ -219,6 +220,7 @@ Tester et vérifier avec les outils de développement du navigateur que le code 
 git add .
 git commit -m "TP1 <idep>"
 git checkout tp2-enonce
+git pull
 ```
 
 ### 2.1. Liste de tous les clients
@@ -349,6 +351,7 @@ Tester que l’application fonctionne toujours.
 git add .
 git commit -m "TP2 <idep>"
 git checkout tp3-enonce
+git pull
 ```
 
 ### 3.1. Créer un intercepteur qui mesure la durée de la requête
@@ -456,6 +459,7 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 git add .
 git commit -m "TP3 <idep>"
 git checkout tp4-enonce
+git pull
 ```
 
 ### 4.1. Ajouter un nouveau client
@@ -566,6 +570,7 @@ Il s’agit de la méthode annotée `@ModelAttribute`. Constater que le menu dé
 git add .
 git commit -m "TP4 <idep>"
 git checkout tp5-enonce
+git pull
 ```
 
 ### 5.1. Validation élémentaire des objets de la classe `Client`
@@ -688,6 +693,7 @@ Injecter le validator dans le contrôleur grâce à l’annotation `@Autowired`.
 git add .
 git commit -m "TP5 <idep>"
 git checkout tp6-enonce
+git pull
 ```
 
 ![Formulaire commande cocktails](images/ajax-commande.png)
@@ -775,6 +781,7 @@ Tester que tout fonctionne.
 git add .
 git commit -m "TP6 <idep>"
 git checkout tp7-enonce
+git pull
 ```
 
 ### 7.1. Vérifier que seul un responsable peut modifier ou créer un nouveau client
