@@ -598,7 +598,7 @@ git pull
 
 Les règles sont les suivantes :
  * l’identifiant doit être positif,
- * la taille du nom doit être compris entre 5 et 300 caractères,
+ * la taille du nom doit être compris entre 5 et 30 caractères,
  * l’email doit correspondre au patron suivant :  `[-_a-z0-9.]+@[-_a-z0-9]+\.[a-z]{2,4}`,
  * le titre doit être non nul,
  * la date doit être non nulle et située dans le passé.
