@@ -855,7 +855,7 @@ Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel 
 
 ## 8. Tests
 
-### 8.1. Ajouter les librairies nécessaires aux différent tests
+### 8.1. Ajouter les librairies nécessaires aux différents tests
 
 > pom.xml
 
@@ -898,7 +898,7 @@ Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel 
 
  2. Déclarer un attribut de type `MockMvc`.
 
- 3. Dans la méthode `@Before`, initialiser les mocks : `MockitoAnnotations.initMocks(this);`.
+ 3. Dans la méthode `@Before`, initialiser les *mocks* : `MockitoAnnotations.initMocks(this);`.
 
  4. Grâce à la classe `Whitebox`, valoriser l’attribut name du contrôleur.
 
@@ -927,7 +927,7 @@ this.mockMvc = MockMvcBuilders
 > NouveauClientControllerTestCase.java
 
  1. Injecter le contrôleur à tester grâce à l’annotation `@InjectMocks`.
- 2. Injecter des mocks des services et DAO grâce à l’annotation `@Mock`.
+ 2. Injecter des *mocks* des services et DAO grâce à l’annotation `@Mock`.
  3. Écrire la méthode `@Before`.
 
 #### 8.2.5 Tester la méthode nouveauClientPost() pour un formulaire valide
