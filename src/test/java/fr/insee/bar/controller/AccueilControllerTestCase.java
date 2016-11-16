@@ -13,6 +13,7 @@ import org.mockito.internal.util.reflection.Whitebox;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 public class AccueilControllerTestCase {
 
@@ -25,21 +26,26 @@ public class AccueilControllerTestCase {
 	public void setup() {
 		MockitoAnnotations.initMocks(this);
 		Whitebox.setInternalState(accueilController, "name", "Spring MVC");
-		this.mockMvc = MockMvcBuilders.standaloneSetup(accueilController)
-				.build();
+		this.mockMvc = MockMvcBuilders
+			.standaloneSetup(accueilController)
+			.setViewResolvers(new InternalResourceViewResolver("/WEB-INF/views", "jsp"))
+			.build();
 	}
 
 	@Test
 	public void welcome() throws Exception {
-		mockMvc.perform(get("/"))
-				.andExpect(status().is(HttpStatus.MOVED_PERMANENTLY.value()))
-				.andExpect(model().attributeDoesNotExist("message"));
+		mockMvc
+			.perform(get("/"))
+			.andExpect(status().is(HttpStatus.MOVED_PERMANENTLY.value()))
+			.andExpect(model().attributeDoesNotExist("message"));
 	}
 
 	@Test
 	public void hello() throws Exception {
-		mockMvc.perform(get("/accueil")).andExpect(status().isOk())
-				.andExpect(model().attributeExists("message"))
-				.andExpect(view().name("accueil"));
+		mockMvc
+			.perform(get("/accueil"))
+			.andExpect(status().isOk())
+			.andExpect(model().attributeExists("message"))
+			.andExpect(view().name("accueil"));
 	}
 }
