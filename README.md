@@ -890,9 +890,74 @@ Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel 
 
 Écrire des tests unitaires pour les méthodes de `AccueilController` et pour les méthodes `NouveauClientController` (à part pour `nouveauClient`).
 
+#### 8.2.1 Préparer les tests de `AccueilController`
+
+> AccueilControllerTestCase.java
+
+ 1. Injecter le contrôleur à tester grâce à l’annotation `@InjectMocks`.
+
+ 2. Déclarer un attribut de type `MockMvc`.
+
+ 3. Dans la méthode `@Before`, initialiser les mocks : `MockitoAnnotations.initMocks(this);`.
+
+ 4. Grâce à la classe `Whitebox`, valoriser l’attribut name du contrôleur.
+
+ 5. Instancier l’objet `MockMvc` en mode *stand-alone* :
+
+```java
+this.mockMvc = MockMvcBuilders
+	.standaloneSetup(accueilController)
+	.setViewResolvers(viewResolver())
+	.build();
+```
+
+#### 8.2.2 Tester la méthode welcome()
+
+ * tester que le status est 301,
+ * tester qu l’attribut `message` n’existe pas dans le modèle.
+
+#### 8.2.3 Tester la méthode hello()
+
+ * tester que le status est 200,
+ * tester que l’attribut `message` existe dans le modèle,
+ * tester que le nom de la vue est `accueil`.
+
+#### 8.2.4 Préparer les tests de `NouveauClientController`
+
+> NouveauClientControllerTestCase.java
+
+ 1. Injecter le contrôleur à tester grâce à l’annotation `@InjectMocks`.
+ 2. Injecter des mocks des services et DAO grâce à l’annotation `@Mock`.
+ 3. Écrire la méthode `@Before`.
+
+#### 8.2.5 Tester la méthode nouveauClientPost() pour un formulaire valide
+
+ 1. Mocker le comportement des méthodes `validate` et `insert`.
+ 2. Exécuter un POST avec en paramètre des données de formulaire valides
+ 3. Puis tester que :
+  * le status est 302,
+  * l’attribut client n’existe pas,
+  * le modèle ne contient aucune erreur,
+  * l’url de redirection est `/clients`,
+  * il existe un attribut flash qui s’appelle `nouveauClient`.
+ 
+#### 8.2.5 Tester la méthode nouveauClientPost() pour un formulaire non valide
+
+ 1. Mocker le comportement des méthodes `validate` et `insert`.
+ 2. Exécuter un POST avec en paramètre des données de formulaire valides sauf pour l’email
+ 3. Puis tester que :
+  * le status est `OK`,
+  * l’attribut client existe,
+  * le modèle contient une erreur,
+  * le nom de la vue est `nouveau-client`.
+
 ### 8.3. Écrire des tests d’intégration
 
+> AccueilControllerTestCase.java, NouveauClientControllerTest.java
+
 Écrire des tests d’intégration pour toutes les méthodes de `AccueilController` et pour les méthodes `NouveauClientController`.
+
+En particulier, cette fois-ci, tester la méthode `/client/nouveau` pour un profile "serveur".
 
 ## 9. Configuration
 
