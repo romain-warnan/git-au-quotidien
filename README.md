@@ -907,7 +907,7 @@ Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel 
 ```java
 this.mockMvc = MockMvcBuilders
 	.standaloneSetup(accueilController)
-	.setViewResolvers(viewResolver())
+	.setViewResolvers(new InternalResourceViewResolver("/WEB-INF/views", "jsp"))
 	.build();
 ```
 
