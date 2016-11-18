@@ -12,6 +12,7 @@ import org.springframework.format.FormatterRegistry;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -80,6 +81,14 @@ public class DispatcherServletConfiguration extends WebMvcConfigurerAdapter impl
 		InternalResourceViewResolver bean = new InternalResourceViewResolver();
 		bean.setPrefix("/WEB-INF/views/");
 		bean.setSuffix(".jsp");
+		return bean;
+	}
+
+	@Bean
+	public CommonsMultipartResolver multipartResolver() {
+		CommonsMultipartResolver bean = new CommonsMultipartResolver();
+		bean.setDefaultEncoding("utf-8");
+		bean.setMaxUploadSize(1_000_000); // 1 Mo
 		return bean;
 	}
 
