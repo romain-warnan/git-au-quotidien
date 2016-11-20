@@ -30,16 +30,6 @@ public class ChargementClientsController {
 	@Autowired
 	private ClientService clientService;
 
-	@GetMapping("/telechargement")
-	public HttpEntity<FileSystemResource> telechargement() {
-		File fichier = clientService.fichier();
-		HttpHeaders header = new HttpHeaders();
-		header.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-		header.set("Content-Disposition", "attachment; filename=clients.txt");
-		header.setContentLength(fichier.length());
-		return new HttpEntity<FileSystemResource>(new FileSystemResource(fichier), header);
-	}
-
 	@GetMapping("/chargement")
 	public String chargement(Employe employe, Model model) throws BarDroitException {
 		employeService.verifierResponsable(employe);
@@ -51,5 +41,19 @@ public class ChargementClientsController {
 		long n = clientService.chargement(file);
 		redirectAttributes.addFlashAttribute("message", String.format("%d clients ont été ajoutés avec succès à partir du fichier %s", n, file.getOriginalFilename()));
 		return "redirect:/clients";
+	}
+
+	@GetMapping("/telechargement")
+	public HttpEntity<FileSystemResource> telechargement() {
+		File fichier = clientService.fichier();
+		return new HttpEntity<FileSystemResource>(new FileSystemResource(fichier), httpHeaders(fichier));
+	}
+
+	private HttpHeaders httpHeaders(File file) {
+		HttpHeaders header = new HttpHeaders();
+		header.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName());
+		header.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+		header.setContentLength(file.length());
+		return HttpHeaders.readOnlyHttpHeaders(header);
 	}
 }
