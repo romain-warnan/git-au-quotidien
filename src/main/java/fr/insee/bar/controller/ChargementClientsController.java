@@ -1,6 +1,12 @@
 package fr.insee.bar.controller;
 
+import java.io.File;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,14 +30,24 @@ public class ChargementClientsController {
 	@Autowired
 	private ClientService clientService;
 
+	@GetMapping("/telechargement")
+	public HttpEntity<FileSystemResource> telechargement() {
+		File fichier = clientService.fichier();
+		HttpHeaders header = new HttpHeaders();
+		header.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+		header.set("Content-Disposition", "attachment; filename=clients.txt");
+		header.setContentLength(fichier.length());
+		return new HttpEntity<FileSystemResource>(new FileSystemResource(fichier), header);
+	}
+
 	@GetMapping("/chargement")
-	public String nouveauClient(Employe employe, Model model) throws BarDroitException {
+	public String chargement(Employe employe, Model model) throws BarDroitException {
 		employeService.verifierResponsable(employe);
 		return "chargement-clients";
 	}
 
 	@PostMapping("/chargement")
-	public String nouveauClientPost(MultipartFile file, RedirectAttributes redirectAttributes) {
+	public String chargementPost(MultipartFile file, RedirectAttributes redirectAttributes) {
 		long n = clientService.chargement(file);
 		redirectAttributes.addFlashAttribute("message", String.format("%d clients ont été ajoutés avec succès à partir du fichier %s", n, file.getOriginalFilename()));
 		return "redirect:/clients";

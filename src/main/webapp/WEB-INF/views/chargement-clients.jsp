@@ -11,6 +11,7 @@
 	</head>
 	<body>
 		<h1>Nouveaux clients</h1>
+		<a href="<c:url value="/client/telechargement" />">Télécharger la liste des clients</a>
 		<c:url value="/client/chargement" var="url" />
 		<form method="POST" enctype="multipart/form-data" action="${url}">
 			<label>Fichier : </label><input type="file" name="file" /><br/>

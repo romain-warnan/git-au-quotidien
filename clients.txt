@@ -1,3 +1,13 @@
+2;Wanda Gray;wgray0@ebay.co.uk;26/07/1988
+2;Lisa Mcdonald;lmcdonald1@de.vu;04/06/1952
+2;Barbara Kim;bkim2@deviantart.com;31/07/1958
+1;Kevin Sims;ksims3@usatoday.com;03/06/1986
+2;Phyllis Johnson;pjohnson4@ovh.net;07/10/1980
+2;Annie Gutierrez;agutierrez5@msu.edu;02/02/1954
+1;William Day;wday6@squarespace.com;15/05/1960
+2;Cheryl Woods;cwoods7@storify.com;08/04/1981
+1;Richard Cox;rcox8@dailymotion.com;25/04/1996
+1;Bobby Morris;bmorris9@intel.com;30/03/1990
 2;Jennifer Robinson;jrobinson0@prweb.com;16/10/1987
 1;Shawn Robinson;srobinson1@europa.eu;21/02/1964
 2;Denise Tucker;dtucker2@wordpress.org;26/04/1961
@@ -68,7 +78,6 @@
 2;Mary Sullivan;msullivan1v@reverbnation.com;11/10/1962
 2;Nicole Burns;nburns1w@unicef.org;10/06/2002
 1;Frank Ellis;fellis1x@google.es;25/01/1955
-2;Teresa Warren;twarren1y@newyorker.com;31/05/1991;m
 1;Fred Howard;fhoward1z@marriott.com;28/02/1981
 1;Ralph Olson;rolson20@google.fr;23/04/2001
 2;Theresa Robertson;trobertson21@nymag.com;20/12/1948
@@ -110,7 +119,6 @@
 2;Wanda Tucker;wtucker31@utexas.edu;07/07/1965
 2;Rose Medina;rmedina32@wikipedia.org;16/05/1979
 1;Howard Torres;htorres33@hhs.gov;31/08/1978
-1;Jack Gray;wgray0@ebay.co.uk;08/01/1995
 1;Victor Lynch;vlynch35@goodreads.com;17/06/2003
 2;Lillian Richardson;lrichardson36@mac.com;03/07/2010
 2;Tammy Palmer;tpalmer37@blogtalkradio.com;06/07/1964
@@ -163,7 +171,6 @@
 2;Barbara Frazier;bfrazier4i@dagondesign.com;22/01/1964
 2;Emily Fernandez;efernandez4j@blogtalkradio.com;04/06/1961
 2;Robin Miller;rmiller4k@nih.gov;18/09/1999
-F;Sandra Murray;smurray4l@unicef.org;07/06/2004
 1;Nicholas Ramos;nramos4m@desdev.cn;12/01/1995
 2;Janice Smith;jsmith4n@toplist.cz;09/03/1981
 2;Janet Pierce;jpierce4o@arstechnica.com;23/04/1952
@@ -172,7 +179,6 @@ F;Sandra Murray;smurray4l@unicef.org;07/06/2004
 2;Cynthia Mason;cmason4r@elpais.com;29/06/1960
 1;Ronald Howard;rhoward4s@youtu.be;03/08/2003
 2;Karen King;kking4t@a8.net;01/10/1958
-1;Earl Price;eprice4u@economist.com;1/1954
 1;Scott Collins;scollins4v@ask.com;12/11/1953
 1;Gary Ellis;gellis4w@cam.ac.uk;18/08/1975
 2;Diane Gardner;dgardner4x@sohu.com;26/06/1996

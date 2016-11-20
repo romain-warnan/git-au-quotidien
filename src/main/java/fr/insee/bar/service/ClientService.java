@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -47,7 +48,8 @@ public class ClientService {
 		File file = new File("clients.txt");
 		try {
 			multipartFile.transferTo(file);
-			return FileUtils.readLines(file, "UTF-8")
+			return FileUtils
+				.readLines(file, "UTF-8")
 				.stream()
 				.map(this::client)
 				.filter(Optional::isPresent)
@@ -59,6 +61,45 @@ public class ClientService {
 			System.err.println(e.getMessage());
 		}
 		return 0;
+	}
+
+	public File fichier() {
+		File file = new File("clients.txt");
+		try {
+			FileUtils.writeLines(file, "UTF-8", clientDao
+				.findAll()
+				.stream()
+				.map(this::string)
+				.collect(Collectors.toList()));
+		}
+		catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+		return file;
+	}
+
+	private String string(Client client) {
+		StringBuilder builder = new StringBuilder();
+		builder
+			.append(client.getTitre().getCode())
+			.append(";")
+			.append(client.getNom())
+			.append(";")
+			.append(client.getEmail())
+			.append(";")
+			.append(this.string(client.getDateNaissance()))
+
+		;
+		return builder.toString();
+	}
+
+	private String string(Date date) {
+		return DateTimeFormatter
+			.ofPattern("dd/MM/yyyy")
+			.format(Instant
+				.ofEpochMilli(date.getTime())
+				.atZone(ZoneId.systemDefault())
+				.toLocalDate());
 	}
 
 	private Optional<Client> client(String ligne) {
@@ -90,7 +131,8 @@ public class ClientService {
 		Instant instant = LocalDate
 			.parse(string, DateTimeFormatter.ofPattern("dd/MM/yyyy"))
 			.atStartOfDay()
-			.atZone(ZoneId.systemDefault()).toInstant();
+			.atZone(ZoneId.systemDefault())
+			.toInstant();
 		return Date.from(instant);
 
 	}
