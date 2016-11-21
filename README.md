@@ -213,13 +213,16 @@ Créer une nouvelle méthode qui se déclenche quand on accède à l’URL « /
 Utiliser un code 301 (redirection permanente) pour effectuer la redirection (important pour le référencement).
 Tester et vérifier avec les outils de développement du navigateur que le code est bien 301.
 
-## 2. Navigation
-
-> Terminal
-
 ```bash
 git add .
 git commit -m "TP1 <idep>"
+git checkout tp1-correction
+git pull
+```
+
+## 2. Navigation
+
+```bash
 git checkout tp2-enonce
 git pull
 ```
@@ -344,13 +347,16 @@ Déclarer ce nouveau convertisseur auprès de la servlet de Spring MVC :
  
 Tester que l’application fonctionne toujours.
 
-## 3. Intercepteurs
-
-> Terminal
-
 ```bash
 git add .
 git commit -m "TP2 <idep>"
+git checkout tp2-correction
+git pull
+```
+
+## 3. Intercepteurs
+
+```bash
 git checkout tp3-enonce
 git pull
 ```
@@ -452,13 +458,16 @@ Déclarer ce nouveau résolveur d’argument auprès de la servlet de Spring MVC
 
 > Seule une seule des deux versions existe dans le contexte Spring. L’annotation `@Autowired` peut donc être utilisée sans problème pour injecter un `EmployeProvider`.
 
-## 4. Formulaires
-
-> Terminal
-
 ```bash
 git add .
 git commit -m "TP3 <idep>"
+git checkout tp3-correction
+git pull
+```
+
+## 4. Formulaires
+
+```bash
 git checkout tp4-enonce
 git pull
 ```
@@ -563,13 +572,16 @@ Si un un booléen `modification` est accessible dans le modèle, afficher un mes
 
 Il s’agit de la méthode annotée `@ModelAttribute`. Constater que le menu déroulant est toujours correctement rempli malgré l’absence de cette méthode.
 
-## 5. Validation
-
-> Terminal
-
 ```bash
 git add .
 git commit -m "TP4 <idep>"
+git checkout tp4-correction
+git pull
+```
+
+## 5. Validation
+
+```bash
 git checkout tp5-enonce
 git pull
 ```
@@ -688,11 +700,16 @@ Injecter le validator dans le contrôleur grâce à l’annotation `@Autowired`.
 
 :question: Pour exploiter au mieux les mécanismes de Spring MVC, il faut remplacer les balises HTML natives par des balises `<form:…>`. Or on constate que si le `modelAttribute` du formulaire est nul, les attributs `path` génèrent une erreur. Il faut donc préparer le formulaire avec un nouveau client vide dans le contrôleur.
 
-## 6. Ajax
-
 ```bash
 git add .
 git commit -m "TP5 <idep>"
+git checkout tp5-correction
+git pull
+```
+
+## 6. Ajax
+
+```bash
 git checkout tp6-enonce
 git pull
 ```
@@ -776,11 +793,16 @@ Dans la fonction `done`, appeler  la fonction `afficherPrix` avec en paramètre 
 
 Tester que tout fonctionne.
 
-## 7. Exceptions
-
 ```bash
 git add .
 git commit -m "TP6 <idep>"
+git checkout tp6-correction
+git pull
+```
+
+## 7. Exceptions
+
+```bash
 git checkout tp7-enonce
 git pull
 ```
@@ -854,11 +876,16 @@ La nouvelle méthode doit lever une exception de type `BarCommandeException` si 
 
 Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel à la fonction `afficherErreur` avec le message d’erreur;
 
-## 8. Tests
-
 ```bash
 git add .
 git commit -m "TP7 <idep>"
+git checkout tp7-correction
+git pull
+```
+
+## 8. Tests
+
+```bash
 git checkout tp8-enonce
 git pull
 ```
@@ -967,22 +994,32 @@ this.mockMvc = MockMvcBuilders
 
 En particulier, cette fois-ci, tester la méthode `/client/nouveau` pour un profile "serveur".
 
-## 9. Configuration
-
 ```bash
 git add .
 git commit -m "TP8 <idep>"
+git checkout tp8-correction
+git pull
+```
+
+## 9. Configuration
+
+```bash
 git checkout tp9-enonce
 git pull
 ```
 
 Remplacer toute la configuration xml par de la configuration Java. Penser à adapter le ficihier `web.xml`. Supprimer les fichiers `applicationContext.xml` et `dispatcher-servlet.xml`.
 
-## 10. Transmettre et récupérer un fichier 
-
 ```bash
 git add .
 git commit -m "TP9 <idep>"
+git checkout tp9-correction
+git pull
+```
+
+## 10. Transmettre et récupérer un fichier 
+
+```bash
 git checkout tp10-enonce
 git pull
 ```
@@ -1001,3 +1038,10 @@ Une fonction effectue les opération suivantes sur le fichier :
  * retourner le nombre total d’insertions.
  
  Sur la même page, permettre à un employé de télécharger la liste complète des clients au format CSV.
+ 
+ ```bash
+git add .
+git commit -m "TP10 <idep>"
+git checkout tp10-correction
+git pull
+```
