@@ -856,6 +856,13 @@ Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel 
 
 ## 8. Tests
 
+```bash
+git add .
+git commit -m "TP7 <idep>"
+git checkout tp8-enonce
+git pull
+```
+
 ### 8.1. Ajouter les librairies nécessaires aux différents tests
 
 > pom.xml
@@ -962,4 +969,35 @@ En particulier, cette fois-ci, tester la méthode `/client/nouveau` pour un prof
 
 ## 9. Configuration
 
+```bash
+git add .
+git commit -m "TP8 <idep>"
+git checkout tp9-enonce
+git pull
+```
+
 Remplacer toute la configuration xml par de la configuration Java. Penser à adapter le ficihier `web.xml`. Supprimer les fichiers `applicationContext.xml` et `dispatcher-servlet.xml`.
+
+## 10. Transmettre et récupérer un fichier 
+
+```bash
+git add .
+git commit -m "TP9 <idep>"
+git checkout tp10-enonce
+git pull
+```
+
+Faire une nouvelle page à partir de laquelle un employé peut *uploader* une liste de clients au format CSV :
+
+```csv
+2;Sylvie Dupont;sylvie.dupont@email.com;25/12/1970
+```
+
+Une fonction effectue les opération suivantes sur le fichier :
+
+ * vérifie la validité de chaque ligne,
+ * écrire les erreurs détectées dans la log,
+ * insérer les lignes valides dans la base de donnée,
+ * retourner le nombre total d’insertions.
+ 
+ Sur la même page, permettre à un employé de télécharger la liste complète des clients au format CSV.
