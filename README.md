@@ -1024,6 +1024,8 @@ git checkout tp10-enonce
 git pull
 ```
 
+![Téléchargement](images/telechargement.png)
+
 Faire une nouvelle page à partir de laquelle un employé peut *uploader* une liste de clients au format CSV :
 
 ```csv
