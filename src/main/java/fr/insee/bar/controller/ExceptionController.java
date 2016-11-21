@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import fr.insee.bar.exception.BarAjaxException;
 import fr.insee.bar.exception.BarCommandeException;
@@ -39,10 +40,21 @@ public class ExceptionController {
 		return ajaxException(e);
 	}
 
+	@ExceptionHandler(NoHandlerFoundException.class)
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	public String handleResourceNotFoundException(NoHandlerFoundException e, Model model) {
+		return httpException("La page que vous cherchez n’existe pas.", model);
+	}
+
 	@ExceptionHandler(Exception.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	public HttpEntity<String> handleUnexpectedException(Exception e) {
 		return ajaxException(e);
+	}
+
+	private static String httpException(String message, Model model) {
+		model.addAttribute("message", message);
+		return "exception";
 	}
 
 	private static String httpException(Exception e, Model model) {
