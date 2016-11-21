@@ -1028,6 +1028,7 @@ Faire une nouvelle page à partir de laquelle un employé peut *uploader* une li
 
 ```csv
 2;Sylvie Dupont;sylvie.dupont@email.com;25/12/1970
+1;Thomas Dupond;thomas.dupond@monmail.fr;01/11/1981
 ```
 
 Une fonction effectue les opération suivantes sur le fichier :
@@ -1036,10 +1037,10 @@ Une fonction effectue les opération suivantes sur le fichier :
  * écrire les erreurs détectées dans la log,
  * insérer les lignes valides dans la base de donnée,
  * retourner le nombre total d’insertions.
+
+Sur la même page, permettre à un employé de télécharger la liste complète des clients au format CSV.
  
- Sur la même page, permettre à un employé de télécharger la liste complète des clients au format CSV.
- 
- ```bash
+```bash
 git add .
 git commit -m "TP10 <idep>"
 git checkout tp10-correction
