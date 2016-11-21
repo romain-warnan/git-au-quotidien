@@ -895,7 +895,7 @@ Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel 
 
 Ajouter un contrôleur qui intercepte l’exception `NoHandlerFoundException` et qui redirige vers une page d’erreur avec le message « La page que vous cherchez n’existe pas. » et un code HTTP 404.
 
-Tester en tapant dans la bar d’adresse une URL qui n’existe pas.
+Tester en saisissant une URL qui n’existe pas dans la barre d’adresse.
 
 ```bash
 git add .
