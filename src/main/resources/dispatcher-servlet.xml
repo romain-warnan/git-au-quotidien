@@ -49,6 +49,7 @@
 	
 	<!-- MVC -->
 	<mvc:resources mapping="/static/**" location="/static/" />
+	<mvc:resources mapping="/favicon.ico" location="/static/favicon.png" />
 	
 	<mvc:annotation-driven conversion-service="conversionService" validator="validator">
 		<mvc:argument-resolvers>

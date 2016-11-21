@@ -7,6 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="/static/css/application.css">
+		<link rel="icon" type="image/png" href="/static/favicon.png" />
 		<title>Spring MVC &ndash; Nouveaux clients</title>
 	</head>
 	<body>
