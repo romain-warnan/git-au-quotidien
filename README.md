@@ -876,6 +876,27 @@ La nouvelle méthode doit lever une exception de type `BarCommandeException` si 
 
 Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel à la fonction `afficherErreur` avec le message d’erreur;
 
+### 7.3. Traiter les erreurs 404 grâce à Spring MVC
+
+#### 7.3.1. Congigurer la servlet dans le fichier `web.xml`
+
+> web.xml
+
+```xml
+<init-param>
+	<param-name>throwExceptionIfNoHandlerFound</param-name>
+	<param-value>true</param-value>
+</init-param>
+```
+
+#### 7.3.2. Rediriger vers une page d’erreur
+
+> ExceptionController.java
+
+Ajouter un contrôleur qui intercepte l’exception `NoHandlerFoundException` et qui redirige vers une page d’erreur avec le message « La page que vous cherchez n’existe pas. »
+
+Tester en tapant dans la bar d’adresse une URL qui n’existe pas.
+
 ```bash
 git add .
 git commit -m "TP7 <idep>"
