@@ -878,7 +878,7 @@ Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel 
 
 ### 7.3. Traiter les erreurs 404 grâce à Spring MVC
 
-#### 7.3.1. Congigurer la servlet dans le fichier `web.xml`
+#### 7.3.1. Configurer la servlet dans le fichier web.xml
 
 > web.xml
 
@@ -893,7 +893,7 @@ Ajouter un *callback* `fail` en cas d’erreur. Dans ce *callback*, faire appel 
 
 > ExceptionController.java
 
-Ajouter un contrôleur qui intercepte l’exception `NoHandlerFoundException` et qui redirige vers une page d’erreur avec le message « La page que vous cherchez n’existe pas. »
+Ajouter un contrôleur qui intercepte l’exception `NoHandlerFoundException` et qui redirige vers une page d’erreur avec le message « La page que vous cherchez n’existe pas. » et un code HTTP 404.
 
 Tester en tapant dans la bar d’adresse une URL qui n’existe pas.
 
