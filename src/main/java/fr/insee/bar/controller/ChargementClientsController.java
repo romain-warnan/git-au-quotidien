@@ -4,9 +4,9 @@ import java.io.File;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,16 +44,12 @@ public class ChargementClientsController {
 	}
 
 	@GetMapping("/telechargement")
-	public HttpEntity<FileSystemResource> telechargement() {
+	public ResponseEntity<FileSystemResource> telechargement() {
 		File fichier = clientService.fichier();
-		return new HttpEntity<FileSystemResource>(new FileSystemResource(fichier), httpHeaders(fichier));
-	}
-
-	private HttpHeaders httpHeaders(File file) {
-		HttpHeaders header = new HttpHeaders();
-		header.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName());
-		header.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-		header.setContentLength(file.length());
-		return HttpHeaders.readOnlyHttpHeaders(header);
+		return ResponseEntity.ok()
+			.contentLength(fichier.length())
+			.contentType(MediaType.APPLICATION_OCTET_STREAM)
+			.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fichier.getName())
+			.body(new FileSystemResource(fichier));
 	}
 }
