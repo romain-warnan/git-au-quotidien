@@ -8,11 +8,11 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="/static/css/application.css">
 		<link rel="icon" type="image/png" href="/static/favicon.png" />
-		<title>Spring MVC &ndash; Accueil</title>
+		<title>Spring MVC &ndash; Images</title>
 	</head>
 	<body>
-		<h1><c:out value="${message}" /></h1>
-		<c:url var="url" value="clients" />
-		<p><a href="<c:url value="clients" />">Liste des clients</a> | <a href="<c:url value="commande" />">Passer une commande</a> | <a href="<c:url value="image" />">Image</a></p>
+		<h1>Images</h1>
+		<img alt="Z:/images" src="<c:url value="/image/cocktails.png" />" />
+		<img alt="static/" src="<c:url value="/static/cocktails.png" />" />
 	</body>
 </html>
