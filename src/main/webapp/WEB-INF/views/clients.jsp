@@ -7,12 +7,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="/static/css/application.css">
+		<link rel="icon" type="image/png" href="/static/favicon.png" />
 		<title>Spring MVC &ndash; Clients</title>
 	</head>
 	<body>	
 		<h1>Liste des clients</h1>
 		<c:if test="${not empty nouveauClient}">
 			<p class="success">Le client <c:out value="${nouveauClient.email}" /> a été créé avec succès.</p>
+		</c:if>
+		<c:if test="${not empty message}">
+			<p class="success"><c:out value="${message}" /></p>
 		</c:if>
 		<table>
 		<tr>
@@ -27,6 +31,6 @@
 			</tr>
 		</c:forEach>
 		</table>
-		<p><a href="<c:url value="/accueil" />">Accueil</a> | <a href="<c:url value="/client/nouveau" />">Nouveau client</a></p>
+		<p><a href="<c:url value="/accueil" />">Accueil</a> | <a href="<c:url value="/client/nouveau" />">Nouveau client</a> | <a href="<c:url value="/client/chargement" />">Liste de clients</a></p>
 	</body>
 </html>

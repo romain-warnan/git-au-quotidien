@@ -8,11 +8,18 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="/static/css/application.css">
 		<link rel="icon" type="image/png" href="/static/favicon.png" />
-		<title>Spring MVC &ndash; Accueil</title>
+		<title>Spring MVC &ndash; Nouveaux clients</title>
 	</head>
 	<body>
-		<h1><c:out value="${message}" /></h1>
-		<c:url var="url" value="clients" />
-		<p><a href="<c:url value="clients" />">Liste des clients</a> | <a href="<c:url value="commande" />">Passer une commande</a></p>
+		<h1>Liste de clients</h1>
+		<p>
+			<a href="<c:url value="/client/telechargement" />">Télécharger la liste des clients</a>
+		</p>
+		<br/>
+		<c:url value="/client/chargement" var="url" />
+		<form method="POST" enctype="multipart/form-data" action="${url}">
+			<label>Fichier : </label><input type="file" name="file" /><br/>
+			<button type="submit">Charger</button>
+		</form>
 	</body>
 </html>

@@ -7,6 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="/static/css/application.css">
+		<link rel="icon" type="image/png" href="/static/favicon.png" />
 		<title>Spring MVC &ndash; Commande</title>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script src="/static/js/recherche.js"></script>

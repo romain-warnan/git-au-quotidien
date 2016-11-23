@@ -19,11 +19,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import fr.insee.configuration.ApplicationContextConfiguration;
-import fr.insee.configuration.DispatcherServletConfiguration;
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { DispatcherServletConfiguration.class, ApplicationContextConfiguration.class })
+@ContextConfiguration({ "classpath:applicationContext.xml", "classpath:dispatcher-servlet.xml" })
 @ActiveProfiles("serveur")
 @WebAppConfiguration
 public class AccueilControllerTest {
