@@ -1,6 +1,7 @@
 package fr.insee.bar.controller;
 
 import java.io.File;
+import java.util.concurrent.Callable;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
@@ -21,7 +22,7 @@ import fr.insee.bar.service.ClientService;
 import fr.insee.bar.service.EmployeService;
 
 @Controller
-@RequestMapping("/client")
+@RequestMapping("/clients")
 public class ChargementClientsController {
 
 	@Autowired
@@ -44,12 +45,15 @@ public class ChargementClientsController {
 	}
 
 	@GetMapping("/telechargement")
-	public ResponseEntity<FileSystemResource> telechargement() {
-		File fichier = clientService.fichier();
+	public Callable<ResponseEntity<FileSystemResource>> telechargement() {
+		return () -> responseEntity(clientService.fichier());
+	}
+
+	private static ResponseEntity<FileSystemResource> responseEntity(File file) {
 		return ResponseEntity.ok()
-			.contentLength(fichier.length())
+			.contentLength(file.length())
 			.contentType(MediaType.APPLICATION_OCTET_STREAM)
-			.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fichier.getName())
-			.body(new FileSystemResource(fichier));
+			.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName())
+			.body(new FileSystemResource(file));
 	}
 }
