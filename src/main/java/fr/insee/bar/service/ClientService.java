@@ -86,7 +86,7 @@ public class ClientService {
 		ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 		File file = null;
 		try {
-			file = executor.schedule(this::file, 5, TimeUnit.SECONDS).get();
+			file = executor.schedule(this::file, 10, TimeUnit.SECONDS).get();
 		}
 		catch (InterruptedException | ExecutionException e) {
 			System.out.println(e.getMessage());
