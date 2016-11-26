@@ -1077,3 +1077,28 @@ git checkout tp11-enonce
 git pull
 ```
 
+Désormais, la fonction qui permet de générer le fichier des clients est longue (10 secondes).
+On souhaite donc l'exécuter dans un autre *thread* afin que le serveur puisse accepter d'autres requêtes.
+
+```bash
+git add .
+git commit -m "TP11 <idep>"
+git checkout tp11-correction
+git pull
+```
+
+## 12. Autres types de vues
+
+```bash
+git checkout tp12-enonce
+git pull
+```
+
+On veut maintenant pouvoir télécharger la liste des clients sous forme de fichier Excel ou PDF.
+
+```bash
+git add .
+git commit -m "TP12 <idep>"
+git checkout tp12-correction
+git pull
+```
