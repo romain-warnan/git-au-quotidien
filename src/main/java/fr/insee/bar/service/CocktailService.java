@@ -14,9 +14,6 @@ import fr.insee.bar.model.Cocktail;
 @Service
 public class CocktailService {
 
-	@Autowired
-	private CocktailDao cocktailDao;
-
 	public boolean commandeValide(List<Cocktail> cocktails) {
 		return cocktails != null && cocktails.size() > 0;
 	}
@@ -25,11 +22,5 @@ public class CocktailService {
 		if (!this.commandeValide(cocktails)) {
 			throw new BarCommandeException("La commande ne contient aucun cocktail.");
 		}
-	}
-
-	public Optional<Cocktail> hasard() {
-		Random random = new Random(System.currentTimeMillis());
-		short id = (short) random.nextInt(200);
-		return cocktailDao.find(id);
 	}
 }
