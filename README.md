@@ -1069,3 +1069,11 @@ git commit -m "TP10 <idep>"
 git checkout tp10-correction
 git pull
 ```
+
+## 11. Exécuter une tâche de manière asynchrone
+
+```bash
+git checkout tp11-enonce
+git pull
+```
+
