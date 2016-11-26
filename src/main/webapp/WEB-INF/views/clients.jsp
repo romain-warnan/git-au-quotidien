@@ -31,6 +31,6 @@
 			</tr>
 		</c:forEach>
 		</table>
-		<p><a href="<c:url value="/accueil" />">Accueil</a> | <a href="<c:url value="/client/nouveau" />">Nouveau client</a> | <a href="<c:url value="/client/chargement" />">Liste de clients</a></p>
+		<p><a href="<c:url value="/accueil" />">Accueil</a> | <a href="<c:url value="/client/nouveau" />">Nouveau client</a> | <a href="<c:url value="/clients/chargement" />">Liste de clients</a></p>
 	</body>
 </html>

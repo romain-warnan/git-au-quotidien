@@ -13,10 +13,10 @@
 	<body>
 		<h1>Liste de clients</h1>
 		<p>
-			<a href="<c:url value="/client/telechargement" />">Télécharger la liste des clients</a>
+			<a href="<c:url value="/clients/telechargement" />">Télécharger la liste des clients</a>
 		</p>
 		<br/>
-		<c:url value="/client/chargement" var="url" />
+		<c:url value="/clients/chargement" var="url" />
 		<form method="POST" enctype="multipart/form-data" action="${url}">
 			<label>Fichier : </label><input type="file" name="file" /><br/>
 			<button type="submit">Charger</button>
