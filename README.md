@@ -1078,7 +1078,7 @@ git pull
 ```
 
 Désormais, la fonction qui permet de générer le fichier des clients est longue (10 secondes).
-On souhaite donc l'exécuter dans un autre *thread* afin que le serveur puisse accepter d'autres requêtes.
+On souhaite donc l’exécuter dans un autre *thread* afin que le serveur puisse accepter d’autres requêtes.
 
 ```bash
 git add .
