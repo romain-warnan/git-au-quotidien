@@ -159,7 +159,7 @@ git pull
 ```xml
 <bean id="viewResolver"	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	<property name="prefix">
-		<value>WEB-INF/views/</value>
+		<value>/WEB-INF/views/</value>
 	</property>
 	<property name="suffix">
 		<value>.jsp</value>
