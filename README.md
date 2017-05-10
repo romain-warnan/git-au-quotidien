@@ -478,7 +478,7 @@ git pull
 
 > NouveauClientController.java
 
-Pour le moment il comporte deux méthodes :
+Dans un premier temps, il faut créer deux méthodes :
 
 * une annotée `@ModelAttribute` qui retourne les modalités de l’énumeration `Client.Titre`,
 * l’autre associée à l’URL `GET /client/nouveau` et qui dirige vers le formulaire d’ajout d’un nouveau client.
