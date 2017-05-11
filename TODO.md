@@ -5,6 +5,7 @@
  1. Diapo 55 : modelAttribute="client" => expliquer que référence = client
  2. Diapo 70 : BindingResult est ajouté au model => inutile d'ajouter le @ModelAttribute dans le Model.  
     Cas de la date invalide
+ 3. @Valid sur les objets @RequestBody (JSON) => pour récupérer les messages d'erreurs, regarder dans ResultBinding
 
 ## TP
 
