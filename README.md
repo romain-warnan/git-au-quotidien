@@ -1070,24 +1070,7 @@ git checkout tp10-correction
 git pull
 ```
 
-## 11. Exécuter une tâche de manière asynchrone
-
-```bash
-git checkout tp11-enonce
-git pull
-```
-
-Désormais, la fonction qui permet de générer le fichier des clients est longue (10 secondes).
-On souhaite donc l’exécuter dans un autre *thread* afin que le serveur puisse accepter d’autres requêtes.
-
-```bash
-git add .
-git commit -m "TP11 <idep>"
-git checkout tp11-correction
-git pull
-```
-
-## 12. Autres types de vues
+## 11. Autres types de vues
 
 ```bash
 git checkout tp12-enonce
