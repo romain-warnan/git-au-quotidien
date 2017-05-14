@@ -478,25 +478,23 @@ git pull
 
 > NouveauClientController.java
 
-Dans un premier temps, il faut créer deux méthodes :
-
-* une annotée `@ModelAttribute` qui retourne les modalités de l’énumeration `Client.Titre`,
-* l’autre associée à l’URL `GET /client/nouveau` et qui dirige vers le formulaire d’ajout d’un nouveau client.
+Dans un premier temps, il faut une seule méthode associée à l’URL `GET /client/nouveau`.
+Elle ajoute au modèle un client vide.
+Elle dirige vers le formulaire d’ajout d’un nouveau client.
  
 #### 4.1.2. Compléter la page qui permet de créer un nouveau client
 
 > nouveau-client.jsp
 
-La page doit comprendre un formulaire `<form>` qui servira à poster les données.
+La page doit comprendre un formulaire `<form:form>` qui servira à poster les données.
+La balise doit contenir un attribut `modelAttribute` contenant le client vide.
 Le formulaire possède les éléments suivants :
 
-* un menu déroulant (`<select>`) pour le titre (Monsieur ou Madame) ;
+* un menu déroulant (`<form:select>` contenant un `<form:options />`) pour le titre (Monsieur ou Madame) ;
 * un champ de texte pour le nom ;
 * un champ de texte pour l’adresse email ;
 * un champ de texte pour la date de naissance au format *jj/mm/aaaa* ;
 * un bouton « Créer » qui poste les données du formulaire vers le serveur (`<button type="submit">`).
-
-:question: Pour remplir le menu déroulant, utiliser la balise `<c:forEach>`. Pour le reste, utiliser des balises HTML natives.
 
 ![Formulaire nouveau client](images/formulaire-nouveau-client.png)
 
@@ -550,7 +548,7 @@ Le lien est paramétré par l’identifiant du client à modifier.
 
 > modification-client.jsp
 
-Cette fois ci, pour que les champs soient pré-remplis avec les données issues de la base, utiliser des balises `<form:...` plutôt que les balises HTML natives.
+Pour que les champs soient pré-remplis avec les données issues de la base, utiliser des balises `<form:...`.
 
 :exclamation: Il ne faut pas oublier d’ajouter un champ caché qui contient l’identifiant du client qu’on est en train de modifier.
 
