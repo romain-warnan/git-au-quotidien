@@ -29,6 +29,10 @@
 				width: 100px;
 				height: auto;
 			}
+
+			.reveal .slide-background.present {
+				opacity: 0.1;
+			}
 		</style>
 	</head>
 	<body>
@@ -52,7 +56,9 @@
 						</tr>
 					</table>
 				</section>
-				<section>Slide 2</section>
+				<section data-background-image="../images/spring.png" data-background-size="1200px">
+					<h2>Spring core : rappels</h2>
+				</section>
 			</div>
 		</div>
 
@@ -71,6 +77,7 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+            Reveal.configure({ slideNumber: 'c/t' });
 		</script>
 	</body>
 </html>
