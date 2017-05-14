@@ -9,3 +9,7 @@ target/
 .project
 .git-credentials
 .*-credentials
+
+!slides
+slides/*
+!slides/index.html
