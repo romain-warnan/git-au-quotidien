@@ -33,6 +33,10 @@
 			.reveal .slide-background.present {
 				opacity: 0.1;
 			}
+
+			.left {
+				text-align: left;
+			}
 		</style>
 	</head>
 	<body>
@@ -59,6 +63,39 @@
 				<section data-background-image="../images/spring.png" data-background-size="1200px">
 					<h2>Spring core : rappels</h2>
 				</section>
+				<section data-markdown class="left">
+					### Spring core
+					Spring core : conteneur qui implémente le *pattern* «&nbsp;inversion de contrôle&nbsp;» (IoC)
+
+					Définitions des objets (*bean*)
+					 - XML : `applicationContext.xml`
+
+					 - Annotations
+					  - Stéréotypes : `@Component`, `@Service`, `@Repository`, `@Controller`…
+					  - Injection : `@Autowired`, `@Resource`, `@Value`…
+					  - Configuration : `@Configuration`
+
+					Au démarrage de l’application, chargement du contexte
+					 - Web : *listener*
+					 - Batch : de manière explicite en Java
+				</section>
+				<section data-markdown class="left">
+					### Spring core
+					Au démarrage de l’application, chargement du contexte
+
+					Web : *listener*
+					```xml
+					<context-param>
+						<param-name>contextConfigLocation</param-name>
+						<param-value>classpath:applicationContext.xml</param-value>
+					</context-param>
+					<listener>
+						<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+					</listener>
+					```
+
+					Batch : de manière explicite en Java
+				</section>
 			</div>
 		</div>
 
@@ -77,7 +114,10 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
-            Reveal.configure({ slideNumber: 'c/t' });
+            Reveal.configure({
+				slideNumber: 'c/t',
+				history: true,
+			});
 		</script>
 	</body>
 </html>
