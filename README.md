@@ -564,12 +564,6 @@ Placer un booléen `modification=true` dans un *flashAttribute* de manière à p
 
 Si un un booléen `modification` est accessible dans le modèle, afficher un message de succès de la forme : « Le client a été modifié avec succès ».
 
-#### 4.2.5. Supprimer la méthode qui retourne la liste des titres
-
-> ModificationClientController.java
-
-Il s’agit de la méthode annotée `@ModelAttribute`. Constater que le menu déroulant est toujours correctement rempli malgré l’absence de cette méthode.
-
 ```bash
 git add .
 git commit -m "TP4 <idep>"

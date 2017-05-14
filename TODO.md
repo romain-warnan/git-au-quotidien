@@ -11,9 +11,9 @@
 
 ## TP
 
- - [ ] Fusionner les deux formulaires, ne faire qu'un seul `<form:form>`
+ - [x] Mettre des `<form:form>` dans le TP4 et l'énoncé du TP5
  - [ ] Exemple de checkboxes
- - [ ] Supprimer la partie async
+ - [x] Supprimer la partie async
 
 ## Autre
 
