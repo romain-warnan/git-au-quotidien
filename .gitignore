@@ -10,8 +10,10 @@ target/
 .git-credentials
 .*-credentials
 
-!slides
+!slides/
+
 slides/*
 !slides/index.html
-!slides/lib/css/
 
+slides/lib/*
+!slides/lib/css/
