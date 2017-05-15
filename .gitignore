@@ -13,3 +13,5 @@ target/
 !slides
 slides/*
 !slides/index.html
+!slides/lib/css
+
