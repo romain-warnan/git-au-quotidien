@@ -11,9 +11,6 @@ target/
 .*-credentials
 
 !slides/
-
 slides/*
 !slides/index.html
-
-slides/lib/*
-!slides/lib/css/
+!slides/*.css
