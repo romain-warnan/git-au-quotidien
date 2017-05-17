@@ -30,11 +30,18 @@
 
 			}
 
+            .reveal .center {
+                text-align: center;
+            }
+
+            .reveal .chapter h2 {
+                font-size: 5em;
+            }
+
 			.reveal .slides img {
 				border: none;
 				background: none;
 				box-shadow: none;
-				width: 100px;
 				height: auto;
 			}
 
@@ -46,15 +53,21 @@
 				opacity: 0.1;
 			}
 
-			.slide {
+            .reveal .slide {
 				text-align: left;
 			}
 
-			.reveal pre code, .reveal code {
-				font-size: 65%;
-			}
+            .reveal pre {
+                width: 100%;
+            }
 
 			.reveal code {
+                font-size: 70%;
+                line-height: 20px;
+			}
+
+			.reveal pre code {
+                max-height: none;
 			}
 		</style>
 	</head>
@@ -69,18 +82,22 @@
 					</p>
 					<table>
 						<tr>
-							<td><img src="../images/spring.png" /></td>
-							<td><img src="../images/java-8.png" /></td>
-							<td><img src="../images/maven.png" /></td>
-							<td><img src="../images/tomcat.png" /></td>
-							<td><img src="../images/ajax.png" /></td>
-							<td><img src="../images/github.png" /></td>
-							<td><img src="../images/jquery.png" /></td>
+							<td><img src="../images/spring.png" style="width: 100px;" /></td>
+							<td><img src="../images/java-8.png" style="width: 100px;" /></td>
+							<td><img src="../images/maven.png" style="width: 100px;" /></td>
+							<td><img src="../images/tomcat.png" style="width: 100px;" /></td>
+							<td><img src="../images/ajax.png" style="width: 100px;" /></td>
+							<td><img src="../images/github.png" style="width: 100px;" /></td>
+							<td><img src="../images/jquery.png" style="width: 100px;" /></td>
 						</tr>
 					</table>
 				</section>
-				<section data-background-image="../images/spring.png" data-background-size="1200px" class="chapter">
-					<h2>Spring core : rappels</h2>
+
+                <!-- Chapitre 1 -->
+
+				<section data-markdown data-background-image="../images/spring.png" data-background-size="1200px" class="chapter">
+					## 1
+					### Spring core : rappels
 				</section>
 				<section data-markdown class="slide">
 					### Spring core
@@ -182,6 +199,47 @@
 						</section>
 					</section>
 				</div>
+
+                <!-- Chapitre 2 -->
+
+                <section data-markdown data-background-image="../images/spring.png" data-background-size="1200px" class="chapter">
+                    ## 2
+                    ### Spring MVC : généralités
+                </section>
+                <section class="slide">
+                    <h3>Classement des frameworks web en 2017</h3>
+                    <div class="center">
+                        <img src="../images/web-frameworks.png" style="width: 600px" />
+                    </div>
+                </section>
+                <section data-markdown class="slide small-code">
+                    ### Dépendances Maven
+                    ```xml
+                    &lt;dependency&gt;
+                        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+                        &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+                        &lt;version&gt;${spring.version}&lt;/version&gt;
+                    &lt;/dependency&gt;
+                    &lt;dependency&gt;
+                        &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+                        &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+                        &lt;version&gt;3.1.0&lt;/version&gt;
+                        &lt;scope&gt;provided&lt;/scope&gt;
+                    &lt;/dependency&gt;
+                    &lt;dependency&gt;
+                        &lt;groupId&gt;javax.servlet.jsp&lt;/groupId&gt;
+                        &lt;artifactId&gt;jsp-api&lt;/artifactId&gt;
+                        &lt;version&gt;2.2&lt;/version&gt;
+                        &lt;scope&gt;provided&lt;/scope&gt;
+                    &lt;/dependency&gt;
+                    &lt;dependency&gt;
+                        &lt;groupId&gt;jstl&lt;/groupId&gt;
+                        &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+                        &lt;version&gt;1.2&lt;/version&gt;
+                    &lt;/dependency&gt;
+
+                    ```
+                </section>
 			</div>
 		</div>
 
