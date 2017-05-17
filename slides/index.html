@@ -282,6 +282,28 @@
 
                     Attention : « / » et pas « /* »
                 </section>
+                <section data-markdown class="slide">
+                    ### Configurer les servlets
+
+                    Dans l’exemple, on redirige toutes les URL vers Spring MVC
+
+                    On peut exclure certaines ressources
+                     - ressources statiques par exemple
+
+                    Attention : l’ordre de déclaration dans web.xml est important
+
+                    ```xml
+                    &lt;servlet&gt;
+                        &lt;servlet-name&gt;default&lt;/servlet-name&gt;
+                        &lt;servlet-class&gt;org.apache.catalina.servlets.DefaultServlet&lt;/servlet-class&gt;
+                        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+                    &lt;/servlet&gt;
+                    &lt;servlet-mapping&gt;
+                        &lt;servlet-name&gt;default&lt;/servlet-name&gt;
+                        &lt;url-pattern&gt;/static/*&lt;/url-pattern&gt;
+                    &lt;/servlet-mapping&gt;
+                    ```
+                </section>
 			</div>
 		</div>
 
