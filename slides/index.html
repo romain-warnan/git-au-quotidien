@@ -212,7 +212,7 @@
                         <img src="../images/web-frameworks.png" style="width: 600px" />
                     </div>
                 </section>
-                <section data-markdown class="slide small-code">
+                <section data-markdown class="slide">
                     ### Dépendances Maven
                     ```xml
                     &lt;dependency&gt;
@@ -260,6 +260,27 @@
                      6. retourne la réponse au client
 
                     La servlet possède son propre contexte Spring
+                </section>
+                <section data-markdown class="slide">
+                    ### Déclarer la servlet ServletDispatcher
+
+                    ```xml
+                    &lt;servlet&gt;
+                        &lt;servlet-name&gt;servlet-dispatcher&lt;/servlet-name&gt;
+                        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+                        &lt;init-param&gt;
+                            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+                            &lt;param-value&gt;classpath:servlet-dispatcher.xml&lt;/param-value&gt;
+                        &lt;/init-param&gt;
+                        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+                    &lt;/servlet&gt;
+                    &lt;servlet-mapping&gt;
+                        &lt;servlet-name&gt;servlet-dispatcher&lt;/servlet-name&gt;
+                        &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+                    &lt;/servlet-mapping&gt;
+                    ```
+
+                    Attention : « / » et pas « /* »
                 </section>
 			</div>
 		</div>
