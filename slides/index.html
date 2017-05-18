@@ -120,39 +120,11 @@
 					  - Injection : `@Autowired`, `@Resource`, `@Value`…
 					  - Configuration : `@Configuration`
 				</section>
-				<section data-markdown class="slide">
-					### Spring core
-					Au démarrage de l’application, chargement du contexte
-					Web : *listener*
-					```xml
-					&lt;context-param&gt;
-						&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
-						&lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;
-					&lt;/context-param&gt;
-					&lt;listener&gt;
-						&lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
-					&lt;/listener&gt;
-					```
-					Batch : de manière explicite en Java
-					```java
-					try(AbstractApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml")){
-						Service service1 = (Service) context.getBean("beanName");
-						Service service2 = context.getBean(Service.class);
-						Service service3 = context.getBean("beanName", Service.class);
-					}
-					```
-				</section>
-				<section data-markdown class="slide">
-					### Beans et injection des dépendances
-					En XML
-					```xml
-					&lt;bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager"&gt;
-						&lt;property name="cacheManager" ref="ehcache" /&gt;
-					&lt;/bean&gt;
-					&lt;bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"&gt;
-						&lt;property name="configLocation" value="classpath:ehcache.xml" /&gt;
-					&lt;/bean&gt;
-					```
+				<section data-markdown="markdown/chapter-1.md"
+						 data-separator="^\r?\n------\r?\n$"
+						 data-separator-vertical="^\r?\n---\r?\n$"
+						 data-separator-notes="^Note:"
+						 data-charset="utf-8">
 				</section>
 				<div class="slides">
 					<section>
