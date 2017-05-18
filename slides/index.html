@@ -69,6 +69,15 @@
 			.reveal pre code {
                 max-height: none;
 			}
+
+			.reveal ul {
+				list-style-type: none;
+			}
+
+			.reveal ul li:before {
+				content: '–';
+				margin-right: 7px;
+			}
 		</style>
 	</head>
 	<body>
@@ -304,6 +313,35 @@
                     &lt;/servlet-mapping&gt;
                     ```
                 </section>
+				<section class="slide">
+					<h3>Hiérarchie des contextes</h3>
+					<div class="center">
+						<img src="../images/double-contexte.png" style="width: 700px" />
+					</div>
+				</section>
+				<section data-markdown class="slide">
+					### Le résolveur de vues
+
+					Indiquer à Spring quelle vue utiliser
+					- JSP, Tiles…
+
+					En général
+					- `InternalResourceViewResolver`
+					- À paramétrer pour faire la relation entre une chaîne de caractère et une JSP
+
+					Attention : l’ordre de déclaration dans web.xml est important
+
+					```xml
+					&lt;bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"&gt;
+						&lt;property name="prefix"&gt;
+							&lt;value&gt;/WEB-INF/views/&lt;/value&gt;
+						&lt;/property&gt;
+						&lt;property name="suffix"&gt;
+							&lt;value&gt;.jsp&lt;/value&gt;
+						&lt;/property&gt;
+					&lt;/bean&gt;
+					```
+				</section>
 			</div>
 		</div>
 
