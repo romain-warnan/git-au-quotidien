@@ -1,0 +1,60 @@
+.reveal .main-title {
+    /* Empty */
+}
+
+.reveal .chapter {
+    /* Empty */
+}
+
+.reveal .center {
+    text-align: center;
+}
+
+.reveal .chapter h2 {
+    font-size: 5em;
+}
+
+.reveal .slides img {
+    border: none;
+    background: none;
+    box-shadow: none;
+    height: auto;
+}
+
+.reveal .slides {
+    font-size: 30px;
+}
+
+.reveal .slide-background.present {
+    opacity: 0.1;
+}
+
+.reveal .slide {
+    text-align: left;
+}
+
+.reveal pre {
+    width: 100%;
+}
+
+.reveal code {
+    font-size: 90%;
+    line-height: 22px;
+}
+
+.reveal pre code {
+    max-height: none;
+}
+
+.reveal ul {
+    list-style-type: none;
+}
+
+.reveal ul ul {
+    list-style-type: none;
+}
+
+.reveal ul li:before {
+    content: '–';
+    margin-right: 7px;
+}
