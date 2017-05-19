@@ -15,4 +15,4 @@ slides/*
 !slides/index.html
 !slides/*.css
 !slides/images
-!slides/markdown
+!slides/chapters
