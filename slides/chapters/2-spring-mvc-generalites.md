@@ -9,7 +9,7 @@
 <!-- .slide: class="slide" -->
 <h3>Classement des frameworks web en 2017</h3>
 <div class="center">
-    <img src="images/web-frameworks.png" style="width: 600px" />
+    <img src="images/web-frameworks.png" style="width: 500px" />
 </div>
 
 
