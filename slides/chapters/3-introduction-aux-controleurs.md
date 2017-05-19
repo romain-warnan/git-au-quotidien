@@ -84,3 +84,122 @@ Bonus : préciser le type de réponse :
 ```java
 	@RequestMapping(value = "/accueil", produces = "application/json; charset=UTF-8")
 ```
+
+
+
+
+
+<!-- .slide: data-background-image="images/question.png" data-background-size="700px" class="exercice" -->
+## Exercice
+
+---
+
+<!-- .slide: class="slide" -->
+### Exemple 1 : cas simple
+```java
+	@RequestMapping("/accueil")
+```
+ - http://serveur/accueil <!-- .element class="fragment highlight-green" -->
+ - http://serveur/ <!-- .element class="fragment highlight-red" -->
+ - http://serveur/accueil?sommaire=123456 <!-- .element class="fragment highlight-green" -->
+ - http://serveur/accueil/123456 <!-- .element class="fragment highlight-red" -->
+
+---
+
+<!-- .slide: class="slide" -->
+### Exemple 2 : plusieurs URI
+```java
+    @RequestMapping({ "/accueil", "/" })
+```
+ - http://serveur/accueil/123456 <!-- .element class="fragment highlight-red" -->
+ - http://serveur/accueil <!-- .element class="fragment highlight-green" -->
+ - http://serveur/ <!-- .element class="fragment highlight-green" -->
+ - http://serveur/accueil?sommaire=123456 <!-- .element class="fragment highlight-green" -->
+
+---
+
+<!-- .slide: class="slide" -->
+### Exemple 3 : méthode HTTP
+```java
+    @RequestMapping(value = "/accueil", method = RequestMethod.GET)
+```
+ - GET http://serveur/accueil <!-- .element class="fragment highlight-green" -->
+ - PUT http://serveur/accueil <!-- .element class="fragment highlight-red" -->
+ - POST http://serveur/accueil?sommaire=123456 <!-- .element class="fragment highlight-red" -->
+ - GET http://serveur/accueil?sommaire=123456 <!-- .element class="fragment highlight-green" -->
+
+---
+
+<!-- .slide: class="slide" -->
+### Exemple 4 : paramètres
+```java
+    @RequestMapping(value = "/accueil", params = { "!sommaire", "geo" })
+```
+ - http://serveur/accueil?geo=COM-92046&id=123 <!-- .element class="fragment highlight-green" -->
+ - http://serveur/accueil <!-- .element class="fragment highlight-red" -->
+ - http://serveur/accueil/123456 <!-- .element class="fragment highlight-red" -->
+ - http://serveur/accueil?geo=COM-80829 <!-- .element class="fragment highlight-green" -->
+ - http://serveur/accueil?sommaire=123456&geo=DE <!-- .element class="fragment highlight-red" -->
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Récupérer des paramètres dans un contrôleur
+`@RequestParam`
+
+http://serveur/accueil<span style="color:red">?nom=Valeur</span>
+
+```java
+@Controller
+public class AccueilController {
+
+     @Autowired
+     private MessageService messageService; 
+
+     @RequestMapping("/accueil")
+     public String accueil(@RequestParam("nom") String nom, Model model) { 
+          model.addAttribute("message", messageService.message(nom));
+          return "accueil";
+     }
+}
+```
+Spring récupère la valeur du paramètre « nom » 
+ - dans l’URL
+ - et l’injecte dans la méthode de contrôleur
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Récupérer des paramètres dans un contrôleur
+`@PathVariable`
+
+http://serveur/personne<span style="color:red">/123456</span>
+
+```java
+@Controller
+public class AccueilController {
+
+     @Autowired
+     private PersonneService personneService;
+
+     @RequestMapping("/personne/{id}")
+     public String accueil(@PathVariable("id") Long id, Model model) { 
+          model.addAttribute("personne", personneService.personne(id));
+          return "personne";
+     }
+}
+```
+Il peut y avoir plusieurs `PathVariable`
+ - On peut mélanger `PathVariable` et `RequestParam`
+ - http://serveur/publication/{sommaire}/{produit}?intertire=1&vue=Complete
+
+
+
+
+
+<!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
+## TP1
