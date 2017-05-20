@@ -74,3 +74,7 @@
     content: '–';
     margin-right: 7px;
 }
+
+.reveal .small {
+    font-size: 0.7em;
+}
