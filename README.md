@@ -173,7 +173,7 @@ git pull
 
 ### 1.9. Créer le contrôleur `AccueilController`
 
-[:clipboard: Aide](http://localhost:8000/#/19)
+:clipboard: [Aide](http://localhost:8000/#/19)
 
 > AccueilController.java
 
@@ -193,7 +193,7 @@ Tester.
 
 ### 1.10. Utiliser un fichier de propriétés
 
-[:clipboard: Aide](http://localhost:8000/#/7)
+:clipboard: [Aide](http://localhost:8000/#/7)
 
 > src/main/resources/application.properties
 
