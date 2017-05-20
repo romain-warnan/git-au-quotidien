@@ -173,6 +173,8 @@ git pull
 
 ### 1.9. Créer le contrôleur `AccueilController`
 
+[:clipboard: Aide](http://localhost:8000/#/19)
+
 > AccueilController.java
 
 Ajouter l’annotation `@Controller`.
@@ -184,12 +186,14 @@ Créer la JSP « views/accueil.jsp » et afficher l’objet « message ».
 
 ```jsp
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<h1><c:out value="${message}" /></h1>
+<h1>${message}</h1>
 ```
 
 Tester.
 
 ### 1.10. Utiliser un fichier de propriétés
+
+[:clipboard: Aide](http://localhost:8000/#/7)
 
 > src/main/resources/application.properties
 
@@ -203,6 +207,7 @@ Ajouter l’annotation `@PropertySource("classpath:application.properties")` pou
 Ajouter un attribute de type `String` dans le contrôleur et l’annoter avec `@Value("${name}")` pour récupérer la valeur de la clé « name »
 Paramétrer le message avec cet attribut.
 Tester.
+
 
 ### 1.11. Rediriger l’URL racine vers la page d’accueil
 
