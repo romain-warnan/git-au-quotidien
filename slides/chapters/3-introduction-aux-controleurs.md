@@ -77,7 +77,7 @@ Valeur de l’entête de la requête :
 	@RequestMapping(value = "/accueil", headers = "Accept=text/html")
 ```
 
----
+===
 
 <!-- .slide: class="slide" -->
 Bonus : préciser le type de réponse :
@@ -92,7 +92,7 @@ Bonus : préciser le type de réponse :
 <!-- .slide: data-background-image="images/question.png" data-background-size="700px" class="exercice" -->
 ## Exercice
 
----
+===
 
 <!-- .slide: class="slide" -->
 ### Exemple 1 : cas simple
@@ -104,7 +104,7 @@ Bonus : préciser le type de réponse :
  - http://serveur/accueil?sommaire=123456 <!-- .element class="fragment highlight-green" -->
  - http://serveur/accueil/123456 <!-- .element class="fragment highlight-red" -->
 
----
+===
 
 <!-- .slide: class="slide" -->
 ### Exemple 2 : plusieurs URI
@@ -116,7 +116,7 @@ Bonus : préciser le type de réponse :
  - http://serveur/ <!-- .element class="fragment highlight-green" -->
  - http://serveur/accueil?sommaire=123456 <!-- .element class="fragment highlight-green" -->
 
----
+===
 
 <!-- .slide: class="slide" -->
 ### Exemple 3 : méthode HTTP
@@ -128,7 +128,7 @@ Bonus : préciser le type de réponse :
  - POST http://serveur/accueil?sommaire=123456 <!-- .element class="fragment highlight-red" -->
  - GET http://serveur/accueil?sommaire=123456 <!-- .element class="fragment highlight-green" -->
 
----
+===
 
 <!-- .slide: class="slide" -->
 ### Exemple 4 : paramètres
