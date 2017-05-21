@@ -196,3 +196,60 @@ Résultat dans le contrôleur
 @RequestMapping("/personne/{id}")
 public String accueil(@PathVariable("id") Personne personne, Model model) {
 ```
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Résolveur d’argument
+
+Injecter d’autres objets du modèle
+
+Indépendants de cette requête en particulier
+ - utilisateur en session
+ - langue de l’utilisateur connecté
+ - …
+
+Implémenter l’interface `HandlerMethodArgumentResolver`
+
+Déclarer ce nouveau *bean*
+
+```xml
+<mvc:annotation-driven conversion-service="conversionService">
+    <mvc:argument-resolvers>
+        <bean class="x.y.z.UtilisateurResolver" />
+    </mvc:argument-resolvers>
+</mvc:annotation-driven>
+```
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Exemple de résolveur d’argument
+
+```java
+@Component
+public class UtilisateurResolver implements HandlerMethodArgumentResolver {
+
+    @Override
+    public boolean supportsParameter(MethodParameter parameter) {
+        return Utilisateur.class.equals(parameter.getParameterType());
+    }
+    
+    @Override
+    public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
+        NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
+        HttpServletRequest request = (HttpServletRequest) webRequest.getNativeRequest();
+        HttpSession session = request.getSession(true);
+        return session.getAttribute("utilisateur");
+    }
+}
+```
+
+```java
+@GetMapping("/administration")
+public String administration(Model model, Utilisateur utilisateur) {
+```
