@@ -142,3 +142,82 @@ Menu déroulant simple
     <option value="2">Féminin</option>
 </select>
 
+===
+
+<!-- .slide: class="slide" -->
+Cases à cocher
+```jsp
+<form:checkboxes path="jours" items="${jours}" itemLabel="libelle" itemValue="code" />
+```
+```html
+<span>
+    <input id="jours1" name="jours" type="checkbox" value="1"/>
+    <label for="jours1">Lundi</label>
+</span>
+<span>
+    <input id="jours2" name="jours" type="checkbox" value="2" checked="checked" />
+    <label for="jours2">Mardi</label>
+</span>
+<span>
+    <input id="jours7" name="jours" type="checkbox" value="7" />
+    <label for="jours7">Dimanche</label>
+</span>
+<input type="hidden" name="_jours" value="on" />
+```
+<span>
+    <input id="jours1" name="jours" type="checkbox" value="1"/>
+    <label for="jours1">Lundi</label>
+</span>
+<span>
+    <input id="jours2" name="jours" type="checkbox" value="2" checked="checked" />
+    <label for="jours2">Mardi</label>
+</span>
+<span>
+    <input id="jours" name="jours" type="checkbox" value="3" />
+    <label for="jours3">Mercredi</label>
+</span>
+<span>
+    <input id="jours4" name="jours" type="checkbox" value="4" checked="checked" />
+    <label for="jours4">Jeudi</label>
+</span>
+<span>
+    <input id="jours5" name="jours" type="checkbox" value="5" />
+    <label for="jours5">Vendredi</label>
+</span>
+<span>
+   <input id="jours6" name="jours" type="checkbox" value="6" />
+   <label for="jours6">Samedi</label>
+</span>
+<span>
+    <input id="jours7" name="jours" type="checkbox" value="7" />
+    <label for="jours7">Dimanche</label>
+</span>
+
+===
+
+<!-- .slide: class="slide" -->
+Menu déroulant simple
+```jsp
+<form:select path="genre.code" items="${genres}" itemLabel="libelle" itemValue="code" />
+```
+```html
+<select id="jour.code" name="jours" multiple="multiple">
+    <option value="1">Lundi</option>
+    <option value="2" selected="selected">Mardi</option>
+    <option value="3">Mercredi</option>
+    <option value="4" selected="selected">Jeudi</option>
+    <option value="5">Vendredi</option>
+    <option value="6">Samedi</option>
+    <option value="7">Dimanche</option>
+</select
+<input type="hidden" name="_jours" value="1" />
+```
+<select id="jour.code" name="jours" multiple="multiple">
+    <option value="1">Lundi</option>
+    <option value="2" selected="selected">Mardi</option>
+    <option value="3">Mercredi</option>
+    <option value="4" selected="selected">Jeudi</option>
+    <option value="5">Vendredi</option>
+    <option value="6">Samedi</option>
+    <option value="7">Dimanche</option>
+</select

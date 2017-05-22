@@ -78,3 +78,7 @@
 .reveal .small {
     font-size: 0.7em;
 }
+
+.reveal label {
+    font-size: medium;
+}
