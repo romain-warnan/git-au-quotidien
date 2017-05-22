@@ -46,5 +46,19 @@ Dans le contrôleur, ajouter l’objet au modèle
     <label>Email : </label><form:input type="text" path="email" />
     <button type="submit">Modifier</button>
 </form:form>
-
 ```
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Les balise `<form:…>`
+
+```jsp
+<form:form action="/test" modelAttribute="personne">
+```
+```jsp
+<form id="personne" action="/test" method="post">
+```
+
