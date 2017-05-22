@@ -221,3 +221,174 @@ Menu déroulant simple
     <option value="6">Samedi</option>
     <option value="7">Dimanche</option>
 </select
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Cas des enumérations
+
+Pour les énumérations tout est automatique :
+ - inutile de préciser l’attribut *items*
+ - inutile de transmettre les *items* au modèle
+ - inutile de préciser l’attribut *itemValue*
+
+```java
+public enum Genre {
+    M("Masculin"),
+    F("Féminin");
+    …
+}
+```
+
+```jsp
+<form:select path="genre" >
+    <form:options itemLabel="libelle" />
+</form:select>
+```
+
+```html
+<select id="genre.code" name="genre.code">
+    <option value="M" selected="selected">Masculin</option>
+    <option value="F">Féminin</option>
+</select>
+```
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Les formulaires côté serveur
+
+Dans le contrôleur, les champs sont récupérés dans un objet
+ - annoté `@ModelAttribute`
+ - attributs de l’objet :  même nom que le *name* (ou le *path*) dans la JSP
+ - l’objet doit respecter la norme Java Bean
+ - l’objet peut être un objet du modèle
+ - en pratique c’est souvent un objet sur mesure
+
+Java bean
+ - accesseurs et des mutateurs pour chaque attributs (*getters* / *setters*)
+ - constructeur sans argument
+ - chacun des attributs doit aussi respecter cette norme
+
+```java
+@PostMapping("/personne/ajout")
+public String ajoutPersonne(@ModelAttribute Personne personne) {
+```
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Champs vides
+
+Si le champ n’est pas présent dans le formulaire :
+ - En java : `null`
+
+Si le champ est présent mais pas rempli :
+ - En java : `""` (chaîne de caractère vide)
+
+
+
+
+
+<!-- .slide: class="slide" -->
+Dans le contrôleur, il faut préparer l’affichage du formulaire
+
+Remplir les éventuelles listes
+ - menus déroulants, cases à cocher, boutons radio…
+ - exécuté à chaque appel du contrôleur, accepte des paramètres (resolver)
+
+```java
+@ModelAttribute("villes")
+public List<Ville> ville() {
+    return villeService.findAll();
+}
+```
+
+Fournir l’objet qui sert à pré-remplir le formulaire
+
+```java
+@GetMapping("/modification/{personne}")
+public String afficher(@PathVariable("personne") Personne personne, Model model){
+    model.addAttribute("personne", personne);
+    return "modification-personne";
+}
+```
+
+```jsp
+<form:form modelAttribute="personne" action="/modification">
+```
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Redirect After Post
+
+Après traitement du formulaire côté serveur
+ - pour éviter de créer deux fois le même objet,
+ - ou payer deux fois, etc.
+
+Redirection vers une page qui fait uniquement de l’affichage
+ - syntaxe : `return "redirect:/personnes";`
+ - redirection temporaire, 302 (par défaut)
+
+Après une redirection, on perd les objets du modèle
+ - Spring MVC gère une flashMap stockée dans la session
+ - la flashMap est déversée dans le modèle généré par le 2<sup>e</sup> contrôleur
+
+```java
+@PostMapping("/modification")
+public String modification(@ModelAttribute Personne personne, RedirectAttributes redirectAttributes) {
+    // Modification de la personne
+    redirectAttributes.addFlashAttribute("personne", personne);
+}
+```
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Formulaire : exemple complet
+
+```jsp
+<form:form action="/modification" modelAttribute="personne" method="post">
+	Nom : <form:input type="text" path="nom" />
+	<button type="submit">Modifier</button>
+</form:form>
+```
+
+```java
+@GetMapping("/modification/{personne}")
+public String affichage(@PathVariable("personne") Personne personne, Model model) {
+    model.addAttribute("personne", personne);
+    return "modification-personne";
+}
+
+@PostMapping("/modification")
+public String traitement(@ModelAttribute Personne personne, RedirectAttributes redirectAttributes) {
+    personneService.modifier(personne);
+    redirectAttributes.addFlashAttribute("personne", personne);
+    return "redirect:/personnes";
+}
+```
+
+```jsp
+@PostMapping("/modification")
+<c:if test="${not empty personne}">
+	Le client <c:out value="${personne.nom}" /> a été créée avec succès.
+</c:if>
+```
+
+
+
+
+<!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
+## [TP4](https://github.com/Insee-CNIP/formation-spring-mvc#4-formulaires)

@@ -75,6 +75,11 @@
     margin-right: 7px;
 }
 
+.reveal ul li {
+    font-size: 80%;
+    color: #1a53a1;
+}
+
 .reveal .small {
     font-size: 0.7em;
 }
