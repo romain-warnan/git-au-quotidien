@@ -12,7 +12,6 @@ target/
 
 node_modules/
 docs/test/
-docs/lib/font/
 docs/*.yml
 docs/bower.json
 docs/CONTRIBUTING.md
