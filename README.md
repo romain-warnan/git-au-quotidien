@@ -1,6 +1,6 @@
 # Introduction à Spring MVC
 
-[Diaporama](https://insee-cnip.github.io/formation-spring-mvc)
+:arrow_forward: [Diaporama](https://insee-cnip.github.io/formation-spring-mvc)
 
 ## 0. Récupérer le code source du TP
 
