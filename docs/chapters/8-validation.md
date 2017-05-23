@@ -204,7 +204,7 @@ Utiliser les méthodes du type :
  - `errors.rejectValue(field, errorCode);`
  - `ValidationUtils.rejectIfEmptyOrWhitespace(errors, field, errorCode);`
  - L’attribut `field` est une chaîne de caractère sans la partie `modelAttribute`
- 
+
 
 
 

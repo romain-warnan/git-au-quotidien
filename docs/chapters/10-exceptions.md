@@ -40,7 +40,7 @@ Réponse sous forme `HttpEntity`
  - ou bien `ResponseEntity<T>`
  - code erreur HTTP grâce à l’annotation `@ResponseStatus`
 
-HttpEntity implique @ResponseBody
+`HttpEntity` implique `@ResponseBody`
 
 
 
