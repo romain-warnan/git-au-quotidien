@@ -291,7 +291,9 @@ Paramétrer Spring MVC pour utiliser le valideur
 <mvc:annotation-driven conversion-service="conversionService" validator="validator">
 ```
 
-===
+
+
+
 
 <!-- .slide: class="slide" -->
 ### Fichiers de ressources i18n
@@ -317,12 +319,13 @@ Recherche les fichiers de la forme suivante à la racine du classpath :
  
  – `erreurs_fr.properties`,
  
- – `erreurs.properties`…!-- .slide: class="slide" -->
+ – `erreurs.properties`…
 
 
 
 
 
+<!-- .slide: class="slide" -->
 ### Source de message d’erreur
 
 Pour les messages d’erreur on choisit le code
