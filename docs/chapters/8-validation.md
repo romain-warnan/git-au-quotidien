@@ -196,7 +196,7 @@ Implémenter l’interface Validator
   - `target` : l’objet à valider
   - `errors` : contient les précédentes erreurs.
 
-Errors est l’objet `BindingResult`
+`Errors` est l’objet `BindingResult`
  - en effet, `BindingResult` implémente l’interface `Errors`
 
 Utiliser les méthodes du type :
@@ -241,7 +241,7 @@ public String modificationPersonnePost(@Valid Personne personne, BindingResult r
         return "modification-personne";
     }
 ```
- 
+
 
 
 
@@ -259,13 +259,12 @@ Méthodes `hasErrors()`, `hasGlobalErrors()` et `hasFieldErrors()`
 <form:errors cssClass="erreur" />
 <form:input type="text" path="nom" />
 <form:errors cssClass="erreur" path="nom" />
-```
- 
+```<!-- .slide: class="slide" -->
 
 
 
 
-<!-- .slide: class="slide" -->
+
 ### Source de message d’erreur
 
 Instancier une source de message
@@ -318,13 +317,12 @@ Recherche les fichiers de la forme suivante à la racine du classpath :
  
  – `erreurs_fr.properties`,
  
- – `erreurs.properties`…
- 
+ – `erreurs.properties`…!-- .slide: class="slide" -->
 
 
 
 
-<!-- .slide: class="slide" -->
+
 ### Source de message d’erreur
 
 Pour les messages d’erreur on choisit le code
