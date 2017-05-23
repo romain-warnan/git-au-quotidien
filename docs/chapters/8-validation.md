@@ -74,13 +74,13 @@ Ces annotations seules ne font rien
 <!-- .slide: class="slide" -->
 ### Liste des annotations de validation
 
-`@Min,@Max`
+`@Min, @Max`
 ```java
 @Min(0)
 private Integer quantite;
 ```
 
-`@NotNull,@Null`
+`@NotNull, @Null`
 ```java
 @NotNull
 private Ville ville;
@@ -92,7 +92,7 @@ private Ville ville;
 private String numeroTelephone;
 ```
 
-`@Past,@Future`
+`@Past, @Future`
 ```java
 @Future
 private Date dateRendezVous;
@@ -104,16 +104,19 @@ private Date dateRendezVous;
 `@Size`
 ```java
 @Size(min = 1, max = 50)
-private String pseudo;@Size(min = 1, max = 3)private List<Long> choixUtilisateur;
+private String pseudo;
+
+@Size(min = 1, max = 3)
+private List<Long> choixUtilisateur;
 ```
 
-`@AssertTrue,@AssertFalse`
+`@AssertTrue, @AssertFalse`
 ```java
 @AssertTrue
 private Boolean conditionsAcceptees;
 ```
 
-`@DecimalMin,@DecimalMax`
+`@DecimalMin, @DecimalMax`
 ```java
 @DecimalMax(0.20)
 private BigDecimal reduction;
@@ -133,12 +136,15 @@ private BigDecimal tauxChomage;
 ### Déclencher la validation dans le contrôleur
 
 Dans la signature de la méthode de contrôleur
- - ajouter l’annotation `@Valid` devant l’objet posté
- - ajouter un paramètre de type `BindingResult`
-  - juste après l’argument `@Valid`
-  - pour stocker le résultat de la validation
-  - nombre d’erreurs,messages d’erreurs
- - `@Valid @ModelAttribute` peut être simplifié en `@Valid`
+
+Ajouter l’annotation `@Valid` devant l’objet posté
+
+Ajouter un paramètre de type `BindingResult`
+ - juste après l’argument `@Valid`
+ - pour stocker le résultat de la validation
+  - nombre d’erreurs, messages d’erreurs
+
+`@Valid @ModelAttribute` peut être simplifié en `@Valid`
 
 Dans le corps de la méthode
  - utiliser la méthode `hasErrors()` de l’objet bindingResult
@@ -153,7 +159,7 @@ Dans le corps de la méthode
 ```java
 public class Personne {
     @NotNull
-    @Size(max = 500)private String nom;
+    @Size(max = 500) private String nom;
     
     public String getNom() {…
     public void setNom(String nom) {…
