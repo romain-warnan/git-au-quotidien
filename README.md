@@ -496,7 +496,7 @@ Le formulaire possède les éléments suivants :
 * un champ de texte pour la date de naissance au format *jj/mm/aaaa* ;
 * un bouton « Créer » qui poste les données du formulaire vers le serveur (`<button type="submit">`).
 
-![Formulaire nouveau client](slides/images/formulaire-nouveau-client.png)
+![Formulaire nouveau client](docs/images/formulaire-nouveau-client.png)
 
 #### 4.1.3. Enregistrer le nouveau client en base de données
 
@@ -552,7 +552,7 @@ Pour que les champs soient pré-remplis avec les données issues de la base, uti
 
 :exclamation: Il ne faut pas oublier d’ajouter un champ caché qui contient l’identifiant du client qu’on est en train de modifier.
 
-![Formulaire modification client](slides/images/formulaire-modification-client.png)
+![Formulaire modification client](docs/images/formulaire-modification-client.png)
 
 #### 4.2.4. Afficher un message au dessus de la liste des clients
 
@@ -706,7 +706,7 @@ git checkout tp6-enonce
 git pull
 ```
 
-![Formulaire commande cocktails](slides/images/ajax-commande.png)
+![Formulaire commande cocktails](docs/images/ajax-commande.png)
 
 ### 6.1. Créer un contrôleur qui permet de passer une nouvelle commande
 
@@ -1037,7 +1037,7 @@ git checkout tp10-enonce
 git pull
 ```
 
-![Téléchargement](slides/images/telechargement.png)
+![Téléchargement](docs/images/telechargement.png)
 
 Faire une nouvelle page à partir de laquelle un employé peut *uploader* une liste de clients au format CSV :
 
