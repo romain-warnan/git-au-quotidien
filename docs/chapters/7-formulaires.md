@@ -66,7 +66,7 @@ Formulaire
 </form>
 ```
 
-<form id="personne" action="/test" method="post" style="border: dotted black 1px">
+<form id="personne" action="bravo.html" method="get" style="border: dotted black 1px">
     <button type="submit">Envoyer</button>
 </form>
 
