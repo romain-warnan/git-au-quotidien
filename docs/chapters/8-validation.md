@@ -259,12 +259,13 @@ Méthodes `hasErrors()`, `hasGlobalErrors()` et `hasFieldErrors()`
 <form:errors cssClass="erreur" />
 <form:input type="text" path="nom" />
 <form:errors cssClass="erreur" path="nom" />
-```<!-- .slide: class="slide" -->
+```
 
 
 
 
 
+<!-- .slide: class="slide" -->
 ### Source de message d’erreur
 
 Instancier une source de message
