@@ -10,9 +10,17 @@ target/
 .git-credentials
 .*-credentials
 
-!docs/
-docs/*
-!docs/index.html
-!docs/*.css
-!docs/images
-!docs/chapters
+node_modules/
+docs/plugin/
+docs/test/
+docs/lib/font/
+docs/css/theme/
+!docs/css/theme/solarized.css
+docs/*.yml
+docs/bower.json
+docs/CONTRIBUTING.md
+docs/demo.html
+docs/Gruntfile.js
+docs/LICENSE
+docs/package.json
+docs/README.md
