@@ -173,3 +173,204 @@ public String modificationPersonnePost(@Valid Personne personne, BindingResult r
 Le BindingResult est ajouté au modèle, donc :
  - on peut afficher les erreurs dans la JSP
  - le formulaire sera prérempli avec les données que l’on vient de saisir (y compris les erreurs)
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Validation métier
+
+Implémenter l’interface Validator
+ - `boolean supports(Class<?> clazz)`
+  - quelles classes peut valider ce valideur ?
+  - utiliser `class.isAssignableFrom` ou `class.equals`
+ - `void validate(Object target, Errors errors)`
+  - comment valider l’objet ?
+  - `target` : l’objet à valider
+  - `errors` : contient les précédentes erreurs.
+
+Errors est l’objet `BindingResult`
+ - en effet, `BindingResult` implémente l’interface `Errors`
+
+Utiliser les méthodes du type :
+ - `errors.reject(errorCode);`
+ - `errors.rejectValue(field, errorCode);`
+ - `ValidationUtils.rejectIfEmptyOrWhitespace(errors, field, errorCode);`
+ - L’attribut `field` est une chaîne de caractère sans la partie `modelAttribute`
+ 
+
+
+
+
+<!-- .slide: class="slide" -->
+### Exemple de validation métier
+
+```java
+@Component
+public class PersonneValidator implements Validator {
+    @Autowired
+    private PersonneService personneService;
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return Personne.class.isAssignableFrom(clazz);
+    }
+    @Override
+    public void validate(Object target, Errors errors) {
+        Personne personne = (Personne) target;
+        if (personneService.valider(personne)) {
+            errors.reject("erreur.globale.personne");
+        }
+        if (personneService.validerDroits(personne)) {
+            errors.rejectValue("adresse", "erreur.personne.droits");
+        }
+    }
+```
+```java
+@PostMapping("/modification")
+public String modificationPersonnePost(@Valid Personne personne, BindingResult result, Model model) {
+    personneValidator.validate(personne, result);
+    if (result.hasErrors()) {
+        model.addAttribute("personne", personne);
+        return "modification-personne";
+    }
+```
+ 
+
+
+
+
+<!-- .slide: class="slide" -->
+### Afficher les erreurs de validations
+
+Si la validation échoue, on veut afficher les champs en erreur
+
+Différence entre `fieldError` et `globalError`
+
+Méthodes `hasErrors()`, `hasGlobalErrors()` et `hasFieldErrors()`
+
+```jsp
+<form:errors cssClass="erreur" />
+<form:input type="text" path="nom" />
+<form:errors cssClass="erreur" path="nom" />
+```
+ 
+
+
+
+
+<!-- .slide: class="slide" -->
+### Source de message d’erreur
+
+Instancier une source de message
+```xml
+<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basenames">
+        <list>
+            <value>messages</value>
+        </list>
+    </property>
+    <property name="defaultEncoding" value="UTF-8" />
+</bean>
+```
+
+Déclarer cette source de message au valideur
+```xml
+<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+    <property name="validationMessageSource" ref="messageSource"/>
+</bean>
+```
+
+Paramétrer Spring MVC pour utiliser le valideur
+```xml
+<mvc:annotation-driven conversion-service="conversionService" validator="validator">
+```
+
+===
+
+<!-- .slide: class="slide" -->
+### Fichiers de ressources i18n
+
+```xml
+<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basenames">
+        <list>
+            <value>messages</value>
+            <value>erreurs</value>
+        </list>
+    </property>
+</bean>
+```
+
+Recherche les fichiers de la forme suivante à la racine du classpath :
+
+ – `messages_fr.properties`,
+ 
+ – `messages_fr_FR.properties`,
+ 
+ – `messages_en.properties`,
+ 
+ – `erreurs_fr.properties`,
+ 
+ – `erreurs.properties`…
+ 
+
+
+
+
+<!-- .slide: class="slide" -->
+### Source de message d’erreur
+
+Pour les messages d’erreur on choisit le code
+```
+erreur.personne.globale=Erreur globale
+```
+Pour les message de la validation unitaire il faut respecter une norme :
+```
+Annotation.modelAttribute.champ=Erreur champ
+```
+Cas particulier des erreurs de conversion :
+```
+typeMismatch.modelAttribute.champ=Erreur champ
+```
+
+Exemple
+```
+Size.personne.nom=Le nom doit contenir au plus {1} caractères.
+NotNull.personne.nom=Le nom de la personne doit être renseigné.
+typeMismatch.personne.date=Le format de la date est incorrect.
+```
+ 
+
+
+
+
+<!-- .slide: class="slide" -->
+### Validation des objets postés en Ajax
+
+Le mécanisme de validation fonctionne aussi en Ajax
+
+On peut écrire `@Valid @RequestBody`
+
+Problème pour afficher les messages d’erreur
+ - car il n’y a pas de modèle
+
+Solution : regarder dans l’objet `ResultBinding`
+
+```java
+List<String> erreurs = result
+    .getAllErrors()
+    .stream()
+    .map(ObjectError::getDefaultMessage)
+    .collect(Collectors.toList());
+```
+
+Le mécanisme des fichiers de properties n’est pas disponible
+ - penser à remplir l’attribut `message` des annotations de validation
+ 
+
+
+
+
+<!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
+## [TP5](https://github.com/Insee-CNIP/formation-spring-mvc#5-validation)
