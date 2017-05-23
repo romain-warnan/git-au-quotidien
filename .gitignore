@@ -11,11 +11,8 @@ target/
 .*-credentials
 
 node_modules/
-docs/plugin/
 docs/test/
 docs/lib/font/
-docs/css/theme/
-!docs/css/theme/solarized.css
 docs/*.yml
 docs/bower.json
 docs/CONTRIBUTING.md
