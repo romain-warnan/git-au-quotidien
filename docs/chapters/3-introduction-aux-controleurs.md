@@ -43,7 +43,7 @@ La méthode accueil() est exécuté
  - http://serveur:port/contextPath/bar/accueil
  - Les arguments de la méthodes sont injectés par Spring
  - Liste extensible d’arguments possibles
- 
+
 
 
 

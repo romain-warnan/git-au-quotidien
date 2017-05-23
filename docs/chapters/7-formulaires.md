@@ -279,9 +279,7 @@ Java bean
 public String ajoutPersonne(@ModelAttribute Personne personne) {
 ```
 
-
-
-
+===
 
 <!-- .slide: class="slide" -->
 ### Champs vides
@@ -386,6 +384,7 @@ public String traitement(@ModelAttribute Personne personne, RedirectAttributes r
 	Le client <c:out value="${personne.nom}" /> a été créée avec succès.
 </c:if>
 ```
+
 
 
 

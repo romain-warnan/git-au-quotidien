@@ -80,6 +80,10 @@
     color: #1a53a1;
 }
 
+.reveal li li {
+    color: #657b83;
+}
+
 .reveal .small {
     font-size: 0.7em;
 }
