@@ -142,7 +142,7 @@ Dans la signature de la méthode de contrôleur
 
 Dans le corps de la méthode
  - utiliser la méthode `hasErrors()` de l’objet bindingResult
- 
+
 
 
 
