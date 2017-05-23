@@ -10,9 +10,9 @@ target/
 .git-credentials
 .*-credentials
 
-!slides/
-slides/*
-!slides/index.html
-!slides/*.css
-!slides/images
-!slides/chapters
+!docs/
+docs/*
+!docs/index.html
+!docs/*.css
+!docs/images
+!docs/chapters
