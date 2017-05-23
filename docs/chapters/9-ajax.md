@@ -177,3 +177,46 @@ public Commande post(@RequestBody Personne personne) {
 
 <!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
 ## [TP6](https://github.com/Insee-CNIP/formation-spring-mvc#6-ajax)
+
+
+
+
+
+<!-- .slide: data-background-image="images/question.png" data-background-size="700px" class="exercice" -->
+## En plus…
+
+===
+
+<!-- .slide: class="slide" -->
+### Contrôleur qui retourne une image
+```java
+@GetMapping("/image/{nom:.+}")
+public ResponseEntity<byte[]> image(@PathVariable("nom") String nom, HttpServletResponse response) {
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.IMAGE_JPEG);
+    try (InputStream in = FileUtils.openInputStream(path.toFile())) {
+        byte[] bytes = IOUtils.toByteArray(in);
+        return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK);
+    }
+    catch (IOException e) {
+        …
+    }
+    new ResponseEntity<byte[]>(null, headers, HttpStatus.NOT_FOUND);
+}
+```
+
+===
+
+<!-- .slide: class="slide" -->
+### Télécharger un fichier
+```java
+@GetMapping("/telechargement")
+public HttpEntity<FileSystemResource> telechargement() {
+    File file = …
+    HttpHeaders headers = new HttpHeaders();
+    headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName());
+    headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);  // Ou autre
+    headers.setContentLength(file.length());
+    return new HttpEntity<FileSystemResource>(new FileSystemResource(file), header);
+}
+```
