@@ -320,12 +320,16 @@ Recherche les fichiers de la forme suivante à la racine du classpath :
  
  – `erreurs_fr.properties`,
  
- – `erreurs.properties`…
-
-
-
-
-
+ – `erreurs.properties`
+ 
+ - etc.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 <!-- .slide: class="slide" -->
 ### Source de message d’erreur
 
