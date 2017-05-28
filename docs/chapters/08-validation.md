@@ -378,7 +378,7 @@ List<String> erreurs = result
 
 Le mécanisme des fichiers de properties n’est pas disponible
  - penser à remplir l’attribut `message` des annotations de validation
- 
+
 
 
 
