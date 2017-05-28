@@ -321,26 +321,25 @@ Recherche les fichiers de la forme suivante à la racine du classpath :
  – `erreurs_fr.properties`,
  
  – `erreurs.properties`
- 
- - etc.
- 
- 
- 
- 
- 
- 
- 
+
+
+
+
+
 <!-- .slide: class="slide" -->
 ### Source de message d’erreur
 
 Pour les messages d’erreur on choisit le code
+
 ```
 erreur.personne.globale=Erreur globale
 ```
+
 Pour les message de la validation unitaire il faut respecter une norme :
 ```
 Annotation.modelAttribute.champ=Erreur champ
 ```
+
 Cas particulier des erreurs de conversion :
 ```
 typeMismatch.modelAttribute.champ=Erreur champ
@@ -352,7 +351,7 @@ Size.personne.nom=Le nom doit contenir au plus {1} caractères.
 NotNull.personne.nom=Le nom de la personne doit être renseigné.
 typeMismatch.personne.date=Le format de la date est incorrect.
 ```
- 
+
 
 
 
