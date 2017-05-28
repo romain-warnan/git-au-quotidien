@@ -17,5 +17,5 @@
 
 ## Autre
 
- - [ ] Diapos en markdown : https://github.com/hakimel/reveal.js
+ - [x] Diapos en markdown : https://github.com/hakimel/reveal.js
  - [ ] Retour expérience w4g sur Spring MVC : exemple préfixer toutes les requêtes Ajax par /async/
