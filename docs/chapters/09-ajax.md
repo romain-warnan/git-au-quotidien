@@ -46,6 +46,38 @@ Récupérer un objet présent dans le corps de la requête
  - &ne; dans l’URL ou posté par un formulaire
  - `@RequestBody`
 
+===
+
+<!-- .slide: class="slide" -->
+### Conversion JAVA &hArr; JSON
+
+```java
+public class Personne {
+    private String nom;
+    private Integer age;
+    private Adresse adresse;
+    
+    // Getters et Setters
+}
+
+public class Adresse {
+    private String voie;
+    private List<String> complement;
+    
+    // Getters et Setters
+}
+```
+
+```json
+{
+  "nom": "Prénom Nom",
+  "age": 33,
+  "adresse": {
+    "voie": "34 rue des Rosiers",
+    "complement": ["complément 1", "complément 2"]
+  }
+}
+```
 
 
 
