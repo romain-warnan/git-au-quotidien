@@ -254,6 +254,8 @@ Il lance la génération de la vue `/WEB-INF/views/clients.jsp`.
 
 #### 2.1.2. Afficher la liste des clients
 
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/42)
+
 > clients.jsp
 
 En itérant sur la liste des clients avec le tag `<c:forEach>`, afficher la liste de tous les clients (nom et email) dans un tableau :
@@ -282,6 +284,8 @@ En itérant sur la liste des clients avec le tag `<c:forEach>`, afficher la list
 
 #### 2.1.3. Ajouter un lien vers la page d’accueil
 
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/41)
+
 > clients.jsp
 
 Grace au tag `<c:url>` créer une variable qui pointe vers la page d’accueil.
@@ -297,6 +301,8 @@ Utiliser cette variable dans un lien qui redirige vers la page d’accueil.
 
 > ClientController.java
 
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/23)
+
 Ce contrôleur possède une méthode qui est appelée à l’URL « /client/{id} ».
 À l’aide de l’annotation `@PathVariable`, récupérer la valeur de l’identifiant passé dans l’URL.
 Dans la base, récupérer le client associé à cet identifiant.
@@ -304,6 +310,8 @@ Ajouter le client au modèle.
 Diriger vers la page `/jsp/client.jsp`.
 
 #### 2.2.2. Créer la page client.jsp
+
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/43)
 
 > client.jsp
 
@@ -319,6 +327,8 @@ Autour de chaque nom de client, ajouter un lien qui pointe vers l’URL `/client
 De cette manière, l’utilisateur peut cliquer sur le nom d’un client pour en voir le détail.
 
 ### 2.3. Utilisation d’un convertisseur
+
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/34)
 
 #### 2.3.1. Créer le nouveau convertisseur
 
@@ -336,6 +346,8 @@ Modifier la signature de la méthode pour remplacer le `Short` par un `Client`.
 Supprimer le DAO du contrôleur.
 
 #### 2.3.3. Enregistrer le convertissuer
+
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/35)
 
 > dispatcher-servlet.xml
 
