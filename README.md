@@ -175,7 +175,7 @@ git pull
 
 ### 1.9. Créer le contrôleur `AccueilController`
 
-:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/19)
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/3/2)
 
 > AccueilController.java
 
@@ -195,7 +195,7 @@ Tester.
 
 ### 1.10. Utiliser un fichier de propriétés
 
-:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/7)
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/1/6)
 
 > src/main/resources/application.properties
 
@@ -254,7 +254,7 @@ Il lance la génération de la vue `/WEB-INF/views/clients.jsp`.
 
 #### 2.1.2. Afficher la liste des clients
 
-:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/42)
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/5/4)
 
 > clients.jsp
 
@@ -284,7 +284,7 @@ En itérant sur la liste des clients avec le tag `<c:forEach>`, afficher la list
 
 #### 2.1.3. Ajouter un lien vers la page d’accueil
 
-:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/41)
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/5/3)
 
 > clients.jsp
 
@@ -301,7 +301,7 @@ Utiliser cette variable dans un lien qui redirige vers la page d’accueil.
 
 > ClientController.java
 
-:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/23)
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/3/11)
 
 Ce contrôleur possède une méthode qui est appelée à l’URL « /client/{id} ».
 À l’aide de l’annotation `@PathVariable`, récupérer la valeur de l’identifiant passé dans l’URL.
@@ -311,7 +311,7 @@ Diriger vers la page `/jsp/client.jsp`.
 
 #### 2.2.2. Créer la page client.jsp
 
-:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/43)
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/5/5)
 
 > client.jsp
 
@@ -328,7 +328,7 @@ De cette manière, l’utilisateur peut cliquer sur le nom d’un client pour en
 
 ### 2.3. Utilisation d’un convertisseur
 
-:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/34)
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/4/9)
 
 #### 2.3.1. Créer le nouveau convertisseur
 
@@ -347,7 +347,7 @@ Supprimer le DAO du contrôleur.
 
 #### 2.3.3. Enregistrer le convertissuer
 
-:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/35)
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/4/10)
 
 > dispatcher-servlet.xml
 
