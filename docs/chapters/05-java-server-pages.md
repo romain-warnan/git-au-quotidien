@@ -141,10 +141,10 @@ Bonjour Monsieur / Bonjour Madame / Bonjour
 
 
 <!-- .slide: class="slide" -->
-### Formattage et internationalistation (i18n) 
+### Formattage et internationalisation (i18n) 
 JSTL : JSP Standard Tag Library
 ```jsp
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 ```
 
 ```jsp
