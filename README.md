@@ -175,7 +175,7 @@ git pull
 
 ### 1.9. Créer le contrôleur `AccueilController`
 
-:clipboard: [Aide](http://localhost:8000/#/19)
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/19)
 
 > AccueilController.java
 
@@ -195,7 +195,7 @@ Tester.
 
 ### 1.10. Utiliser un fichier de propriétés
 
-:clipboard: [Aide](http://localhost:8000/#/7)
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/7)
 
 > src/main/resources/application.properties
 
@@ -217,7 +217,7 @@ Tester.
 
 Créer une nouvelle méthode qui se déclenche quand on accède à l’URL « / ».
 À l’aide de l’instruction `"redirect:/accueil"` rediriger cette URL vers l’URL « /accueil ».
-Utiliser un code 301 (redirection permanente) pour effectuer la redirection (important pour le référencement).
+Utiliser l’annotation `@ResponseStatus` pour que la redirection soit permanente (301, Moved Permanently).
 Tester et vérifier avec les outils de développement du navigateur que le code est bien 301.
 
 ```bash
