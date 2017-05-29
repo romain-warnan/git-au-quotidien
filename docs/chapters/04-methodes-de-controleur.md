@@ -7,6 +7,38 @@
 
 
 <!-- .slide: class="slide" -->
+### Types de retours possibles
+
+| Type                 | Remarque                                                        |
+| -------------------- | ----------------------------------------------------------------|
+| `void`               | Il faut écrire soi-même dans la réponse                         |
+| `View`               | Objet contenu le nom de la vue                                  |
+| `ModelAndView`       |                                                                 |
+| `RedirectView`       |                                                                 |
+| `String`             | Nom de la vue                                                   |
+| `HttpHeaders`        | Réponse sans corps                                              |
+| `HttpEntity<T>`      | Erreurs lors de la validation de l’objet posté                  |
+| `ResponseEntity<T>`  | Encapsule un objet JSON, ou un fichier ou une image par exemple |
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Types de retours possibles
+
+Les autres types sont considérés différemment selon l’annotation portée par la méthode
+
+| Annotation                     | Conséquence                                                             |
+| ------------------------------ | ----------------------------------------------------------------------- |
+| `@ResponseBody`                | L’objet est sérialisé en JSON                                           |
+| Aucune ou `@ModelAttribute`    | L’objet est ajouté au model avec le nom spécifié ou le nom de sa classe |
+
+
+
+
+
+<!-- .slide: class="slide" -->
 ### Types d’arguments possibles
 Requête, réponse et session
 
@@ -34,7 +66,6 @@ Requête, réponse et session
 | `PathVariable`          | /<span style="color:red">foo</span>/bar?baz=123                                    |
 | `MatrixVariable`        | /a=<span style="color:red">1</span>;b=<span style="color:red">2</span>/bar?baz=123 |
 | `RequestHeader`         | Entête                                                                             |
-| `RequestBody`           | Corps                                                                              |
 | `RequestAttribute`      | Attribut                                                                           |
 | `RequestPart`           | *Upload* de fichiers                                                               |
 
@@ -88,38 +119,6 @@ public String processSubmit(@ModelAttribute("personne") Personne personne, Bindi
 ```
 
 Attention à l’ordre @ModelAttribute / BindingResult
-
-
-
-
-
-<!-- .slide: class="slide" -->
-### Types de retours possibles
-
-| Type                 | Remarque                                                        |
-| -------------------- | ----------------------------------------------------------------|
-| `void`               | Il faut écrire soi-même dans la réponse                         |
-| `View`               | Objet contenu le nom de la vue                                  |
-| `ModelAndView`       |                                                                 |
-| `RedirectView`       |                                                                 |
-| `String`             | Nom de la vue                                                   |
-| `HttpHeaders`        | Réponse sans corps                                              |
-| `HttpEntity<T>`      | Erreurs lors de la validation de l’objet posté                  |
-| `ResponseEntity<T>`  | Encapsule un objet JSON, ou un fichier ou une image par exemple |
-
-
-
-
-
-<!-- .slide: class="slide" -->
-### Types de retours possibles
-
-Les autres types sont considérés différemment selon l’annotation portée par la méthode
-
-| Annotation                     | Conséquence                                                             |
-| ------------------------------ | ----------------------------------------------------------------------- |
-| `@ResponseBody`                | L’objet est sérialisé en JSON                                           |
-| Aucune ou `@ModelAttribute`    | L’objet est ajouté au model avec le nom spécifié ou le nom de sa classe |
 
 
 
