@@ -383,7 +383,9 @@ git pull
 ### 3.1. Créer un intercepteur qui mesure la durée de la requête
  
 > TimerInterceptor.java
- 
+
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/6/5)
+
 L’intercepteur implémente l’interface `HandlerInterceptor`.
 Démarrer un chronomètre (`Stopwatch` de la librairie guava) dans la méthode `preHandle`.
 Enregistrer ce chronomètre en tant qu’attribut de la requête.
@@ -439,6 +441,8 @@ Grace au service `EmployeService`, vérifier que l’employé possède le rôle 
 Si oui, le diriger vers la nouvelle page `nouveau-client.jsp`, sinon, le rediriger vers la page `clients.jsp`.
 
 #### 3.5.2. Créer et déclarer un résolveur d’argument pour la classe `Employe`
+
+:clipboard: [Aide](https://insee-cnip.github.io/formation-spring-mvc/#/4/11)
 
 > EmployeResolver.java
 
