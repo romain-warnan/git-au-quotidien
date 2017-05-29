@@ -80,7 +80,10 @@ Champ caché
 <input id="id" name="id" type="hidden" value="1" />
 ```
 
-===
+
+
+
+
 
 <!-- .slide: class="slide" -->
 Champ de texte
@@ -101,7 +104,10 @@ Zone de texte
 ```
 <textarea id="verbatim" name="verbatim">Verbatim, long texte</textarea>
 
-===
+
+
+
+
 
 <!-- .slide: class="slide" -->
 Boutons radio
@@ -142,7 +148,10 @@ Menu déroulant simple
     <option value="2">Féminin</option>
 </select>
 
-===
+
+
+
+
 
 <!-- .slide: class="slide" -->
 Cases à cocher
@@ -193,7 +202,10 @@ Cases à cocher
     <label for="jours7">Dimanche</label>
 </span>
 
-===
+
+
+
+
 
 <!-- .slide: class="slide" -->
 Menu déroulant simple
@@ -279,7 +291,10 @@ Java bean
 public String ajoutPersonne(@ModelAttribute Personne personne) {
 ```
 
-===
+
+
+
+
 
 <!-- .slide: class="slide" -->
 ### Champs vides

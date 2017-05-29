@@ -1,5 +1,5 @@
 <!-- .slide: data-background-image="images/spring.png" data-background-size="1200px" class="chapter" -->
-## 8
+## 9
 ### Ajax
 
 
@@ -46,7 +46,10 @@ Récupérer un objet présent dans le corps de la requête
  - &ne; dans l’URL ou posté par un formulaire
  - `@RequestBody`
 
-===
+
+
+
+
 
 <!-- .slide: class="slide" -->
 ### Conversion JAVA &hArr; JSON
@@ -218,7 +221,10 @@ public Commande post(@RequestBody Personne personne) {
 <!-- .slide: data-background-image="images/question.png" data-background-size="700px" class="exercice" -->
 ## En plus…
 
-===
+
+
+
+
 
 <!-- .slide: class="slide" -->
 ### Contrôleur qui retourne une image
@@ -238,7 +244,10 @@ public ResponseEntity<byte[]> image(@PathVariable("nom") String nom, HttpServlet
 }
 ```
 
-===
+
+
+
+
 
 <!-- .slide: class="slide" -->
 ### Télécharger un fichier
