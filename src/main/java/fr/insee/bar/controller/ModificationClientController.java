@@ -48,6 +48,7 @@ public class ModificationClientController {
 		}
 		clientDao.update(client);
 		attributes.addFlashAttribute("modification", true);
-		return "redirect:/client/" + client.getId();
+		attributes.addAttribute("id", client.getId());
+		return "redirect:/client/{id}";
 	}
 }
