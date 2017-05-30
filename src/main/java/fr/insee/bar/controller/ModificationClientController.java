@@ -43,7 +43,6 @@ public class ModificationClientController {
 	public String modificationClientPost(@Valid Client client, BindingResult result, Model model, RedirectAttributes attributes) {
 		clientValidator.validate(client, result);
 		if (result.hasErrors()) {
-			model.addAttribute("client", client);
 			return "modification-client";
 		}
 		clientDao.update(client);

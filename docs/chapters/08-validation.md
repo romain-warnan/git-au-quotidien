@@ -127,7 +127,7 @@ private BigDecimal reduction;
 
 `@Digits`
 ```java
-@Size(integer = 2, fraction = 2)
+@Digits(integer = 2, fraction = 2)
 private BigDecimal tauxChomage;
 ```
 
@@ -161,8 +161,9 @@ Dans le corps de la méthode
 
 ```java
 public class Personne {
-    @NotNull
-    @Size(max = 500) private String nom;
+    
+    @Size(max = 500)
+    private String nom;
     
     public String getNom() {…
     public void setNom(String nom) {…
@@ -240,7 +241,6 @@ public class PersonneValidator implements Validator {
 public String modificationPersonnePost(@Valid Personne personne, BindingResult result, Model model) {
     personneValidator.validate(personne, result);
     if (result.hasErrors()) {
-        model.addAttribute("personne", personne);
         return "modification-personne";
     }
 ```
@@ -354,33 +354,6 @@ Size.personne.nom=Le nom doit contenir au plus {1} caractères.
 NotNull.personne.nom=Le nom de la personne doit être renseigné.
 typeMismatch.personne.date=Le format de la date est incorrect.
 ```
-
-
-
-
-
-<!-- .slide: class="slide" -->
-### Validation des objets postés en Ajax
-
-Le mécanisme de validation fonctionne aussi en Ajax
-
-On peut écrire `@Valid @RequestBody`
-
-Problème pour afficher les messages d’erreur
- - car il n’y a pas de modèle
-
-Solution : regarder dans l’objet `ResultBinding`
-
-```java
-List<String> erreurs = result
-    .getAllErrors()
-    .stream()
-    .map(ObjectError::getDefaultMessage)
-    .collect(Collectors.toList());
-```
-
-Le mécanisme des fichiers de properties n’est pas disponible
- - penser à remplir l’attribut `message` des annotations de validation
 
 
 

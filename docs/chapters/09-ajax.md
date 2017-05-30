@@ -211,6 +211,34 @@ public Commande post(@RequestBody Personne personne) {
 
 
 
+<!-- .slide: class="slide" -->
+### Validation des objets postés en Ajax
+
+Le mécanisme de validation fonctionne aussi en Ajax
+
+On peut écrire `@Valid @RequestBody`
+
+Problème pour afficher les messages d’erreur
+ - car il n’y a pas de modèle
+
+Solution : regarder dans l’objet `ResultBinding`
+
+```java
+List<String> erreurs = result
+    .getAllErrors()
+    .stream()
+    .map(ObjectError::getDefaultMessage)
+    .collect(Collectors.toList());
+```
+
+Le mécanisme des fichiers de properties n’est pas disponible
+ - penser à remplir l’attribut `message` des annotations de validation
+
+
+
+
+
+
 <!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
 ## [TP6](https://github.com/Insee-CNIP/formation-spring-mvc#6-ajax)
 
