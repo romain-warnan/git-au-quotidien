@@ -32,7 +32,12 @@ Comment les modifier ? À l’aide d’un formulaire
 ### Les formulaires dans Spring — JSP
 
 Utiliser les balises `<form:…>`
- - Préciser `modelAttribute`
+
+```jsp
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+```
+
+Préciser `modelAttribute` dans la balise `<form:form>`
 
 Dans le contrôleur, ajouter l’objet au modèle
  - L’objet est éventuellement vide
@@ -361,6 +366,7 @@ Après une redirection, on perd les objets du modèle
 public String modification(@ModelAttribute Personne personne, RedirectAttributes redirectAttributes) {
     // Modification de la personne
     redirectAttributes.addFlashAttribute("personne", personne);
+    return "redirect:/personnes";
 }
 ```
 
@@ -394,7 +400,6 @@ public String traitement(@ModelAttribute Personne personne, RedirectAttributes r
 ```
 
 ```jsp
-@PostMapping("/modification")
 <c:if test="${not empty personne}">
 	Le client <c:out value="${personne.nom}" /> a été créée avec succès.
 </c:if>
