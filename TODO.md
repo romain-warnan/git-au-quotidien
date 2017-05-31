@@ -14,6 +14,7 @@
  - [x] Mettre des `<form:form>` dans le TP4 et l'énoncé du TP5
  - [ ] Exemple de checkboxes
  - [x] Supprimer la partie async
+ - [ ] TP Exceptions : HttpEntity -> ResponseEntity
 
 ## Autre
 
