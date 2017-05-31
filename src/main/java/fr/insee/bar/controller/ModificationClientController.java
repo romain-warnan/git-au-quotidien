@@ -1,7 +1,11 @@
 package fr.insee.bar.controller;
 
-import javax.validation.Valid;
-
+import fr.insee.bar.dao.ClientDao;
+import fr.insee.bar.exception.BarDroitException;
+import fr.insee.bar.model.Client;
+import fr.insee.bar.model.Employe;
+import fr.insee.bar.service.EmployeService;
+import fr.insee.bar.validator.ClientValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,12 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import fr.insee.bar.dao.ClientDao;
-import fr.insee.bar.exception.BarDroitException;
-import fr.insee.bar.model.Client;
-import fr.insee.bar.model.Employe;
-import fr.insee.bar.service.EmployeService;
-import fr.insee.bar.validator.ClientValidator;
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/client")
@@ -40,7 +39,7 @@ public class ModificationClientController {
 	}
 
 	@PostMapping("/modification/{client}")
-	public String modificationClientPost(@Valid Client client, BindingResult result, Model model, RedirectAttributes attributes) {
+	public String modificationClientPost(@Valid Client client, BindingResult result, RedirectAttributes attributes) {
 		clientValidator.validate(client, result);
 		if (result.hasErrors()) {
 			return "modification-client";

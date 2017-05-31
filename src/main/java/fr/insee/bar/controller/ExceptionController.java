@@ -42,7 +42,7 @@ public class ExceptionController {
 
 	@ExceptionHandler(NoHandlerFoundException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)
-	public String handleResourceNotFoundException(NoHandlerFoundException e, Model model) {
+	public String handleResourceNotFoundException(Model model) {
 		return httpException("La page que vous cherchez n’existe pas.", model);
 	}
 
@@ -63,6 +63,6 @@ public class ExceptionController {
 	}
 
 	private static HttpEntity<String> ajaxException(Exception e) {
-		return new HttpEntity<String>(e.getMessage());
+		return new HttpEntity<>(e.getMessage());
 	}
 }
