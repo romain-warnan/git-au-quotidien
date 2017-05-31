@@ -1,5 +1,16 @@
 package fr.insee.bar.service;
 
+import com.google.common.base.Objects;
+import fr.insee.bar.dao.ClientDao;
+import fr.insee.bar.exception.BarClientException;
+import fr.insee.bar.model.Client;
+import fr.insee.bar.model.Client.Titre;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.File;
 import java.io.IOException;
 import java.time.Instant;
@@ -8,25 +19,9 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-
-import com.google.common.base.Objects;
-
-import fr.insee.bar.dao.ClientDao;
-import fr.insee.bar.exception.BarClientException;
-import fr.insee.bar.model.Client;
-import fr.insee.bar.model.Client.Titre;
 
 @Service
 public class ClientService {
@@ -67,7 +62,7 @@ public class ClientService {
 		return 0;
 	}
 
-	private File file() {
+	public File fichier() {
 		File file = new File("clients.txt");
 		try {
 			FileUtils.writeLines(file, "UTF-8", clientDao
@@ -79,19 +74,6 @@ public class ClientService {
 		catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-		return file;
-	}
-
-	public File fichier() {
-		ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
-		File file = null;
-		try {
-			file = executor.schedule(this::file, 10, TimeUnit.SECONDS).get();
-		}
-		catch (InterruptedException | ExecutionException e) {
-			System.out.println(e.getMessage());
-		}
-		executor.shutdown();
 		return file;
 	}
 
@@ -152,6 +134,10 @@ public class ClientService {
 			.toInstant();
 		return Date.from(instant);
 
+	}
+
+	public List<Client> clients() {
+		return clientDao.findAll();
 	}
 
 	private Optional<Client> clientException(String ligne) throws BarClientException {
