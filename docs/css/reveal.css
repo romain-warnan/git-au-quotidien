@@ -872,7 +872,7 @@ body {
   z-index: 2; }
 
 .print-pdf .reveal .slide-background {
-  opacity: 1 !important;
+  opacity: 0 !important;
   visibility: visible !important; }
 
 /* Video backgrounds */
