@@ -961,6 +961,13 @@ git pull
 
 Écrire des tests unitaires pour les méthodes de `AccueilController` et pour les méthodes `NouveauClientController` (à part pour `nouveauClient`).
 
+Ajouter les imports statiques suivants pour avoir accès aux assertions :
+
+```java
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+```
+
 #### 8.2.1 Préparer les tests de `AccueilController`
 
 > AccueilControllerTestCase.java
