@@ -121,15 +121,15 @@ $.ajax({
 ```java
 @GetMapping(value = "/path/resource", produces = "application/json; charset=UTF-8")
 @ResponseBody
-public Personne personne(@RequestParam("nom") String nom) {
-   return personneService.trouver(nom);
+public Personne personne(@RequestParam("p1") String p1, @RequestParam("p2") Integer p2) {
+   return personneService.trouver(p1, p2);
 }
 ```
 
 ```java
 @GetMapping(value = "/path/resource", produces = "application/json; charset=UTF-8")
-public ResponseEntity<Personne> personne(@RequestParam("nom") String nom) {
-    Personne personne = personneService.trouver(nom);
+public ResponseEntity<Personne> personne(@RequestParam("p1") String p1, @RequestParam("p2") Integer p2) {
+    Personne personne = personneService.trouver(p1, p2);
     ResponseEntity<Personne> response = new ResponseEntity<>(HttpStatus.OK, personne);
     return response;
 }
