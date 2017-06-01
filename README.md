@@ -959,7 +959,7 @@ git pull
 
 ### 8.2. Écrire des tests unitaires
 
-Écrire des tests pour les méthodes de `AccueilController` et pour les méthodes `NouveauClientController` (à part pour `nouveauClient`).
+Écrire des tests pour les méthodes de `AccueilController` et pour les méthodes `NouveauClientController`.
 
 Ajouter les imports statiques suivants pour avoir accès aux assertions :
 
@@ -1006,7 +1006,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
   * le modèle contient une erreur,
   * le nom de la vue est `nouveau-client`.
 
-Finalement, tester la méthode `/client/nouveau` pour un profile "serveur".
+Finalement, tester la méthode associée à l’URL `/client/nouveau` pour un profile "serveur".
 
 ```bash
 git add .
