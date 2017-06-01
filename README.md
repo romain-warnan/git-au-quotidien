@@ -959,7 +959,7 @@ git pull
 
 ### 8.2. Écrire des tests unitaires
 
-Écrire des tests unitaires pour les méthodes de `AccueilController` et pour les méthodes `NouveauClientController` (à part pour `nouveauClient`).
+Écrire des tests pour les méthodes de `AccueilController` et pour les méthodes `NouveauClientController` (à part pour `nouveauClient`).
 
 Ajouter les imports statiques suivants pour avoir accès aux assertions :
 
@@ -970,24 +970,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 #### 8.2.1 Préparer les tests de `AccueilController`
 
-> AccueilControllerTestCase.java
-
- 1. Injecter le contrôleur à tester grâce à l’annotation `@InjectMocks`.
-
- 2. Déclarer un attribut de type `MockMvc`.
-
- 3. Dans la méthode `@Before`, initialiser les *mocks* : `MockitoAnnotations.initMocks(this);`.
-
- 4. Grâce à la classe `Whitebox`, valoriser l’attribut name du contrôleur.
-
- 5. Instancier l’objet `MockMvc` en mode *stand-alone* :
-
-```java
-this.mockMvc = MockMvcBuilders
-	.standaloneSetup(accueilController)
-	.setViewResolvers(new InternalResourceViewResolver("/WEB-INF/views", "jsp"))
-	.build();
-```
+> AccueilControllerTest.java
 
 #### 8.2.2 Tester la méthode welcome()
 
@@ -1002,17 +985,12 @@ this.mockMvc = MockMvcBuilders
 
 #### 8.2.4 Préparer les tests de `NouveauClientController`
 
-> NouveauClientControllerTestCase.java
-
- 1. Injecter le contrôleur à tester grâce à l’annotation `@InjectMocks`.
- 2. Injecter des *mocks* des services et DAO grâce à l’annotation `@Mock`.
- 3. Écrire la méthode `@Before`.
+> NouveauClientControllerTest.java
 
 #### 8.2.5 Tester la méthode nouveauClientPost() pour un formulaire valide
 
- 1. Mocker le comportement des méthodes `validate` et `insert`.
- 2. Exécuter un POST avec en paramètre des données de formulaire valides
- 3. Puis tester que :
+ 1. Exécuter un POST avec en paramètre des données de formulaire valides
+ 2. Puis tester que :
   * le status est 302,
   * l’attribut client n’existe pas,
   * le modèle ne contient aucune erreur,
@@ -1021,21 +999,14 @@ this.mockMvc = MockMvcBuilders
  
 #### 8.2.5 Tester la méthode nouveauClientPost() pour un formulaire non valide
 
- 1. Mocker le comportement des méthodes `validate` et `insert`.
- 2. Exécuter un POST avec en paramètre des données de formulaire valides sauf pour l’email
- 3. Puis tester que :
+ 1. Exécuter un POST avec en paramètre des données de formulaire valides sauf pour l’email
+ 2. Puis tester que :
   * le status est `OK`,
   * l’attribut client existe,
   * le modèle contient une erreur,
   * le nom de la vue est `nouveau-client`.
 
-### 8.3. Écrire des tests d’intégration
-
-> AccueilControllerTestCase.java, NouveauClientControllerTest.java
-
-Écrire des tests d’intégration pour toutes les méthodes de `AccueilController` et pour les méthodes `NouveauClientController`.
-
-En particulier, cette fois-ci, tester la méthode `/client/nouveau` pour un profile "serveur".
+Finalement, tester la méthode `/client/nouveau` pour un profile "serveur".
 
 ```bash
 git add .
