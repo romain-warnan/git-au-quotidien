@@ -1,0 +1,1 @@
+<img alt="static/" src="${pageContext.request.contextPath}/static/cocktails.png"/>

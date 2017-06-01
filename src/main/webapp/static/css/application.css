@@ -174,3 +174,8 @@ button:hover {
 	font-weight: bold;
 	font-size: 20px;
 }
+
+#header img {
+	width: 100px;
+	height: auto;
+}
