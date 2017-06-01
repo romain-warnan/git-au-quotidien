@@ -10,76 +10,22 @@
 ### Tester un contrôleur
 
 Classe de base : `MockMvc`
- - mocks pour les contrôleurs
+
+Mocks pour les contrôleurs
+
 Librairie d’assertions adaptée
 
-1. Tests unitaires
- - mode stand-alone
- - pas de runner particulier
- - pas de contexte Spring
- - utilisation massive de Mockito
-
-2. Tests d’intégration
- - chargement du contexte Spring
- - `@RunWith(SpringJUnit4ClassRunner.class)`
-
+Utiliser des imports statiques pour la lisibilité du code :
+```java
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+```
 
 
 
 
 <!-- .slide: class="slide" -->
-### Test unitaire d’un contrôleur : préparation
-
-Injecter le contrôleur à tester
-```java
-@InjectMocks
-private PersonneController personneController;
-```
-
-Injecter des mocks de tous les services
-```java
-@Mock
-private PersonneService personneService;
-```
-
-Initialiser les mocks
-```java
-MockitoAnnotations.initMocks(this);
-```
-
-Instancier l’objet `MockMvc` en mode *stand-alone* pour le contrôleur
-```java
-this.mockMvc = MockMvcBuilders.standaloneSetup(personneController).build();
-```
-
-
-
-
-
-<!-- .slide: class="slide" -->
-### Test unitaire d’un contrôleur : exécution
-
-Mocker tous les appels aux services
-```java
-doNothing().when(validator).validate(any(Personne.class), any(Errors.class));
-when(personneDao.find(any(Short.class))).thenReturn(personne);
-```
-
-Simuler la requête
-```java
-mockMvc.perform(get("/accueil"))
-```
-
-Et finalement, utiliser des assertions
-	
-Bien garder en tête que seul le contrôleur existe
-
-
-
-
-
-<!-- .slide: class="slide" -->
-### Test d’intégration d’un contrôleur : préparation
+### Test d’un contrôleur : préparation
 
 Annoter la classe de test
 ```java
@@ -105,7 +51,7 @@ this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
 
 
 <!-- .slide: class="slide" -->
-### Test d’intégration d’un contrôleur : exécution
+### Test d’un contrôleur : exécution
 
 Simuler la requête
 ```java
@@ -144,6 +90,41 @@ mockMvc.perform(get("/accueil"))
     .andExpect(status().isOk()) 
     .andExpect(…)
     …;
+```
+
+
+
+
+
+<!-- .slide: class="slide" -->
+### Exemple complet
+
+```java
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration({ "classpath:applicationContext.xml", "classpath:dispatcher-servlet.xml" })
+@ActiveProfiles("prodile")
+@WebAppConfiguration
+public class WelcomeControllerTest {
+
+	@Autowired
+	private WebApplicationContext webApplicationContext;
+
+	private MockMvc mockMvc;
+
+	@Before
+	public void before() {
+		this.mockMvc = MockMvcBuilders
+			.webAppContextSetup(this.webApplicationContext)
+			.build();
+	}
+
+	@Test
+	public void welcome() throws Exception {
+		mockMvc
+			.perform(get("/welcom"))
+			.andExpect(status().isOk()
+			.andExpect(model().attributeDoesNotExist("name"));
+	}
 ```
 
 
