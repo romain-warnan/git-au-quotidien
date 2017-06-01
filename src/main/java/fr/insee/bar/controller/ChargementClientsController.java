@@ -47,7 +47,12 @@ public class ChargementClientsController {
 
 	@GetMapping(value = "/telechargement", params = "!type")
 	public ResponseEntity<FileSystemResource> telechargement() {
-		return responseEntity(clientService.fichier());
+		File file = clientService.fichier();
+		return ResponseEntity.ok()
+			.contentLength(file.length())
+			.contentType(MediaType.APPLICATION_OCTET_STREAM)
+			.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName())
+			.body(new FileSystemResource(file));
 	}
 
 	@GetMapping(value = "/telechargement", params = "type=pdf")
