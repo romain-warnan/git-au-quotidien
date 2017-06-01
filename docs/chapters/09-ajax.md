@@ -257,18 +257,16 @@ Le mécanisme des fichiers de properties n’est pas disponible
 <!-- .slide: class="slide" -->
 ### Contrôleur qui retourne une image
 ```java
-@GetMapping("/image/{nom:.+}")
-public ResponseEntity<byte[]> image(@PathVariable("nom") String nom, HttpServletResponse response) {
-    HttpHeaders headers = new HttpHeaders();
-    headers.setContentType(MediaType.IMAGE_JPEG);
-    try (InputStream in = FileUtils.openInputStream(path.toFile())) {
-        byte[] bytes = IOUtils.toByteArray(in);
-        return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK);
-    }
-    catch (IOException e) {
-        …
-    }
-    new ResponseEntity<byte[]>(null, headers, HttpStatus.NOT_FOUND);
+@GetMapping("image/{file:.+}")
+public ResponseEntity<byte[]> image(@PathVariable("nom") String nom) throws IOException {
+        File file = …
+        try (InputStream in = FileUtils.openInputStream(file)) {
+            return ResponseEntity.ok()
+                .cacheControl(CacheControl.maxAge(30, TimeUnit.DAYS))
+                .contentType(MediaType.IMAGE_PNG)
+                .body(imageAsByteArray(IOUtils.toByteArray(in)));
+        }
+        return null;
 }
 ```
 
@@ -280,13 +278,13 @@ public ResponseEntity<byte[]> image(@PathVariable("nom") String nom, HttpServlet
 <!-- .slide: class="slide" -->
 ### Télécharger un fichier
 ```java
-@GetMapping("/telechargement")
-public HttpEntity<FileSystemResource> telechargement() {
-    File file = …
-    HttpHeaders headers = new HttpHeaders();
-    headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName());
-    headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);  // Ou autre
-    headers.setContentLength(file.length());
-    return new HttpEntity<FileSystemResource>(new FileSystemResource(file), header);
-}
+	@GetMapping(value = "/telechargement", params = "!type")
+	public ResponseEntity<FileSystemResource> telechargement() {
+		File file = clientService.fichier();
+		return ResponseEntity.ok()
+			.contentLength(file.length())
+			.contentType(MediaType.APPLICATION_OCTET_STREAM)
+			.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName())
+			.body(new FileSystemResource(file));
+	}
 ```
