@@ -35,9 +35,13 @@ public class ImageController {
 			.body(imageAsByteArray(path));
 	}
 
-	private static byte[] imageAsByteArray(Path path) throws IOException {
+	private static byte[] imageAsByteArray(Path path) {
 		try (InputStream in = FileUtils.openInputStream(path.toFile())) {
 			return IOUtils.toByteArray(in);
 		}
+		catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
 	}
 }
