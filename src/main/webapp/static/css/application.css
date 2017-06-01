@@ -175,7 +175,26 @@ button:hover {
 	font-size: 20px;
 }
 
+#header {
+	display: table-row;
+}
+
 #header img {
-	width: 100px;
+	width: 150px;
 	height: auto;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#header h1 {
+	display: table-cell;
+	padding-left: 20px;
+	font-family: cursive;
+	vertical-align: middle;
+	font-size: 30px;
+	color: #dd5566;
+}
+
+#footer {
+	margin-top: 30px;
 }
