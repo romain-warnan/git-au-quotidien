@@ -1108,6 +1108,7 @@ Les attributs header et footer sont non vides et pointent respectivement vers `d
 
 Définir ensuite une `<definition>` appelée "accueil" et héritant de "base-definition".
 Valoriser les attributs title, body et footer.
+Pour la page d’accueil, le footer doit être vide car on ne veut pas de lien vers la page d’accueil sur la page d’accueil !
 
 #### 9.7.3 Définition de la page de chargement des clients
 
@@ -1116,6 +1117,12 @@ Valoriser les attributs title et body.
 
 Finalement décommenter le reste du fichier pour faire fonctionner les autres pages.
 
+```bash
+git add .
+git commit -m "TP12 <idep>"
+git checkout tp12-correction
+git pull
+```
 
 ## 10. Configuration
 
