@@ -1124,7 +1124,9 @@ git checkout tp12-correction
 git pull
 ```
 
-## 10. Configuration
+## 10. Pour aller plus loin
+
+### 10.1. Configuration
 
 ```bash
 git checkout tp9-enonce
@@ -1140,7 +1142,7 @@ git checkout tp9-correction
 git pull
 ```
 
-## 11. Transmettre et récupérer un fichier 
+### 10.2. Transmettre et récupérer un fichier 
 
 ```bash
 git checkout tp10-enonce
@@ -1172,7 +1174,7 @@ git checkout tp10-correction
 git pull
 ```
 
-## 12. Autres types de vues
+### 10.3. Autres types de vues
 
 ```bash
 git checkout tp12-enonce
