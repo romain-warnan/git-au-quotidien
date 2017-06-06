@@ -2,6 +2,17 @@
 
 :arrow_forward: [Diaporama](https://insee-cnip.github.io/formation-spring-mvc)
 
+* [1. Mise en place](README.md#1-mise-en-place)
+* [2. Navigation](README.md#2-navigation)
+* [3. Intercepteurs](README.md#3-intercepteurs)
+* [4. Formulaires](README.md#4-formulaires)
+* [5. Validation](README.md#5-validation)
+* [6. Ajax](README.md#6-ajax)
+* [7. Exceptions](README.md#7-exceptions)
+* [8. Tests](README.md#8-tests)
+* [9. Tiles](README.md#9-tiles)
+* [10. Pour aller plus loin](README.md#10-pour-aller-plus-loin)
+
 ## 0. Récupérer le code source du TP
 
 ### 0.1. Cloner le dépot git
