@@ -154,7 +154,7 @@ public String accueil(Model model) {
     <put-attribute name="attributeName" value="…" />
 ```
 
-Il y a correspondance entre les balises <put-attribute> de tiles.xml et les instructions <tiles:…> dans la JSP :
+Il y a correspondance entre les balises `<put-attribute>` de tiles.xml et les instructions `<tiles:…>` dans la JSP :
 
 ```html
 <tiles:insertAttribute name="attributeName" />
