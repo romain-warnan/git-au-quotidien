@@ -1024,8 +1024,6 @@ git pull
 
 ### 9.1 Installation de Tiles
 
-![Structure HTML](docs/images/html-3d.png)
-
 #### 9.1.1 Ajouter les dépendances Maven
 
 > pom.xml
@@ -1067,13 +1065,13 @@ Dans `/WEB-INF/views/` :
 
 Copier le contenu de `commande.jsp` dans `default-layout.jsp`.
 
-Ajouter la taglib tiles :
+Ajouter la taglib Tiles :
 ```jsp
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 ```
 
 Puis, remplacer le contenu du `<body>`, par trois sections : `<header>`, `<section>` et `<footer>`.
-Y ajouter les attributs tiles suivants : "header", "body" et "footer". 
+Y ajouter les attributs iles suivants : "header", "body" et "footer". 
 
 À la place du contenu de la balise `<title>`, ajouter l’attribut textuel "title".
 
@@ -1096,7 +1094,7 @@ Dans le header, ajouter l’image `webapp/static/cocktails.png` et un titre `<h1
 
 Dans le footer, ajouter un lien vers la page d’accueil.
 
-### 9.7 Création des pages avec tiles
+### 9.7 Création des pages avec Tiles
 
 > tiles.xml
 

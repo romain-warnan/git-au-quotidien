@@ -64,13 +64,13 @@ StringUtils.isNotEmpty(personne.getNom())
 
 <!-- .slide: class="slide" -->
 ### JSTL : JSP Standard Tag Library
-```jsp
+```html
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 ```
 
 
 
-```jsp
+```html
 
 <c:set var="nom" value="${personne.nom}"
 <c:set var="nom">Valeur</c:set>
@@ -78,7 +78,7 @@ StringUtils.isNotEmpty(personne.getNom())
 (vide)
 ```
  
-```jsp
+```html
 <c:url var="url" value="/accueil" />
 <a href="${url}">Lien</a>
 <a href="<c:url value="/accueil" />">Lien</a>
@@ -86,13 +86,13 @@ StringUtils.isNotEmpty(personne.getNom())
 <a href="contextPath/accueil">Lien</a>
 ```
  
-```jsp
+```html
 <c:out value="${personne.nom}" />
 
 Nom
 ```
  
-```jsp
+```html
 <c:out value="${personne.nom}" default="Inconnu" />
 
 Nom / Inconnu
@@ -104,13 +104,13 @@ Nom / Inconnu
 
 <!-- .slide: class="slide" -->
 ### Structures de contrôle
-```jsp
+```html
 <c:if test="${empty personne.nom}">Inconnu</c:if>
 
 (vide) / Inconnu
 ```
 
-```jsp
+```html
 <c:forEach items="${personnes}" var="personne">
     ${personne.nom}<br/>
 </c:forEach>
@@ -120,7 +120,7 @@ Nom1
 Nom2
 ```
 
-```jsp
+```html
 <c:choose>
     <c:when test="${personne.titre == 'M.'}">
         Bonjour Monsieur
@@ -143,11 +143,11 @@ Bonjour Monsieur / Bonjour Madame / Bonjour
 <!-- .slide: class="slide" -->
 ### Formattage et internationalisation (i18n) 
 JSTL : JSP Standard Tag Library
-```jsp
+```html
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 ```
 
-```jsp
+```html
 <fmt:bundle basename="message">
     <fmt:message key="a.b.bonjour" />
 </fmt:bundle>
@@ -156,21 +156,21 @@ Bonjour / ???a.b.bonjour???
 Hello / ???a.b.bonjour???
 ```
 
-```jsp
+```html
 <fmt:formatNumber value="${1234.5}" minIntegerDigits="1" minFractionDigits="2" />
 
 1 234,50 
 1,234.50
 ```
 
-```jsp
+```html
 <fmt:formatDate value="${date}" pattern="dd/mmmm/YYYY"/>
 
 31 avril 2015
 31 April 2015
 ```
 
-```jsp
+```html
 <fmt:formatDate value="${date}" dateStyle="short"/>
 
 31/04/15

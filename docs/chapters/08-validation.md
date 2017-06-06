@@ -258,7 +258,7 @@ Différence entre `fieldError` et `globalError`
 
 Méthodes `hasErrors()`, `hasGlobalErrors()` et `hasFieldErrors()`
 
-```jsp
+```html
 <form:errors cssClass="erreur" />
 <form:input type="text" path="nom" />
 <form:errors cssClass="erreur" path="nom" />

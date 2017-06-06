@@ -33,7 +33,7 @@ Comment les modifier ? À l’aide d’un formulaire
 
 Utiliser les balises `<form:…>`
 
-```jsp
+```html
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 ```
 
@@ -45,7 +45,7 @@ Dans le contrôleur, ajouter l’objet au modèle
   - ici, `model.addAttribute("personne", new Personne());`
  - Sinon, les propriétés de l’objet servent à pré-remplir le formulaire
  
-```jsp
+```html
 <form:form action="/personne/modifier" modelAttribute="personne" method="post">
     <form:hidden path="id" />
     <label>Email : </label><form:input type="text" path="email" />
@@ -60,7 +60,7 @@ Dans le contrôleur, ajouter l’objet au modèle
 <!-- .slide: class="slide" -->
 ### Les balise `<form:…>`
 Formulaire
-```jsp
+```html
 <form:form action="/test" modelAttribute="personne">
     <button type="submit">Envoyer</button>
 </form:form>
@@ -78,7 +78,7 @@ Formulaire
 Dans le corps de la balise `<form:form>`, le __path__ est relatif au __modelAttribute__
 
 Champ caché
-```jsp
+```html
 <form:hidden path="id" />
 ```
 ```html
@@ -92,7 +92,7 @@ Champ caché
 
 <!-- .slide: class="slide" -->
 Champ de texte
-```jsp
+```html
 <form:input path="email" />
 ```
 ```html
@@ -101,7 +101,7 @@ Champ de texte
 <input id="email" name="email" type="text" value="prenom.nom@gmail.com"/>
 
 Zone de texte
-```jsp
+```html
 <form:textarea path="verbatim"/>
 ```
 ```html
@@ -116,7 +116,7 @@ Zone de texte
 
 <!-- .slide: class="slide" -->
 Boutons radio
-```jsp
+```html
 <form:radiobuttons path="genre.code" items="${genres}" itemLabel="libelle" itemValue="code" />
 ```
 ```html
@@ -139,7 +139,7 @@ Boutons radio
 </span>
 
 Menu déroulant simple
-```jsp
+```html
 <form:select path="genre.code" items="${genres}" itemLabel="libelle" itemValue="code" />
 ```
 ```html
@@ -160,7 +160,7 @@ Menu déroulant simple
 
 <!-- .slide: class="slide" -->
 Cases à cocher
-```jsp
+```html
 <form:checkboxes path="jours" items="${jours}" itemLabel="libelle" itemValue="code" />
 ```
 ```html
@@ -214,7 +214,7 @@ Cases à cocher
 
 <!-- .slide: class="slide" -->
 Menu déroulant simple
-```jsp
+```html
 <form:select path="genre.code" items="${genres}" itemLabel="libelle" itemValue="code" />
 ```
 ```html
@@ -259,7 +259,7 @@ public enum Genre {
 }
 ```
 
-```jsp
+```html
 <form:select path="genre" >
     <form:options itemLabel="libelle" />
 </form:select>
@@ -338,7 +338,7 @@ public String afficher(@PathVariable("personne") Personne personne, Model model)
 }
 ```
 
-```jsp
+```html
 <form:form modelAttribute="personne" action="/modification">
 ```
 
@@ -377,7 +377,7 @@ public String modification(@ModelAttribute Personne personne, RedirectAttributes
 <!-- .slide: class="slide" -->
 ### Formulaire : exemple complet
 
-```jsp
+```html
 <form:form action="/modification" modelAttribute="personne" method="post">
 	Nom : <form:input type="text" path="nom" />
 	<button type="submit">Modifier</button>
@@ -399,7 +399,7 @@ public String traitement(@ModelAttribute Personne personne, RedirectAttributes r
 }
 ```
 
-```jsp
+```html
 <c:if test="${not empty personne}">
 	Le client <c:out value="${personne.nom}" /> a été créée avec succès.
 </c:if>
