@@ -17,7 +17,6 @@
 | `RedirectView`       |                                                                 |
 | `String`             | Nom de la vue                                                   |
 | `HttpHeaders`        | Réponse sans corps                                              |
-| `HttpEntity<T>`      | Erreurs lors de la validation de l’objet posté                  |
 | `ResponseEntity<T>`  | Encapsule un objet JSON, ou un fichier ou une image par exemple |
 
 
@@ -97,7 +96,7 @@ Ajax
 | Type                 | Remarque                        |
 | -------------------- | ------------------------------- |
 | `@RequestBody`       |                                 |
-| `HttpEntity<T>`      |                                 |
+| `ResponseEntity<T>`  |                                 |
 
 
 
