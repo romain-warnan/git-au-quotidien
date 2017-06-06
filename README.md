@@ -883,7 +883,7 @@ La nouvelle méthode doit lever une exception de type `BarCommandeException` si 
 
 > ExceptionController.java
 
-Écrire une méthode qui est appelée dès qu’une exception de type `BarCommandeException` est levée. Le contrôleur doit en plus retourner un code HTTP 400 (Bad request) et le message d’erreur dans un objet `HttpEntity`.
+Écrire une méthode qui est appelée dès qu’une exception de type `BarCommandeException` est levée. Le contrôleur doit en plus retourner un code HTTP 400 (Bad request) et le message d’erreur dans un objet `ResponseEntity`.
 
 #### 7.2.5. Afficher une erreur si la commande est passée sans contenir aucun cocktail
 

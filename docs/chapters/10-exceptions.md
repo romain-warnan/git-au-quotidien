@@ -36,11 +36,11 @@ public class ControllerAdvice {
 Méthode associée à l’exception la plus spécifique
  - `Throwable` < `Exception` < `IOException` < `FileNotFoundException`
 
-Réponse sous forme `HttpEntity`
+Réponse sous forme `ResponseEntity<T>`
  - ou bien `ResponseEntity<T>`
  - code erreur HTTP grâce à l’annotation `@ResponseStatus`
 
-`HttpEntity` implique `@ResponseBody`
+`ResponseEntity` implique `@ResponseBody`
 
 
 
