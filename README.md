@@ -2,6 +2,8 @@
 
 :arrow_forward: [Diaporama](https://insee-cnip.github.io/formation-spring-mvc)
 
+## Table des matières
+
 * [1. Mise en place](README.md#1-mise-en-place)
 * [2. Navigation](README.md#2-navigation)
 * [3. Intercepteurs](README.md#3-intercepteurs)
