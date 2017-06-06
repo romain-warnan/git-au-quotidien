@@ -1024,6 +1024,8 @@ git pull
 
 ### 9.1 Installation de Tiles
 
+![Structure HTML](docs/images/html-3d.png)
+
 #### 9.1.1 Ajouter les dépendances Maven
 
 > pom.xml
