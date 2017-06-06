@@ -15,8 +15,13 @@
  - [ ] Exemple de checkboxes
  - [x] Supprimer la partie async
  - [ ] TP Exceptions : HttpEntity -> ResponseEntity
+ - [ ] Tiles
 
 ## Autre
 
  - [x] Diapos en markdown : https://github.com/hakimel/reveal.js
  - [ ] Retour expérience w4g sur Spring MVC : exemple préfixer toutes les requêtes Ajax par /async/
+
+## Liens
+ - http://websystique.com/springmvc/spring-4-mvc-apache-tiles-3-annotation-based-example/
+ - http://www.codingpedia.org/ama/spring-mvc-and-apache-tiles-integration-example/
