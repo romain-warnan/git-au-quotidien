@@ -170,4 +170,4 @@ Le code de présentation est découpé en parties homogènes
 
 
 <!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
-## [TP9](https://github.com/Insee-CNIP/formation-spring-mvc#9-tiles)
+## [TP9](https://github.com/romain-warnan/formation-spring-mvc#9-tiles)

@@ -1,6 +1,6 @@
 # Introduction à Spring MVC
 
-:arrow_forward: [Diaporama](https://insee-cnip.github.io/formation-spring-mvc)
+:arrow_forward: [Diaporama](https://romain-warnan.github.io/formation-spring-mvc/)
 
 ## Table des matières
 
@@ -26,7 +26,7 @@ cd /d/*idep*/Mes\ Documents/eclipse_workspace
 git config --global user.name "*Prénom Nom*"
 git config --global user.email "*email*"
 git config --global http.proxy http://proxy-orange.http.insee.fr:8080
-git clone https://github.com/Insee-CNIP/formation-spring-mvc.git
+git clone https://github.com/romain-warnan/formation-spring-mvc.git
 cd formation-spring-mvc
 git checkout tp1-enonce
 git pull

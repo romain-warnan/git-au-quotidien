@@ -73,4 +73,4 @@ public String handleResourceNotFoundException(…){
 
 
 <!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
-## [TP7](https://github.com/Insee-CNIP/formation-spring-mvc#7-exceptions)
+## [TP7](https://github.com/romain-warnan/formation-spring-mvc#7-exceptions)

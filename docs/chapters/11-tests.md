@@ -133,4 +133,4 @@ public class WelcomeControllerTest {
 
 
 <!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
-## [TP8](https://github.com/Insee-CNIP/formation-spring-mvc#8-tests)
+## [TP8](https://github.com/romain-warnan/formation-spring-mvc#8-tests)

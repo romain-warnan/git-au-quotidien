@@ -240,7 +240,7 @@ Le mécanisme des fichiers de properties n’est pas disponible
 
 
 <!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
-## [TP6](https://github.com/Insee-CNIP/formation-spring-mvc#6-ajax)
+## [TP6](https://github.com/romain-warnan/formation-spring-mvc#6-ajax)
 
 
 

@@ -410,4 +410,4 @@ public String traitement(@ModelAttribute Personne personne, RedirectAttributes r
 
 
 <!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
-## [TP4](https://github.com/Insee-CNIP/formation-spring-mvc#4-formulaires)
+## [TP4](https://github.com/romain-warnan/formation-spring-mvc#4-formulaires)

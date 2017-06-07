@@ -360,4 +360,4 @@ typeMismatch.personne.date=Le format de la date est incorrect.
 
 
 <!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
-## [TP5](https://github.com/Insee-CNIP/formation-spring-mvc#5-validation)
+## [TP5](https://github.com/romain-warnan/formation-spring-mvc#5-validation)

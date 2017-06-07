@@ -182,4 +182,4 @@ Hello / ???a.b.bonjour???
 
 
 <!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
-## [TP2](https://github.com/Insee-CNIP/formation-spring-mvc#2-navigation)
+## [TP2](https://github.com/romain-warnan/formation-spring-mvc#2-navigation)
