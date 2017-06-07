@@ -1,7 +1,8 @@
 # Introduction à Spring MVC
 
 :arrow_forward: [Diaporama](https://romain-warnan.github.io/formation-spring-mvc/)
-:bookmark_tabs: [Imprimer](https://romain-warnan.github.io/formation-spring-mvc/?print-pdf#/)
+
+:bookmark_tabs: [Imprimer](https://romain-warnan.github.io/formation-spring-mvc/?print-pdf#/) (avec Chrome)
 
 ## Table des matières
 
