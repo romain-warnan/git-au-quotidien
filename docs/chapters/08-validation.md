@@ -258,7 +258,7 @@ Différence entre `fieldError` et `globalError`
 
 Méthodes `hasErrors()`, `hasGlobalErrors()` et `hasFieldErrors()`
 
-```jsp
+```html
 <form:errors cssClass="erreur" />
 <form:input type="text" path="nom" />
 <form:errors cssClass="erreur" path="nom" />
@@ -360,4 +360,4 @@ typeMismatch.personne.date=Le format de la date est incorrect.
 
 
 <!-- .slide: data-background-image="images/tp.png" data-background-size="500px" class="tp" -->
-## [TP5](https://github.com/Insee-CNIP/formation-spring-mvc#5-validation)
+## [TP5](https://github.com/romain-warnan/formation-spring-mvc#5-validation)

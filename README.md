@@ -1,6 +1,21 @@
 # Introduction à Spring MVC
 
-:arrow_forward: [Diaporama](https://insee-cnip.github.io/formation-spring-mvc)
+:arrow_forward: [Diaporama](https://romain-warnan.github.io/formation-spring-mvc/)
+
+:bookmark_tabs: [Imprimer](https://romain-warnan.github.io/formation-spring-mvc/?print-pdf#/) (avec Chrome)
+
+## Table des matières
+
+* [1. Mise en place](README.md#1-mise-en-place)
+* [2. Navigation](README.md#2-navigation)
+* [3. Intercepteurs](README.md#3-intercepteurs)
+* [4. Formulaires](README.md#4-formulaires)
+* [5. Validation](README.md#5-validation)
+* [6. Ajax](README.md#6-ajax)
+* [7. Exceptions](README.md#7-exceptions)
+* [8. Tests](README.md#8-tests)
+* [9. Tiles](README.md#9-tiles)
+* [10. Pour aller plus loin](README.md#10-pour-aller-plus-loin)
 
 ## 0. Récupérer le code source du TP
 
@@ -13,7 +28,7 @@ cd /d/*idep*/Mes\ Documents/eclipse_workspace
 git config --global user.name "*Prénom Nom*"
 git config --global user.email "*email*"
 git config --global http.proxy http://proxy-orange.http.insee.fr:8080
-git clone https://github.com/Insee-CNIP/formation-spring-mvc.git
+git clone https://github.com/romain-warnan/formation-spring-mvc.git
 cd formation-spring-mvc
 git checkout tp1-enonce
 git pull
@@ -1024,8 +1039,6 @@ git pull
 
 ### 9.1 Installation de Tiles
 
-![Structure HTML](docs/images/html-3d.png)
-
 #### 9.1.1 Ajouter les dépendances Maven
 
 > pom.xml
@@ -1067,12 +1080,13 @@ Dans `/WEB-INF/views/` :
 
 Copier le contenu de `commande.jsp` dans `default-layout.jsp`.
 
-Ajouter la taglib tiles :
+Ajouter la taglib Tiles :
 ```jsp
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 ```
 
 Puis, remplacer le contenu du `<body>`, par trois sections : `<header>`, `<section>` et `<footer>`.
+
 Y ajouter les attributs Tiles suivants : `"header"`, `"body"` et `"footer"`. 
 
 À la place du contenu de la balise `<title>`, ajouter l’attribut textuel "title".
@@ -1096,7 +1110,7 @@ Dans le header, ajouter l’image `webapp/static/cocktails.png` et un titre `<h1
 
 Dans le footer, ajouter un lien vers la page d’accueil.
 
-### 9.7 Création des pages avec tiles
+### 9.7 Création des pages avec Tiles
 
 > tiles.xml
 
@@ -1126,7 +1140,9 @@ git checkout tp12-correction
 git pull
 ```
 
-## 10. Configuration
+## 10. Pour aller plus loin
+
+### 10.1. Configuration
 
 ```bash
 git checkout tp9-enonce
@@ -1142,7 +1158,7 @@ git checkout tp9-correction
 git pull
 ```
 
-## 11. Transmettre et récupérer un fichier 
+### 10.2. Transmettre et récupérer un fichier 
 
 ```bash
 git checkout tp10-enonce
@@ -1174,7 +1190,7 @@ git checkout tp10-correction
 git pull
 ```
 
-## 12. Autres types de vues
+### 10.3. Autres types de vues
 
 ```bash
 git checkout tp12-enonce

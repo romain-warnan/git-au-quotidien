@@ -4,7 +4,6 @@ import fr.insee.bar.exception.BarAjaxException;
 import fr.insee.bar.exception.BarCommandeException;
 import fr.insee.bar.exception.BarDroitException;
 import fr.insee.bar.exception.BarHttpException;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -49,7 +48,7 @@ public class ExceptionController {
 	}
 
 	@ExceptionHandler(Exception.class)
-	public HttpEntity<String> handleUnexpectedException(Exception e) {
+	public ResponseEntity<String> handleUnexpectedException(Exception e) {
         return ResponseEntity
             .status(HttpStatus.INTERNAL_SERVER_ERROR)
             .body(e.getMessage());
