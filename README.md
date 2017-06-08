@@ -1073,7 +1073,7 @@ Ajouter la taglib tiles :
 ```
 
 Puis, remplacer le contenu du `<body>`, par trois sections : `<header>`, `<section>` et `<footer>`.
-Y ajouter les attributs tiles suivants : "header", "body" et "footer". 
+Y ajouter les attributs Tiles suivants : `"header"`, `"body"` et `"footer"`. 
 
 À la place du contenu de la balise `<title>`, ajouter l’attribut textuel "title".
 
@@ -1081,7 +1081,7 @@ Y ajouter les attributs tiles suivants : "header", "body" et "footer".
 
 > commande.jsp
 
-Le code contenu dans `default-layout.jsp` étant désormais valable pour toutes les pages, il faut le supprimer des JSP du répertoire pages/.
+Le code contenu dans `default-layout.jsp` étant désormais valable pour toutes les pages, il faut le supprimer des JSP du répertoire `pages/`.
 Ce travail a été fait sauf pour la page `commande.jsp`.
 
 ### 9.5 Création du header
@@ -1103,19 +1103,19 @@ Dans le footer, ajouter un lien vers la page d’accueil.
 #### 9.7.1 Définition de base
 
 Définir d’abord une `<definition>` de base appelée "base-definition" et pointant vers la page `default-layout.jsp`.
-Ce layout contient quatre attributs appelés title, header, body et footer.
+Ce layout contient quatre attributs appelés `title`, `header`, `body` et `footer`.
 Les attributs header et footer sont non vides et pointent respectivement vers `default-header.jsp` et `default-footer.jsp`.
 
 #### 9.7.2 Définition de la page d’accueil
 
 Définir ensuite une `<definition>` appelée "accueil" et héritant de "base-definition".
-Valoriser les attributs title, body et footer.
+Valoriser les attributs `title`, `body` et `footer`.
 Pour la page d’accueil, le footer doit être vide car on ne veut pas de lien vers la page d’accueil sur la page d’accueil !
 
 #### 9.7.3 Définition de la page de chargement des clients
 
 Définir ici une `<definition>` appelée "chargement-clients" et héritant de "base-definition".
-Valoriser les attributs title et body.
+Valoriser les attributs `title` et `body`.
 
 Finalement décommenter le reste du fichier pour faire fonctionner les autres pages.
 
