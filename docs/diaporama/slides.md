@@ -75,3 +75,32 @@ git status
 <div class="center">
     <img src="images/git-status.png" />
 </div>
+
+
+===
+
+
+<!-- .slide: class="slide" -->
+### Commiter des fichiers
+
+```bash
+git commit -m "Message de commit."
+```
+
+Tout ce qui est dans l’index est commité.
+
+Si on souhaite commiter tous les fichiers modifiés :
+ - ne commite pas les nouveaux fichiers
+ - utiliser `add` explicitement dans ce cas
+ 
+```bash
+git commit -am "Message de commit."
+```
+
+Pour un message de commit plus complet, utiliser l’éditeur de texte :
+```bash
+git commit
+```
+ - rappel pour quitter vi : __Esc__ puis « :wq », ou __Esc__ puis __Maj + zz__
+
+__Attention__ : le travail est commité dans le dépôt local.
