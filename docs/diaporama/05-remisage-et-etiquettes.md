@@ -1,67 +1,24 @@
 <!-- .slide: data-background-image="images/git-logo.png" data-background-size="800px" class="chapter" -->
-## 4
-### Branches
+## 5
+### Autres opérations
 
 
 ===
 
 
 <!-- .slide: class="slide" -->
-### Branches locales
+### Remisage
 
-Créer une nouvelle branche locale :
+Stocker toutes les modifications non commitées :
 ```bash
-git branch nom-branche 
+git stash
 ```
+ - copie locale propre
+ - modification dans la remise
 
-Extraire une branche existante :
+Récupérer le contenu de la remise :
 ```bash
-git checkout nom-branche 
-```
- - conserve les modifications locales
- - combiner les deux opération grâce à `git checkout -b nom-branche`
-
-
-===
-
-
-<!-- .slide: class="slide" -->
-### Branches distantes
-
-Partager une branche locale :
-```bash
-git push --set-upstream origin nom-branche-distante
-```
- - il faut être dans la branche locale
- - en général `nom-branch-distante` = `nom-branche`
-
-
-Suivre une branche distante :
-```bash
-git checkout nom-branche-distante
-```
- - attention au cas où il existe déjà une branche locale portant ce nom
- 
-
-===
-
-
-<!-- .slide: class="slide" -->
-### Fusionner une branche
-
-Intègrer les commits de la branche la branche principale :
-```bash
-git checkout master
-git merge nom-branche
-```
- 
-Cas simple : *fast-forward*
- - pas de commit de fusion
- - simple avance rapide
-
-Supprimer une branche locale fusionnée ou partagée :
-```bash
-git branch -d nom-branche
+git stash pop
 ```
 
 
@@ -69,15 +26,29 @@ git branch -d nom-branche
 
 
 <!-- .slide: class="slide" -->
-### Fusionner une branche
+### Étiquettes
 
-Cas intermédiaire : fusion à trois branches
- - commit du résultat de la fusion
+Marquer un commit comme particulier
+ - photographie du code à un moment donné
 
+```bash
+git tag -a v1.1 -m "Version livrée en production le 10/11/2017"
+```
 
-<div class="center">
-    <img src="images/fusion.png" />
-</div>
+Poser une étiquette *a posteriori*
 
-Cas difficile : fusion avec conflits
- - résoudre les conflits avant de pouvoir commiter
+```bash
+git tag -a v1.1 -m "Version livrée en production le 10/11/2017" 5978c73
+```
+
+Envoyer des étiquettes dans le dépôt distant
+
+```bash
+git push origin --tags
+```
+
+Récupérer le code associé à une étiquette donnée
+
+```bash
+git checkout v1.1
+```
