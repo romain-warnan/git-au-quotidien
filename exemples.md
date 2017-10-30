@@ -6,3 +6,5 @@ Fichier contenant du texte pour tester différents cas :
  - pull --rebase
 
 Fichier aussi utiliser pour montrer la gestion des conflits.
+
+Nouvelle ligne 1
