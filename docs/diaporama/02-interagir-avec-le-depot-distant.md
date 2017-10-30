@@ -24,3 +24,54 @@ Gérer les droits d’accès :
  - échange de clés SSH
  - identifiant / mot de passe
  - `credential.helper`
+
+
+===
+
+ 
+<!-- .slide: class="slide" -->
+### Mettre à jour sa copie locale
+#### État initial
+
+Des commits ont été envoyés vers le serveurs par d’autres développeurs :
+
+
+<div class="center">
+    <img src="images/rebase-1.png" />
+</div>
+
+
+===
+
+
+<!-- .slide: class="slide" -->
+### Mettre à jour sa copie locale
+#### Fusion
+
+```bash
+git pull
+```
+Génère un commit résultant de la fusion :
+ - branche distante -> branche locale
+
+<div class="center">
+    <img src="images/rebase-2.png" />
+</div>
+
+
+===
+
+
+<!-- .slide: class="slide" -->
+### Mettre à jour sa copie locale
+#### Rebasage
+
+```bash
+git pull --rebase
+```
+Pas de commit de fusion :
+ - l’historique de la branche locale est réécrit
+ 
+<div class="center">
+    <img src="images/rebase-3.png" />
+</div>
