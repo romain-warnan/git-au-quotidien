@@ -2,7 +2,7 @@ package fr.insee.bar.controller;
 
 import fr.insee.bar.dao.ClientDao;
 import fr.insee.bar.exception.BarDroitException;
-import fr.insee.bar.model.Client;
+import fr.insee.bar.model.Personne;
 import fr.insee.bar.model.Employe;
 import fr.insee.bar.service.EmployeService;
 import fr.insee.bar.validator.ClientValidator;
@@ -32,21 +32,21 @@ public class ModificationClientController {
 	private EmployeService employeService;
 
 	@GetMapping("/modification/{client}")
-	public String modificationClient(@PathVariable("client") Client client, Employe employe, Model model) throws BarDroitException {
+	public String modificationClient(@PathVariable("client") Personne personne, Employe employe, Model model) throws BarDroitException {
 		employeService.verifierResponsable(employe);
-		model.addAttribute("client", client);
+		model.addAttribute("client", personne);
 		return "modification-client";
 	}
 
 	@PostMapping("/modification/{client}")
-	public String modificationClientPost(@Valid Client client, BindingResult result, RedirectAttributes attributes) {
-		clientValidator.validate(client, result);
+	public String modificationClientPost(@Valid Personne personne, BindingResult result, RedirectAttributes attributes) {
+		clientValidator.validate(personne, result);
 		if (result.hasErrors()) {
 			return "modification-client";
 		}
-		clientDao.update(client);
+		clientDao.update(personne);
 		attributes.addFlashAttribute("modification", true);
-		attributes.addAttribute("id", client.getId());
+		attributes.addAttribute("id", personne.getId());
 		return "redirect:/client/{id}";
 	}
 }
