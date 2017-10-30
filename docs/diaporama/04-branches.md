@@ -7,21 +7,34 @@
 
 
 <!-- .slide: class="slide" -->
-### Résoudre les conflits
+### Branches locales
 
-Le même fichier a été modifié dans la branche distante et dans la branche locale.
-
-#### Cas du rebasage
-
+Créer une nouvelle branche locale :
 ```bash
-git pull --rebase
+git branch nom-branche 
 ```
- - on est avertis qu’il y a des conflits
 
-Quand un fichier est corrigé :
+Extraire une branche existante :
 ```bash
-git add fichier-conflit
+git checkout nom-branche 
 ```
+ - conserve les modifications locales
+ - combiner les deux opération grâce à `git checkout -b nom-branch`
+
+
+===
+
+
+<!-- .slide: class="slide" -->
+### Branches distantes
+
+Partager une branche locale :
+```bash
+git push --set-upstream origin nom-branch-distante
+```
+ - il faut être dans la brnche locale
+ - en général `nom-branch-distante` = `nom-branch`
+
 
 Une fois que tous les conflits sont corrigés :
 ```bash
