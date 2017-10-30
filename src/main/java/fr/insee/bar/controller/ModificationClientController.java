@@ -2,8 +2,8 @@ package fr.insee.bar.controller;
 
 import fr.insee.bar.dao.ClientDao;
 import fr.insee.bar.exception.BarDroitException;
-import fr.insee.bar.model.Personne;
-import fr.insee.bar.model.Agent;
+import fr.insee.bar.model.Client;
+import fr.insee.bar.model.Employe;
 import fr.insee.bar.service.EmployeService;
 import fr.insee.bar.validator.ClientValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,21 +32,21 @@ public class ModificationClientController {
 	private EmployeService employeService;
 
 	@GetMapping("/modification/{client}")
-	public String modificationClient(@PathVariable("client") Personne personne, Agent agent, Model model) throws BarDroitException {
-		employeService.verifierResponsable(agent);
-		model.addAttribute("client", personne);
+	public String modificationClient(@PathVariable("client") Client client, Employe employe, Model model) throws BarDroitException {
+		employeService.verifierResponsable(employe);
+		model.addAttribute("client", client);
 		return "modification-client";
 	}
 
 	@PostMapping("/modification/{client}")
-	public String modificationClientPost(@Valid Personne personne, BindingResult result, RedirectAttributes attributes) {
-		clientValidator.validate(personne, result);
+	public String modificationClientPost(@Valid Client client, BindingResult result, RedirectAttributes attributes) {
+		clientValidator.validate(client, result);
 		if (result.hasErrors()) {
 			return "modification-client";
 		}
-		clientDao.update(personne);
+		clientDao.update(client);
 		attributes.addFlashAttribute("modification", true);
-		attributes.addAttribute("id", personne.getId());
+		attributes.addAttribute("id", client.getId());
 		return "redirect:/client/{id}";
 	}
 }

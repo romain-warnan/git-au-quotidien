@@ -1,8 +1,8 @@
 package fr.insee.bar.provider;
 
-import fr.insee.bar.model.Agent;
+import fr.insee.bar.model.Employe;
 
 public interface EmployeProvider {
 
-	Agent provide();
+	Employe provide();
 }

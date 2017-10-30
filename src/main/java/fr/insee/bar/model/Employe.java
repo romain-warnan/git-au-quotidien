@@ -3,7 +3,7 @@ package fr.insee.bar.model;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 
-public class Agent {
+public class Employe {
 
 	private Short id;
 	private String nom;
@@ -40,10 +40,10 @@ public class Agent {
 
 	@Override
 	public boolean equals(Object object) {
-		if (object == null || !(object instanceof Agent)) {
+		if (object == null || !(object instanceof Employe)) {
 			return false;
 		}
-		Agent other = (Agent) object;
+		Employe other = (Employe) object;
 		return Objects.equal(this.id, other.id);
 	}
 

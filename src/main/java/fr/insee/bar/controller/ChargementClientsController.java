@@ -17,7 +17,7 @@ import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import fr.insee.bar.exception.BarDroitException;
-import fr.insee.bar.model.Agent;
+import fr.insee.bar.model.Employe;
 import fr.insee.bar.service.ClientService;
 import fr.insee.bar.service.EmployeService;
 import fr.insee.bar.view.ClientsExcelView;
@@ -34,8 +34,8 @@ public class ChargementClientsController {
     private ClientService clientService;
 
     @GetMapping("/chargement")
-    public String chargement(Agent agent) throws BarDroitException {
-	employeService.verifierResponsable(agent);
+    public String chargement(Employe employe) throws BarDroitException {
+	employeService.verifierResponsable(employe);
 	return "chargement-clients";
     }
 
@@ -57,13 +57,13 @@ public class ChargementClientsController {
 
     @GetMapping(value = "/telechargement", params = "type=pdf")
     public View telechargementPdf(Model model) {
-	model.addAttribute("clients", clientService.personnes());
+	model.addAttribute("clients", clientService.clients());
 	return new ClientsPdfView();
     }
 
     @GetMapping(value = "/telechargement", params = "type=xls")
     public View telechargementExcel(Model model) {
-	model.addAttribute("clients", clientService.personnes());
+	model.addAttribute("clients", clientService.clients());
 	return new ClientsExcelView();
     }
 }

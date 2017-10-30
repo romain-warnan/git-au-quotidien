@@ -5,15 +5,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import fr.insee.bar.model.Agent;
+import fr.insee.bar.model.Employe;
 
 @Controller
 @RequestMapping("/commande")
 public class CommandeController {
 
 	@GetMapping
-	public String commande(Agent agent, Model model) {
-		model.addAttribute("employe", agent);
+	public String commande(Employe employe, Model model) {
+		model.addAttribute("employe", employe);
 		return "commande";
 	}
 }
