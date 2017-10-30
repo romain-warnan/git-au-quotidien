@@ -46,7 +46,7 @@ Des commits ont été envoyés vers le serveurs par d’autres développeurs :
 
 <!-- .slide: class="slide" -->
 ### Mettre à jour sa copie locale
-#### Fusion
+#### Option 1 – Fusion
 
 ```bash
 git pull
@@ -64,7 +64,7 @@ Génère un commit résultant de la fusion :
 
 <!-- .slide: class="slide" -->
 ### Mettre à jour sa copie locale
-#### Rebasage
+#### Option 2 – Rebasage
 
 ```bash
 git pull --rebase
