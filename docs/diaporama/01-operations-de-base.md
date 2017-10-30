@@ -89,13 +89,12 @@ git commit -m "Message de commit."
 
 Tout ce qui est dans l’index est commité.
 
-Si on souhaite commiter tous les fichiers modifiés :
- - ne commite pas les nouveaux fichiers
- - utiliser `add` explicitement dans ce cas
- 
+Si on souhaite commiter tous les fichiers modifiés : 
 ```bash
 git commit -am "Message de commit."
 ```
+ - ne commite pas les nouveaux fichiers
+ - utiliser `add` explicitement dans ce cas
 
 Pour un message de commit plus complet, utiliser l’éditeur de texte :
 ```bash
