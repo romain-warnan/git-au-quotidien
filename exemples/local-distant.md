@@ -4,3 +4,4 @@ Fichier contenant du texte pour tester différents cas :
  - fetch
  - pull
  - pull --rebase
+ - ajout d'unélément
