@@ -4,5 +4,3 @@ Fichier contenant du texte pour tester différents cas :
  - fetch
  - pull
  - pull --rebase
-
-Modification distante.
