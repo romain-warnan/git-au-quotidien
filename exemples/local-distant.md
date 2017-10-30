@@ -1,7 +1,7 @@
 Fichier contenant du texte pour tester différents cas :
  - merge
- - rebase
  - fetch
+ - rebase
  - pull
  - pull --rebase
- - ajout d'unélément
+ - ajout d'un élément
