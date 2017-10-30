@@ -3,7 +3,7 @@ package fr.insee.bar.controller;
 import fr.insee.bar.dao.ClientDao;
 import fr.insee.bar.exception.BarDroitException;
 import fr.insee.bar.model.Client;
-import fr.insee.bar.model.Employe;
+import fr.insee.bar.model.Agent;
 import fr.insee.bar.service.EmployeService;
 import fr.insee.bar.validator.ClientValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +31,8 @@ public class NouveauClientController {
 	private EmployeService employeService;
 
 	@GetMapping("/nouveau")
-	public String nouveauClient(Employe employe, Model model) throws BarDroitException {
-		employeService.verifierResponsable(employe);
+	public String nouveauClient(Agent agent, Model model) throws BarDroitException {
+		employeService.verifierResponsable(agent);
 		model.addAttribute("client", new Client());
 		return "nouveau-client";
 	}

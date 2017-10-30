@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
 
 import com.google.common.collect.ImmutableMap;
 
-import fr.insee.bar.model.Employe;
+import fr.insee.bar.model.Agent;
 import fr.insee.bar.model.Role;
 
 @Repository
@@ -48,10 +48,10 @@ public class EmployeDao {
 		this.template = new NamedParameterJdbcTemplate(dataSource);
 	}
 
-	public Optional<Employe> find(Short id) {
+	public Optional<Agent> find(Short id) {
 		try {
-			Employe employe = template.queryForObject(SQL_FIND, ImmutableMap.of("id", id), rowMapper);
-			return Optional.of(employe);
+			Agent agent = template.queryForObject(SQL_FIND, ImmutableMap.of("id", id), rowMapper);
+			return Optional.of(agent);
 
 		}
 		catch (EmptyResultDataAccessException e) {
@@ -59,23 +59,23 @@ public class EmployeDao {
 		}
 	}
 
-	public List<Employe> findAll() {
+	public List<Agent> findAll() {
 		return template.query(SQL_FIND_ALL, rowMapper);
 	}
 
 	@Component
-	public class EmployeRowMapper implements RowMapper<Employe> {
+	public class EmployeRowMapper implements RowMapper<Agent> {
 
 		@Override
-		public Employe mapRow(ResultSet rs, int rowNum) throws SQLException {
+		public Agent mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Role role = new Role();
 			role.setId(rs.getShort("rid"));
 			role.setLibelle(rs.getString("libelle"));
-			Employe employe = new Employe();
-			employe.setId(rs.getShort("eid"));
-			employe.setNom(rs.getString("nom"));
-			employe.setRole(role);
-			return employe;
+			Agent agent = new Agent();
+			agent.setId(rs.getShort("eid"));
+			agent.setNom(rs.getString("nom"));
+			agent.setRole(role);
+			return agent;
 		}
 
 	}

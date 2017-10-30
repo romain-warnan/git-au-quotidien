@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import fr.insee.bar.dao.EmployeDao;
-import fr.insee.bar.model.Employe;
+import fr.insee.bar.model.Agent;
 
 @Profile("responsable")
 @Component
@@ -15,7 +15,7 @@ public class ResponsableProvider implements EmployeProvider {
 	private EmployeDao employeDao;
 
 	@Override
-	public Employe provide() {
+	public Agent provide() {
 		return employeDao.find(Short.valueOf("3")).get();
 	}
 
