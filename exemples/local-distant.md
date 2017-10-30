@@ -6,3 +6,4 @@ Fichier contenant du texte pour tester différents cas :
  - pull --rebase
 
 Modification distante.
+Modification locale.
