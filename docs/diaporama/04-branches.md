@@ -74,9 +74,10 @@ git branch -d nom-branche
 Cas intermédiaire : fusion à trois branches
  - commit du résultat de la fusion
 
-Cas difficile : fusion avec conflits
- - résoudre les conflits avant de pouvoir commiter
 
 <div class="center">
     <img src="images/fusion.png" />
 </div>
+
+Cas difficile : fusion avec conflits
+ - résoudre les conflits avant de pouvoir commiter
