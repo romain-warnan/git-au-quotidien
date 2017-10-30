@@ -41,3 +41,42 @@ Suivre une branche distante :
 git checkout nom-branche-distante
 ```
  - attention au cas où il existe déjà une branche locale portant ce nom
+ 
+
+===
+
+
+<!-- .slide: class="slide" -->
+### Fusionner une branche
+
+Intègrer les commits de la branche nom-branch dans master :
+```bash
+git checkout master
+git merge nom-branche
+```
+ 
+Cas simple : *fast-forward*
+ - pas de commit de fusion
+ - simple avance rapide
+
+Supprimer une branche locale fusionnée ou partagée :
+```bash
+git branch -d nom-branche
+```
+
+
+===
+
+
+<!-- .slide: class="slide" -->
+### Fusionner une branche
+
+Cas intermédiaire : fusion à trois branches
+ - commit du résultat de la fusion
+
+Cas difficile : fusion avec conflits
+ - résoudre les conflits avant de pouvoir commiter
+
+<div class="center">
+    <img src="images/fusion.png" />
+</div>
