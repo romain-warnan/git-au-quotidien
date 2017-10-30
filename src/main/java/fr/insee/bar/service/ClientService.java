@@ -3,8 +3,8 @@ package fr.insee.bar.service;
 import com.google.common.base.Objects;
 import fr.insee.bar.dao.ClientDao;
 import fr.insee.bar.exception.BarClientException;
-import fr.insee.bar.model.Client;
-import fr.insee.bar.model.Client.Titre;
+import fr.insee.bar.model.Personne;
+import fr.insee.bar.model.Personne.Titre;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,17 +29,17 @@ public class ClientService {
 	@Autowired
 	private ClientDao clientDao;
 
-	public boolean emailDejaUtilise(Client client) {
-		Optional<Client> optional = clientDao.findByEmail(client.getEmail());
+	public boolean emailDejaUtilise(Personne personne) {
+		Optional<Personne> optional = clientDao.findByEmail(personne.getEmail());
 		if (optional.isPresent()) {
-			Client autre = optional.get();
-			return !Objects.equal(autre.getId(), client.getId());
+			Personne autre = optional.get();
+			return !Objects.equal(autre.getId(), personne.getId());
 		}
 		return false;
 	}
 
 	private boolean emailDejaUtilise(String email) {
-		Optional<Client> optional = clientDao.findByEmail(email);
+		Optional<Personne> optional = clientDao.findByEmail(email);
 		return optional.isPresent();
 	}
 
@@ -50,7 +50,7 @@ public class ClientService {
 			return FileUtils
 				.readLines(file, "UTF-8")
 				.stream()
-				.map(this::client)
+				.map(this::personne)
 				.filter(Optional::isPresent)
 				.map(Optional::get)
 				.map(clientDao::insert)
@@ -77,16 +77,16 @@ public class ClientService {
 		return file;
 	}
 
-	private String string(Client client) {
+	private String string(Personne personne) {
 		StringBuilder builder = new StringBuilder();
 		builder
-			.append(client.getTitre().getCode())
+			.append(personne.getTitre().getCode())
 			.append(";")
-			.append(client.getNom())
+			.append(personne.getNom())
 			.append(";")
-			.append(client.getEmail())
+			.append(personne.getEmail())
 			.append(";")
-			.append(this.string(client.getDateNaissance()))
+			.append(this.string(personne.getDateNaissance()))
 
 		;
 		return builder.toString();
@@ -101,7 +101,7 @@ public class ClientService {
 				.toLocalDate());
 	}
 
-	private Optional<Client> client(String ligne) {
+	private Optional<Personne> personne(String ligne) {
 		try {
 			return this.clientException(ligne);
 		}
@@ -111,19 +111,19 @@ public class ClientService {
 		return Optional.empty();
 	}
 
-	private Client client(String[] tokens) throws BarClientException, NumberFormatException, DateTimeParseException {
+	private Personne personne(String[] tokens) throws BarClientException, NumberFormatException, DateTimeParseException {
 		if (tokens.length != 4) {
 			throw new BarClientException(String.format("Il y a %d éléments au lieu de 4.", tokens.length));
 		}
 		if (this.emailDejaUtilise(tokens[2])) {
 			throw new BarClientException(String.format("L’email %s est déjà utilisé.", tokens[2]));
 		}
-		Client client = new Client();
-		client.setTitre(Titre.of(Short.valueOf(tokens[0])));
-		client.setNom(tokens[1]);
-		client.setEmail(tokens[2]);
-		client.setDateNaissance(this.date(tokens[3]));
-		return client;
+		Personne personne = new Personne();
+		personne.setTitre(Titre.of(Short.valueOf(tokens[0])));
+		personne.setNom(tokens[1]);
+		personne.setEmail(tokens[2]);
+		personne.setDateNaissance(this.date(tokens[3]));
+		return personne;
 	}
 
 	private Date date(String string) throws DateTimeParseException {
@@ -136,15 +136,15 @@ public class ClientService {
 
 	}
 
-	public List<Client> clients() {
+	public List<Personne> personnes() {
 		return clientDao.findAll();
 	}
 
-	private Optional<Client> clientException(String ligne) throws BarClientException {
+	private Optional<Personne> clientException(String ligne) throws BarClientException {
 		if (StringUtils.isNotBlank(ligne)) {
 			String[] tokens = ligne.split(";");
 			try {
-				return Optional.of(this.client(tokens));
+				return Optional.of(this.personne(tokens));
 			}
 			catch (NumberFormatException e) {
 				throw new BarClientException(String.format("La ligne [%s] est invalide. %s n’est pas un nombre valide.", ligne, tokens[0]));

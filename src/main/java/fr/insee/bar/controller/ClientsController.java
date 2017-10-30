@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import fr.insee.bar.dao.ClientDao;
-import fr.insee.bar.model.Client;
+import fr.insee.bar.model.Personne;
 
 @Controller
 public class ClientsController {
@@ -18,8 +18,8 @@ public class ClientsController {
 
 	@GetMapping("/clients")
 	public String clients(Model model) {
-		List<Client> clients = clientDao.findAll();
-		model.addAttribute("clients", clients);
+		List<Personne> personnes = clientDao.findAll();
+		model.addAttribute("clients", personnes);
 		return "clients";
 	}
 }
