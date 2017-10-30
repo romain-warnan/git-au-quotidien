@@ -9,8 +9,6 @@
 <!-- .slide: class="slide" -->
 ### Résoudre les conflits
 
-Le même fichier a été modifié dans la branche distante et dans la branche locale.
-
 #### Cas du rebasage
 
 ```bash
