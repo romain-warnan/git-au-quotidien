@@ -52,7 +52,7 @@ git checkout nom-branche-distante
 <!-- .slide: class="slide" -->
 ### Fusionner une branche
 
-Intègrer les commits de la branche la branche principale :
+Intégrer les commits dans la branche principale :
 ```bash
 git checkout master
 git merge nom-branche

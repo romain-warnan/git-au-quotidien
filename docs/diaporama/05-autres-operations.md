@@ -106,8 +106,17 @@ Gérer des sous-modules
 
 
 <!-- .slide: class="slide" -->
-### Documentation
+### Ressources utiles
+
+
+Documentation Git en français :
 
 <div class="center">
-	<a href="https://git-scm.com/book/fr/v2" target="_blank"><img src="images/documentation.png" style="width: 500px" /></a>
+	<a href="https://git-scm.com/book/fr/v2" target="_blank"><img src="images/documentation.png" style="width: 300px" /></a>
+</div>
+
+Code de la présentation :
+
+<div class="center">
+	<a href="https://github.com/romain-warnan/git-au-quotidien" target="_blank"><img src="images/github.png" /></a>
 </div>
