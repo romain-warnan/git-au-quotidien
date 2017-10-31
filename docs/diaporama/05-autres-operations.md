@@ -80,4 +80,34 @@ git reset --hard 46e273cc54
 
 
 <!-- .slide: class="slide" -->
-### Revenir en arrière
+### Autres possibilités
+
+Voir les modifications
+ - `git diff`
+
+Modifier un commit
+ - `commit --amend`
+
+Réorganiser l’historique local
+ - `rebase --interactive`
+
+Réécrire l’historique distant
+ - `filter-branch`
+ 
+Déclencher des actions
+ - `.git/hooks`
+
+Gérer des sous-modules 
+
+…
+
+
+===
+
+
+<!-- .slide: class="slide" -->
+### Documentation
+
+<div class="center">
+	<a href="https://git-scm.com/book/fr/v2" target="_blank"><img src="images/documentation.png" style="width: 500px" /></a>
+</div>
