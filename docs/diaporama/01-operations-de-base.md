@@ -31,7 +31,7 @@ Fichier `.gitignore`
  - à la racine du dépôt local
  - nom important
 
-Exemple
+Exemple :
 ```
 target/
 .settings/
@@ -59,15 +59,9 @@ git commit -am "Ignorer les fichiers .class"
 ```bash
 git add '*.java'
 ```
-
-Ou bien, souvent :
-
-```bash
-git add .
-```
+ - souvent on utilise plus simplement `git add .`
 
 Voir l’état de la copie locale :
-
 ```bash
 git status
 ```
@@ -86,15 +80,14 @@ git status
 ```bash
 git commit -m "Message de commit."
 ```
-
-Tout ce qui est dans l’index est commité.
+ - tout ce qui est dans l’index est commité.
 
 Si on souhaite commiter tous les fichiers modifiés : 
 ```bash
 git commit -am "Message de commit."
 ```
  - ne commite pas les nouveaux fichiers
- - utiliser `add` explicitement dans ce cas
+  - utiliser `add` explicitement dans ce cas
 
 Pour un message de commit plus complet, utiliser l’éditeur de texte :
 ```bash

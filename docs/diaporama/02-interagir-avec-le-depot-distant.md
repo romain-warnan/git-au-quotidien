@@ -12,8 +12,7 @@
 ```bash
 git push
 ```
-
-Tous les commits du dépôt local sont envoyés vers le dépôt distant.
+ - tous les commits du dépôt local sont envoyés vers le dépôt distant
 
 Cas le plus simple car :
  - on a clôné le dépôt distant
@@ -34,7 +33,6 @@ Gérer les droits d’accès :
 #### État initial
 
 Des commits ont été envoyés vers le serveurs par d’autres développeurs :
-
 
 <div class="center">
     <img src="images/rebase-1.png" />

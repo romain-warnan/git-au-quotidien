@@ -9,6 +9,9 @@
 <!-- .slide: class="slide" -->
 ### Branches locales
 
+Passer d’une branche à l’autre est très rapide avec Git
+ - car tout se passe en local
+
 Créer une nouvelle branche locale :
 ```bash
 git branch nom-branche 
@@ -19,7 +22,7 @@ Extraire une branche existante :
 git checkout nom-branche 
 ```
  - conserve les modifications locales
- - combiner les deux opération grâce à `git checkout -b nom-branche`
+ - combiner les deux opérations grâce à `git checkout -b nom-branche`
 
 
 ===
