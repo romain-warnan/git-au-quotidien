@@ -68,8 +68,16 @@ Annuler les 3 derniers commits :
 git reset --hard HEAD~3 --
 ```
  - en cas d’erreur de manipulation : `git reset HEAD@{3}`
+  - chercher sur internet selon les cas
 
 Pour retourner en arrière à un commit donné :
 ```bash
 git reset --hard 46e273cc54
 ```
+
+
+===
+
+
+<!-- .slide: class="slide" -->
+### Revenir en arrière
