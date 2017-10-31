@@ -20,6 +20,7 @@ Réappliquer le contenu de la remise :
 ```bash
 git stash pop
 ```
+ - `git stash drop` pour abandonner le contenu de la remise
 
 
 ===
