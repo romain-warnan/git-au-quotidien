@@ -35,6 +35,10 @@
     font-size: 5em;
 }
 
+.reveal p {
+	margin: 20px 0 0 0;
+}
+
 .reveal .slides img {
     border: none;
     background: none;
