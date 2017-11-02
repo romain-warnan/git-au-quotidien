@@ -1,4 +1,4 @@
-<!-- .slide: data-background-image="images/git-logo.png" data-background-size="800px" class="chapter" -->
+<!-- .slide: data-background-image="images/git-logo.png" data-background-size="600px" class="chapter" -->
 ## 4
 ### Branches
 
