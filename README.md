@@ -9,9 +9,9 @@ Plus rapide et plus complet que son prédécesseur, le système utilise un vocab
 
 Les sujets abordés :
 
- – Différences fondamentales entre SVN et Git, et ce qu’elles changent pour le développeur.
- – Outils qui permettent d’utiliser Git à l’Insee : Eclipse (Egit), git-bash, Gitlab.
- – Fonctionnalités supplémentaires dont on peut tirer parti : gestion simplifiée des branches et des branches distantes, fusion, rebasage, remisage.
+ - Différences fondamentales entre SVN et Git, et ce qu’elles changent pour le développeur.
+ - Outils qui permettent d’utiliser Git à l’Insee : Eclipse (Egit), git-bash, Gitlab.
+ - Fonctionnalités supplémentaires dont on peut tirer parti : gestion simplifiée des branches et des branches distantes, fusion, rebasage, remisage.
  
 ## Plan
 
