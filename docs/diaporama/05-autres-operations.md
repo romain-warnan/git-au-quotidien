@@ -27,6 +27,32 @@ git stash pop
 
 
 <!-- .slide: class="slide" -->
+### Revenir en arrière
+
+Revenir au dernier commit :
+```bash
+git reset --hard
+```
+ - __attention__ on perd définitivement les modifications non commitées
+ - *cf.* `svn revert`
+
+Annuler les 3 derniers commits :
+```bash
+git reset --hard HEAD~3 --
+```
+ - en cas d’erreur de manipulation : `git reset HEAD@{3}`
+  - chercher sur internet selon les cas
+
+Pour retourner en arrière à un commit donné :
+```bash
+git reset --hard 46e273cc54
+```
+
+
+===
+
+
+<!-- .slide: class="slide" -->
 ### Étiquettes
 
 Marquer un commit comme particulier :
@@ -48,32 +74,6 @@ git push origin --tags
 Récupérer le code associé à une étiquette donnée :
 ```bash
 git checkout v1.1
-```
-
-
-===
-
-
-<!-- .slide: class="slide" -->
-### Revenir en arrière
-
-Revenir au dernier commit :
-```bash
-git reset --hard
-```
- - __attention__ on perd définitivement les modifications non commitées
- - *cf.* `svn revert`
-
-Annuler les 3 derniers commits :
-```bash
-git reset --hard HEAD~3 --
-```
- - en cas d’erreur de manipulation : `git reset HEAD@{3}`
-  - chercher sur internet selon les cas
-
-Pour retourner en arrière à un commit donné :
-```bash
-git reset --hard 46e273cc54
 ```
 
 
