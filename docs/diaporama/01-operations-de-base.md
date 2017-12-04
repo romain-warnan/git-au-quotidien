@@ -10,7 +10,7 @@
 ### Cloner le code depuis le dépôt distant
 
 ```bash
-git clone git@github.com:romain-warnan/git-au-quotidien.git
+git clone https://github.com/romain-warnan/git-au-quotidien.git
 cd git-au-quotidien
 ```
 
