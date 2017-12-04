@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
 
 import com.google.common.collect.ImmutableMap;
 
-import fr.insee.bar.model.Employe;
+import fr.insee.bar.model.Salarie;
 import fr.insee.bar.model.Role;
 
 @Repository
@@ -48,10 +48,10 @@ public class EmployeDao {
 		this.template = new NamedParameterJdbcTemplate(dataSource);
 	}
 
-	public Optional<Employe> find(Short id) {
+	public Optional<Salarie> find(Short id) {
 		try {
-			Employe employe = template.queryForObject(SQL_FIND, ImmutableMap.of("id", id), rowMapper);
-			return Optional.of(employe);
+			Salarie salarie = template.queryForObject(SQL_FIND, ImmutableMap.of("id", id), rowMapper);
+			return Optional.of(salarie);
 
 		}
 		catch (EmptyResultDataAccessException e) {
@@ -59,23 +59,23 @@ public class EmployeDao {
 		}
 	}
 
-	public List<Employe> findAll() {
+	public List<Salarie> findAll() {
 		return template.query(SQL_FIND_ALL, rowMapper);
 	}
 
 	@Component
-	public class EmployeRowMapper implements RowMapper<Employe> {
+	public class EmployeRowMapper implements RowMapper<Salarie> {
 
 		@Override
-		public Employe mapRow(ResultSet rs, int rowNum) throws SQLException {
+		public Salarie mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Role role = new Role();
 			role.setId(rs.getShort("rid"));
 			role.setLibelle(rs.getString("libelle"));
-			Employe employe = new Employe();
-			employe.setId(rs.getShort("eid"));
-			employe.setNom(rs.getString("nom"));
-			employe.setRole(role);
-			return employe;
+			Salarie salarie = new Salarie();
+			salarie.setId(rs.getShort("eid"));
+			salarie.setNom(rs.getString("nom"));
+			salarie.setRole(role);
+			return salarie;
 		}
 
 	}

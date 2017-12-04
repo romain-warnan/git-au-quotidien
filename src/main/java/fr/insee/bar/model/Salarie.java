@@ -3,7 +3,7 @@ package fr.insee.bar.model;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 
-public class Employe {
+public class Salarie {
 
 	private Short id;
 	private String nom;
@@ -40,10 +40,10 @@ public class Employe {
 
 	@Override
 	public boolean equals(Object object) {
-		if (object == null || !(object instanceof Employe)) {
+		if (object == null || !(object instanceof Salarie)) {
 			return false;
 		}
-		Employe other = (Employe) object;
+		Salarie other = (Salarie) object;
 		return Objects.equal(this.id, other.id);
 	}
 
