@@ -1,2 +1,2 @@
 Fichier modifié localement.
-Démonstration du rebase.
+Hotfix.
