@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.Errors;
 
 import fr.insee.bar.dao.ClientDao;
-import fr.insee.bar.model.Personne;
+import fr.insee.bar.model.Client;
 import fr.insee.bar.service.EmployeService;
 import fr.insee.bar.validator.ClientValidator;
 
@@ -52,8 +52,8 @@ public class NouveauClientControllerTestCase {
 	public void nouveauClientPostSuccess() throws Exception {
 		doNothing()
 			.when(clientValidator)
-			.validate(any(Personne.class), any(Errors.class));
-		when(clientDao.insert(any(Personne.class)))
+			.validate(any(Client.class), any(Errors.class));
+		when(clientDao.insert(any(Client.class)))
 			.thenReturn(null);
 		this.mockMvc
 			.perform(post("/client/nouveau")
@@ -71,8 +71,8 @@ public class NouveauClientControllerTestCase {
 	public void nouveauClientPostError() throws Exception {
 		doNothing()
 			.when(clientValidator)
-			.validate(any(Personne.class), any(Errors.class));
-		when(clientDao.insert(any(Personne.class)))
+			.validate(any(Client.class), any(Errors.class));
+		when(clientDao.insert(any(Client.class)))
 			.thenReturn(null);
 		this.mockMvc
 			.perform(post("/client/nouveau")

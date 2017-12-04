@@ -11,7 +11,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.servlet.view.document.AbstractXlsView;
 
-import fr.insee.bar.model.Personne;
+import fr.insee.bar.model.Client;
 
 public class ClientsExcelView extends AbstractXlsView {
 
@@ -22,10 +22,10 @@ public class ClientsExcelView extends AbstractXlsView {
 	@SuppressWarnings("rawtypes")
 	List clients = (List) model.get("clients");
 	for (int n = 0; n < clients.size(); n++) {
-	    Personne personne = (Personne) clients.get(n);
+	    Client client = (Client) clients.get(n);
 	    Row row = sheet.createRow(n);
-	    row.createCell(0).setCellValue(personne.getNom());
-	    row.createCell(1).setCellValue(personne.getEmail());
+	    row.createCell(0).setCellValue(client.getNom());
+	    row.createCell(1).setCellValue(client.getEmail());
 	}
     }
 }
