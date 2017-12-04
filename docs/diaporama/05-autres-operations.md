@@ -18,7 +18,7 @@ git stash
 
 Réappliquer le contenu de la remise :
 ```bash
-git stash pop
+git stash popa
 ```
  - `git stash drop` pour abandonner le contenu de la remise
 
@@ -48,7 +48,7 @@ Pour retourner en arrière à un commit donné :
 git reset --hard 46e273cc54
 ```
 
-Seulement si le travail n’a pas été paratgé
+Seulement si le travail n’a pas été partagé
  - Sinon, voir `git revert`
 
 ===
