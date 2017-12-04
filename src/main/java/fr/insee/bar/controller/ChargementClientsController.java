@@ -57,13 +57,13 @@ public class ChargementClientsController {
 
     @GetMapping(value = "/telechargement", params = "type=pdf")
     public View telechargementPdf(Model model) {
-	model.addAttribute("clients", clientService.personnes());
+	model.addAttribute("clients", clientService.clients());
 	return new ClientsPdfView();
     }
 
     @GetMapping(value = "/telechargement", params = "type=xls")
     public View telechargementExcel(Model model) {
-	model.addAttribute("clients", clientService.personnes());
+	model.addAttribute("clients", clientService.clients());
 	return new ClientsExcelView();
     }
 }

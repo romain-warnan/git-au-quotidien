@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import fr.insee.bar.model.Personne;
+import fr.insee.bar.model.Client;
 import fr.insee.bar.service.ClientService;
 
 @Component
@@ -16,13 +16,13 @@ public class ClientValidator implements Validator {
 
 	@Override
 	public boolean supports(Class<?> clazz) {
-		return Personne.class.isAssignableFrom(clazz);
+		return Client.class.isAssignableFrom(clazz);
 	}
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		Personne personne = (Personne) target;
-		if (clientService.emailDejaUtilise(personne)) {
+		Client client = (Client) target;
+		if (clientService.emailDejaUtilise(client)) {
 			errors.rejectValue("email", "client.email.unique");
 		}
 	}

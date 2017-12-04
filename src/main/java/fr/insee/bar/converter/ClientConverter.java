@@ -7,17 +7,17 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import fr.insee.bar.dao.ClientDao;
-import fr.insee.bar.model.Personne;
+import fr.insee.bar.model.Client;
 
 @Component
-public class ClientConverter implements Converter<String, Personne> {
+public class ClientConverter implements Converter<String, Client> {
 
 	@Autowired
 	private ClientDao clientDao;
 
 	@Override
-	public Personne convert(String id) {
-		Optional<Personne> personne = clientDao.find(Short.valueOf(id));
-		return personne.orElse(Personne.EMPTY);
+	public Client convert(String id) {
+		Optional<Client> client = clientDao.find(Short.valueOf(id));
+		return client.orElse(Client.EMPTY);
 	}
 }
