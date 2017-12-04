@@ -4,3 +4,4 @@ Fichier contenant du texte pour tester différents cas :
  - rebase
  - pull
  - pull --rebase
+Pour démontrer la résolution des conflits.
