@@ -123,3 +123,12 @@ Code de la présentation :
 <div class="center">
 	<a href="https://github.com/romain-warnan/git-au-quotidien" target="_blank"><img src="images/github.png" /></a>
 </div>
+
+
+===
+
+
+<!-- .slide: class="slide" -->
+```bash
+git log --pretty=format:%h --grep='pull' --reverse -1
+```
