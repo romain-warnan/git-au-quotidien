@@ -1,2 +1,1 @@
-Fichier modifié localement.
-Hotfix.
+Fichier modifié localemModification locale.
