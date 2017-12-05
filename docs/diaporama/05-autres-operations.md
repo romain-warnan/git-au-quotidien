@@ -1,4 +1,18 @@
-﻿<!-- .slide: class="slide" -->
+﻿<!-- .slide: data-background-image="images/git-logo.png" data-background-size="600px" class="chapter" -->
+## 5
+### Autres opérations
+
+
+===
+
+
+<!-- .slide: class="slide" -->
+### Remisage
+
+Stocker toutes les modifications non commitées :
+```bash
+git stash
+```
  - copie locale propre
  - modifications dans la remise
 
