@@ -21,3 +21,4 @@ docs/Gruntfile.js
 docs/LICENSE
 docs/package.json
 docs/README.md
+*.tmp
