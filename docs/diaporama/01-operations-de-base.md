@@ -187,7 +187,7 @@ git commit -am "Ignorer les fichiers .class"
 <!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
 ### Ignorer des fichiers (1)
 
-Dans la vue *Package explorer*, *Filters*
+Dans la vue *Package Explorer*, *Filters*
 
 <div class="center">
     <img src="egit/ignore-0.png" class="boxed-img" />
@@ -226,7 +226,7 @@ Afficher les fichiers cachés
 <!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
 ### Ignorer des fichiers (4)
 
-*Commiter* le fichier `.gitignore`
+Commiter le fichier `.gitignore`
 
 <div class="center">
     <img src="egit/ignore-3.png" class="boxed-img" />
@@ -279,3 +279,68 @@ git commit
  - rappel pour quitter vi : __Esc__ puis « :wq », ou __Esc__ puis __Maj + zz__
 
 __Attention__ : le travail est commité dans le dépôt local.
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Commiter des fichiers (1)
+
+Vue *Git Staging* : glisser-déposer les fichiers à commiter
+
+<div class="center">
+    <img src="egit/commit-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Commiter des fichiers (2)
+
+Écrire un message et commiter
+
+<div class="center">
+    <img src="egit/commit-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Commiter des fichiers (3)
+
+Un nouveau *commit* est visible dans l’historique : `5be3cd1`
+
+<div class="center">
+    <img src="egit/commit-2.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Amender un *commit* (1)
+
+Éventuellement, réécrire le message et modifier le contenu du *commit*
+
+<div class="center">
+    <img src="egit/commit-3.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Amender un *commit* (2)
+
+Le dernier *commit* est modifié : `14009e8`
+
+<div class="center">
+    <img src="egit/commit-4.png" class="boxed-img" />
+</div>
