@@ -21,6 +21,63 @@ Différence majeure par rapport à SVN
  - dépôt local ≠ dépôt distant
 
 
+%%%
+
+
+<!-- .slide: class="slide" -->
+### Cloner à partir de FusionForge (1)
+
+Dans FusionForge, onglet « Code source »
+ - copier l’url `git+ssh…`
+
+<div class="center">
+    <img src="egit/clone-0.0.png" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: class="slide" -->
+### Cloner à partir de FusionForge (2)
+
+Perspective Git
+ - coller l’url à gauche
+
+<div class="center">
+    <img src="egit/clone-0.1.png" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: class="slide" -->
+### Cloner à partir de FusionForge (3)
+
+ - Choisir les branches à importer
+ - Next
+
+<div class="center">
+    <img src="egit/clone-0.2.png" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: class="slide" -->
+### Cloner à partir de FusionForge (4)
+
+ - Browse
+ - Sélectionner le workspace d’Eclipse
+ - Finish
+
+<div class="center">
+    <img src="egit/clone-0.3.png" />
+</div>
+
+
 ===
 
 
