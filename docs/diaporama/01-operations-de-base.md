@@ -95,6 +95,20 @@ Le projet n’est pas encore dans Eclipse, il faut l’importer
 	</div>
 </div>
 
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Cloner à partir de GitLab (1)
+
+Le projet n’est pas encore dans Eclipse, il faut l’importer
+
+<div class="center smaller">
+    <div class="smaller-img">
+	    <img src="egit/clone-0.4.png" />
+	</div>
+</div>
 ===
 
 
