@@ -83,6 +83,41 @@ Génère un commit résultant de la fusion :
 </div>
 
 
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Fusion d’une branche distante (1)
+
+<div class="center">
+    <img src="egit/pull-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Fusion d’une branche distante (2)
+
+<div class="center">
+    <img src="egit/pull-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Fusion d’une branche distante (3)
+
+Création d’un *commit* de fusion à deux parents
+
+<div class="center">
+    <img src="egit/pull-2.png" class="boxed-img" />
+</div>
+
+
 ===
 
 
