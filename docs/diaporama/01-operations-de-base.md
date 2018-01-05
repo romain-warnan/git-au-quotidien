@@ -30,7 +30,9 @@ Différence majeure par rapport à SVN
 FusionForge, onglet « Code source » : copier l’url `git+ssh…`
 
 <div class="center">
-    <img src="egit/clone-0.0.png" />
+	<div class="smaller-img">
+	    <img src="egit/clone-0.0.png" />
+	</div>
 </div>
 
 
@@ -42,8 +44,10 @@ FusionForge, onglet « Code source » : copier l’url `git+ssh…`
 
 Perspective Git : coller l’url à gauche
 
-<div class="center">
-    <img src="egit/clone-0.1.png" />
+<div class="center smaller">
+    <div class="smaller-img">
+	    <img src="egit/clone-0.1.png" />
+	</div>
 </div>
 
 
@@ -55,8 +59,10 @@ Perspective Git : coller l’url à gauche
 
 Choisir les branches à importer
 
-<div class="center">
-    <img src="egit/clone-0.2.png" />
+<div class="center smaller">
+    <div class="smaller-img">
+	    <img src="egit/clone-0.2.png" />
+	</div>
 </div>
 
 
@@ -68,8 +74,10 @@ Choisir les branches à importer
 
 Sélectionner le *workspace* d’Eclipse
 
-<div class="center">
-    <img src="egit/clone-0.3.png" />
+<div class="center smaller">
+    <div class="smaller-img">
+	    <img src="egit/clone-0.3.png" />
+	</div>
 </div>
 
 
@@ -81,8 +89,10 @@ Sélectionner le *workspace* d’Eclipse
 
 Le projet n’est pas encore dans Eclipse, il faut l’importer
 
-<div class="center">
-    <img src="egit/clone-0.4.png" />
+<div class="center smaller">
+    <div class="smaller-img">
+	    <img src="egit/clone-0.4.png" />
+	</div>
 </div>
 
 ===
