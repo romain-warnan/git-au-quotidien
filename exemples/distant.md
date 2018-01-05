@@ -1,3 +1,3 @@
 Fichier modifié directement dans le dépôt distant.
-Démonstration rebase. 
-MOdification distante.
+Démonstration merge. 
+Modification distante.
