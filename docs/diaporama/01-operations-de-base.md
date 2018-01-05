@@ -30,9 +30,7 @@ Différence majeure par rapport à SVN
 FusionForge, onglet « Code source » : copier l’url `git+ssh…`
 
 <div class="center">
-	<div class="smaller-img">
-	    <img src="egit/clone-0.0.png" />
-	</div>
+    <img src="egit/clone-0.0.png" class="boxed-img" />
 </div>
 
 
@@ -45,9 +43,7 @@ FusionForge, onglet « Code source » : copier l’url `git+ssh…`
 Perspective Git : coller l’url à gauche
 
 <div class="center smaller">
-    <div class="smaller-img">
-	    <img src="egit/clone-0.1.png" />
-	</div>
+	   <img src="egit/clone-0.1.png" class="boxed-img" />
 </div>
 
 
@@ -60,9 +56,7 @@ Perspective Git : coller l’url à gauche
 Choisir les branches à importer
 
 <div class="center smaller">
-    <div class="smaller-img">
-	    <img src="egit/clone-0.2.png" />
-	</div>
+    <img src="egit/clone-0.2.png" class="boxed-img" />
 </div>
 
 
@@ -75,9 +69,7 @@ Choisir les branches à importer
 Sélectionner le *workspace* d’Eclipse
 
 <div class="center smaller">
-    <div class="smaller-img">
-	    <img src="egit/clone-0.3.png" />
-	</div>
+    <img src="egit/clone-0.3.png" class="boxed-img" />
 </div>
 
 
@@ -90,9 +82,7 @@ Sélectionner le *workspace* d’Eclipse
 Le projet n’est pas encore dans Eclipse, il faut l’importer
 
 <div class="center smaller">
-    <div class="smaller-img">
-	    <img src="egit/clone-0.4.png" />
-	</div>
+    <img src="egit/clone-0.4.png" class="boxed-img" />
 </div>
 
 
@@ -105,9 +95,7 @@ Le projet n’est pas encore dans Eclipse, il faut l’importer
 GitLab, onglet « Details » : copier l’url `[git@git.web…`
 
 <div class="center smaller">
-    <div class="smaller-img">
-	    <img src="egit/clone-1.0.png" />
-	</div>
+    <img src="egit/clone-1.0.png" class="boxed-img" />
 </div>
 
 
@@ -120,9 +108,7 @@ GitLab, onglet « Details » : copier l’url `[git@git.web…`
 Eclipse ne comprends pas, corriger les éléments de l’url un par un
 
 <div class="center smaller">
-    <div class="smaller-img">
-	    <img src="egit/clone-1.1.png" />
-	</div>
+    <img src="egit/clone-1.1.png" class="boxed-img" />
 </div>
 
 
@@ -135,9 +121,7 @@ Eclipse ne comprends pas, corriger les éléments de l’url un par un
 Importer le projet avec Maven
 
 <div class="center smaller">
-    <div class="smaller-img">
-	    <img src="egit/clone-1.2.png" />
-	</div>
+    <img src="egit/clone-1.2.png" class="boxed-img" />
 </div>
 
 
@@ -150,9 +134,7 @@ Importer le projet avec Maven
 Patienter
 
 <div class="center smaller">
-    <div class="smaller-img">
-	    <img src="egit/clone-1.3.png" />
-	</div>
+    <img src="egit/clone-1.3.png" class="boxed-img" />
 </div>
 
 
@@ -165,10 +147,8 @@ Patienter
 
 Pour vérifier, faire *Team > Show in history* à la racine du projet
 
-<div class="center smaller">
-    <div class="smaller-img">
-	    <img src="egit/clone-1.4.png" />
-	</div>
+<div class="center">
+    <img src="egit/clone-1.4.png" class="boxed-img" />
 </div>
 
 
@@ -199,6 +179,58 @@ Ignorer de nouveaux fichiers :
 echo "*.class" >> .gitignore
 git commit -am "Ignorer les fichiers .class"
 ```
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Ignorer des fichiers (1)
+
+Dans la vue *Package explorer*, *Filters*
+
+<div class="center">
+    <img src="egit/ignore-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Ignorer des fichiers (2)
+
+Afficher les fichiers cachés
+
+<div class="center">
+    <img src="egit/ignore-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Ignorer des fichiers (3)
+
+Éditer le fichier `.gitignore`
+
+<div class="center">
+    <img src="egit/ignore-2.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Ignorer des fichiers (4)
+
+*Commiter* le fichier `.gitignore`
+
+<div class="center">
+    <img src="egit/ignore-3.png" class="boxed-img" />
+</div>
 
 
 ===
