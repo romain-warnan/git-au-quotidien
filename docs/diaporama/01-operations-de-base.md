@@ -102,13 +102,76 @@ Le projet n’est pas encore dans Eclipse, il faut l’importer
 <!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
 ### Cloner à partir de GitLab (1)
 
-Le projet n’est pas encore dans Eclipse, il faut l’importer
+GitLab, onglet « Details » : copier l’url `[git@git.web…`
 
 <div class="center smaller">
     <div class="smaller-img">
-	    <img src="egit/clone-0.4.png" />
+	    <img src="egit/clone-1.0.png" />
 	</div>
 </div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Cloner à partir de GitLab (2)
+
+Eclipse ne comprends pas, corriger les éléments de l’url un par un
+
+<div class="center smaller">
+    <div class="smaller-img">
+	    <img src="egit/clone-1.1.png" />
+	</div>
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Cloner à partir de GitLab (3)
+
+Importer le projet avec Maven
+
+<div class="center smaller">
+    <div class="smaller-img">
+	    <img src="egit/clone-1.2.png" />
+	</div>
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Cloner à partir de GitLab (4)
+
+Patienter
+
+<div class="center smaller">
+    <div class="smaller-img">
+	    <img src="egit/clone-1.3.png" />
+	</div>
+</div>
+
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Cloner à partir de GitLab (5)
+
+Pour vérifier, faire *Team > Show in history* à la racine du projet
+
+<div class="center smaller">
+    <div class="smaller-img">
+	    <img src="egit/clone-1.4.png" />
+	</div>
+</div>
+
+
 ===
 
 
