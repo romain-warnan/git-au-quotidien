@@ -24,11 +24,10 @@ Différence majeure par rapport à SVN
 %%%
 
 
-<!-- .slide: class="slide" -->
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
 ### Cloner à partir de FusionForge (1)
 
-Dans FusionForge, onglet « Code source »
- - copier l’url `git+ssh…`
+FusionForge, onglet « Code source » : copier l’url `git+ssh…`
 
 <div class="center">
     <img src="egit/clone-0.0.png" />
@@ -38,11 +37,10 @@ Dans FusionForge, onglet « Code source »
 %%%
 
 
-<!-- .slide: class="slide" -->
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
 ### Cloner à partir de FusionForge (2)
 
-Perspective Git
- - coller l’url à gauche
+Perspective Git : coller l’url à gauche
 
 <div class="center">
     <img src="egit/clone-0.1.png" />
@@ -52,11 +50,10 @@ Perspective Git
 %%%
 
 
-<!-- .slide: class="slide" -->
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
 ### Cloner à partir de FusionForge (3)
 
- - Choisir les branches à importer
- - Next
+Choisir les branches à importer
 
 <div class="center">
     <img src="egit/clone-0.2.png" />
@@ -66,17 +63,27 @@ Perspective Git
 %%%
 
 
-<!-- .slide: class="slide" -->
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
 ### Cloner à partir de FusionForge (4)
 
- - Browse
- - Sélectionner le workspace d’Eclipse
- - Finish
+Sélectionner le *workspace* d’Eclipse
 
 <div class="center">
     <img src="egit/clone-0.3.png" />
 </div>
 
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Cloner à partir de FusionForge (5)
+
+Le projet n’est pas encore dans Eclipse, il faut l’importer
+
+<div class="center">
+    <img src="egit/clone-0.4.png" />
+</div>
 
 ===
 

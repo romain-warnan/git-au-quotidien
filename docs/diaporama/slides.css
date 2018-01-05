@@ -50,7 +50,11 @@
     font-size: 30px;
 }
 
-.reveal .chapter.slide-background.present  {
+.reveal .tp.slide-background.present  {
+    opacity: 0.2;
+}
+
+.reveal .slide.slide-background.present  {
     opacity: 0.2;
 }
 
