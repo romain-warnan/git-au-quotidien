@@ -25,6 +25,32 @@ Gérer les droits d’accès :
  - `credential.helper`
 
 
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Partager ses *commits* (1)
+
+La copie de travail doit être à jour : voir `git pull`
+
+<div class="center">
+    <img src="egit/push-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Partager ses *commits* (2)
+
+Récapitulatifs des *commits* envoyés
+
+<div class="center">
+    <img src="egit/push-1.png" class="boxed-img" />
+</div>
+
+
 ===
 
  
