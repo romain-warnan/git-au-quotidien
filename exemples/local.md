@@ -1,1 +1,2 @@
-Fichier modifié localement. Modification locale.
+Fichier modifié localement.
+Modification locale.
