@@ -1,2 +1,1 @@
-Modification distante 1
-Modification distante 2
+Conflit rebasage : Modification distante 1
