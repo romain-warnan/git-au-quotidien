@@ -134,3 +134,64 @@ Pas de commit de fusion :
 <div class="center">
     <img src="images/rebase-3.png" />
 </div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage d’une branche distante (1)
+
+Choisir *Fetch*
+
+ - pas *Pull* car cela fait une fusion par défaut
+
+<div class="center">
+    <img src="egit/fetch-rebase-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage d’une branche distante (2)
+
+Liste des *commits* qui vont être récupérés
+<div class="center">
+    <img src="egit/fetch-rebase-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage d’une branche distante (3)
+
+Choisir *Rebase*
+<div class="center">
+    <img src="egit/fetch-rebase-2.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage d’une branche distante (4)
+
+Choisir la branche distante adéquate
+<div class="center">
+    <img src="egit/fetch-rebase-3.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage d’une branche distante (5)
+
+Les commits locaux ont été réécrits et l’historique est linéaire
+<div class="center">
+    <img src="egit/fetch-rebase-4.png" class="boxed-img" />
+</div>
