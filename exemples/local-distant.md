@@ -1,3 +1,1 @@
-Modification locale 1
-Modification locale 2
-Modification locale 3
+Rebasage : Modification locale 1
