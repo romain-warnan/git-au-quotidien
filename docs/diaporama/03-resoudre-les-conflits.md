@@ -9,30 +9,6 @@
 <!-- .slide: class="slide" -->
 ### Résoudre les conflits
 
-#### Cas du rebasage
-
-Il est déconseillé d’utiliser cette technique, mieux vaut utiliser une fusion en cas de conflit
-
-```bash
-git pull --rebase
-```
-
-Pour revenir à l’état sans conflit et annuler le rebasage :
-```bash
-git rebase --abort
-```
-
-Puis on se ramène a cas de la fusion :
-```bash
-git pull
-```
-
-===
-
-
-<!-- .slide: class="slide" -->
-### Résoudre les conflits
-
 #### Cas de la fusion
 
 
@@ -54,4 +30,28 @@ git commit -m "Message de résolution du conflit."
 Pour revenir à l’état sans conflit et annuler la fusion :
 ```bash
 git merge --abort
+```
+
+===
+
+
+<!-- .slide: class="slide" -->
+### Résoudre les conflits
+
+#### Cas du rebasage
+
+Il est déconseillé d’utiliser cette technique, mieux vaut utiliser une fusion en cas de conflit
+
+```bash
+git pull --rebase
+```
+
+Pour revenir à l’état sans conflit et annuler le rebasage :
+```bash
+git rebase --abort
+```
+
+Puis on se ramène a cas de la fusion :
+```bash
+git pull --rebase
 ```
