@@ -11,28 +11,21 @@
 
 #### Cas du rebasage
 
+Il est déconseillé d’utiliser cette technique, mieux vaut utiliser une fusion en cas de conflit
+
 ```bash
 git pull --rebase
 ```
- - on est avertis qu’il y a des conflits
-
-Quand un fichier est corrigé :
-```bash
-git add fichier-conflit
-```
-
-Une fois que tous les conflits sont corrigés :
-```bash
-git rebase --continue
-```
-
-Répéter ces opérations tant que le rebasage n’est pas terminé.
 
 Pour revenir à l’état sans conflit et annuler le rebasage :
 ```bash
 git rebase --abort
 ```
 
+Puis on se ramène a cas de la fusion :
+```bash
+git pull
+```
 
 ===
 
