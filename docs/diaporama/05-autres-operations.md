@@ -171,6 +171,64 @@ Récupérer le code associé à une étiquette donnée :
 git checkout v1.1
 ```
 
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Poser un étiquette (1)
+
+Clic droit sur le *commit* adéquat
+<div class="center">
+    <img src="egit/tag-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Poser un étiquette (2)
+
+Nommer et décrire l’étiquette
+<div class="center">
+    <img src="egit/tag-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Poser un étiquette (3)
+
+Envoyer l’étiquette dans le dépôt distant
+<div class="center">
+    <img src="egit/tag-2.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Poser un étiquette (4)
+
+<div class="center">
+    <img src="egit/tag-3.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Poser un étiquette (5)
+
+L’étiquette est bien visible dans le dépôt distant
+<div class="center">
+    <img src="egit/tag-4.png" class="boxed-img" />
+</div>
+
 
 ===
 
