@@ -36,11 +36,53 @@ git merge --abort
 %%%
 
 <!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
-### Résoudre les conflits de fusion
+### Résoudre les conflits de fusion (1)
 
-Choisir la branche distante adéquate
+Pendant un *Pull* on est prévenu qu’il y a des conflits
 <div class="center">
-    <img src="egit/fetch-rebase-3.png" class="boxed-img" />
+    <img src="egit/pull-conflict-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Résoudre les conflits de fusion (2)
+
+Double-cliquer sur le fichier en conflit
+
+ - cela ouvre l’outils de résolution des conflits
+
+<div class="center">
+    <img src="egit/pull-conflict-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Résoudre les conflits de fusion (3)
+
+ - résoudre le conflit à l’aide de l’outils et enregister les fichiers
+ - glisser le fichier dans la zone d’index
+ - saisir un message de *commit* et commiter
+
+<div class="center">
+    <img src="egit/pull-conflict-2.png" class="boxed-img" />
+</div>
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Résoudre les conflits de fusion (4)
+
+La branche distante est fusionnée dans la copie locale
+
+<div class="center">
+    <img src="egit/pull-conflict-2.png" class="boxed-img" />
 </div>
 
 
@@ -72,7 +114,7 @@ git pull
 %%%
 
 <!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
-### Résoudre les conflits de rebasage
+### Résoudre les conflits de rebasage (1)
 
 Choisir la branche distante adéquate
 <div class="center">
@@ -80,12 +122,10 @@ Choisir la branche distante adéquate
 </div>
 
 
-
-
 %%%
 
 <!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
-### Résoudre les conflits de rebasage
+### Résoudre les conflits de rebasage (2)
 
 Choisir d’annuler le rebasage *Abort rebase*
 <div class="center">
@@ -96,7 +136,7 @@ Choisir d’annuler le rebasage *Abort rebase*
 %%%
 
 <!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
-### Résoudre les conflits de rebasage
+### Résoudre les conflits de rebasage (3)
 
 Lancer une fusion comme dans l’exemple précédent
 <div class="center">
