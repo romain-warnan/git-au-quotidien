@@ -2,7 +2,7 @@ package fr.insee.bar.controller;
 
 import fr.insee.bar.dao.ClientDao;
 import fr.insee.bar.exception.BarDroitException;
-import fr.insee.bar.model.Client;
+import fr.insee.bar.model.Personne;
 import fr.insee.bar.model.Salarie;
 import fr.insee.bar.service.EmployeService;
 import fr.insee.bar.validator.ClientValidator;
@@ -33,12 +33,12 @@ public class NouveauClientController {
 	@GetMapping("/nouveau")
 	public String nouveauClient(Salarie salarie, Model model) throws BarDroitException {
 		employeService.verifierResponsable(salarie);
-		model.addAttribute("client", new Client());
+		model.addAttribute("client", new Personne());
 		return "nouveau-client";
 	}
 
 	@PostMapping("/nouveau")
-	public String nouveauClientPost(@Valid Client client, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
+	public String nouveauClientPost(@Valid Personne client, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
 		clientValidator.validate(client, result);
 		if (result.hasErrors()) {
 			model.addAttribute("client", client);
