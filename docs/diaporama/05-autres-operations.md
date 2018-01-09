@@ -21,7 +21,64 @@ Réappliquer le contenu de la remise :
 git stash pop
 ```
  - `git stash drop` pour abandonner le contenu de la remise
+ 
 
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Remiser des modifications (1)
+
+<div class="center">
+    <img src="egit/stash-0.png" class="boxed-img" />
+</div>
+ 
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Remiser des modifications (2)
+
+Choisir d’inclure ou non les fichiers nouvellements créés
+<div class="center">
+    <img src="egit/stash-1.png" class="boxed-img" />
+</div>
+ 
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Appliquer des modifications remisées (1)
+
+<div class="center">
+    <img src="egit/stash-apply-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Appliquer des modifications remisées (2)
+
+Appliquer puis supprimer la remise
+<div class="center">
+    <img src="egit/stash-apply-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Appliquer des modifications remisées (3)
+
+Appliquer puis supprimer la remise
+<div class="center">
+    <img src="egit/stash-apply-2.png" class="boxed-img" />
+</div>
 
 ===
 

@@ -13,15 +13,15 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 
-public class Personne {
+public class Client {
 
-	public static Personne EMPTY = new Personne((short) 0, "<client>");
+	public static Client EMPTY = new Client((short) 0, "<client>");
 
-	public Personne() {
+	public Client() {
 		titre = Titre.M;
 	}
 
-	private Personne(Short id, String nom) {
+	private Client(Short id, String nom) {
 		this.id = id;
 		this.nom = nom;
 	}
@@ -121,10 +121,10 @@ public class Personne {
 
 	@Override
 	public boolean equals(Object object) {
-		if (object == null || !(object instanceof Personne)) {
+		if (object == null || !(object instanceof Client)) {
 			return false;
 		}
-		Personne other = (Personne) object;
+		Client other = (Client) object;
 		return Objects.equal(this.id, other.id);
 	}
 

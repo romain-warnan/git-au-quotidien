@@ -11,7 +11,7 @@ public class Employe {
 
 	public Short getId() {
 		return id;
-	}
+	} 
 
 	public void setId(Short id) {
 		this.id = id;

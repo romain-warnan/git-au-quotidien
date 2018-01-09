@@ -17,8 +17,8 @@ import org.springframework.stereotype.Repository;
 
 import com.google.common.collect.ImmutableMap;
 
-import fr.insee.bar.model.Personne;
-import fr.insee.bar.model.Personne.Titre;
+import fr.insee.bar.model.Client;
+import fr.insee.bar.model.Client.Titre;
 
 @Repository
 public class ClientDao {
@@ -42,9 +42,9 @@ public class ClientDao {
 		this.template = new NamedParameterJdbcTemplate(dataSource);
 	}
 
-	public Optional<Personne> find(Short id) {
+	public Optional<Client> find(Short id) {
 		try {
-			Personne client = template.queryForObject(SQL_FIND, ImmutableMap.of("id", id), rowMapper);
+			Client client = template.queryForObject(SQL_FIND, ImmutableMap.of("id", id), rowMapper);
 			return Optional.of(client);
 
 		}
@@ -53,9 +53,9 @@ public class ClientDao {
 		}
 	}
 
-	public Optional<Personne> findByEmail(String email) {
+	public Optional<Client> findByEmail(String email) {
 		try {
-			Personne client = template.queryForObject(SQL_FIND_BY_EMAIL, ImmutableMap.of("email", email), rowMapper);
+			Client client = template.queryForObject(SQL_FIND_BY_EMAIL, ImmutableMap.of("email", email), rowMapper);
 			return Optional.of(client);
 
 		}
@@ -64,11 +64,11 @@ public class ClientDao {
 		}
 	}
 
-	public List<Personne> findAll() {
+	public List<Client> findAll() {
 		return template.query(SQL_FIND_ALL, rowMapper);
 	}
 
-	public Personne insert(Personne client) {
+	public Client insert(Client client) {
 		template.update(SQL_INSERT, ImmutableMap.of(
 			"nom", client.getNom(),
 			"email", client.getEmail(),
@@ -77,7 +77,7 @@ public class ClientDao {
 		return this.findByEmail(client.getEmail()).get();
 	}
 
-	public Personne update(Personne client) {
+	public Client update(Client client) {
 		template.update(SQL_UPDATE, ImmutableMap.of(
 			"nom", client.getNom(),
 			"email", client.getEmail(),
@@ -88,11 +88,11 @@ public class ClientDao {
 	}
 
 	@Component
-	public class ClientRowMapper implements RowMapper<Personne> {
+	public class ClientRowMapper implements RowMapper<Client> {
 
 		@Override
-		public Personne mapRow(ResultSet rs, int rowNum) throws SQLException {
-			Personne client = new Personne();
+		public Client mapRow(ResultSet rs, int rowNum) throws SQLException {
+			Client client = new Client();
 			client.setId(rs.getShort("id"));
 			client.setNom(rs.getString("nom"));
 			client.setEmail(rs.getString("email"));

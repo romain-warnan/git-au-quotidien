@@ -3,8 +3,8 @@ package fr.insee.bar.service;
 import com.google.common.base.Objects;
 import fr.insee.bar.dao.ClientDao;
 import fr.insee.bar.exception.BarClientException;
-import fr.insee.bar.model.Personne;
-import fr.insee.bar.model.Personne.Titre;
+import fr.insee.bar.model.Client;
+import fr.insee.bar.model.Client.Titre;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,17 +29,17 @@ public class ClientService {
 	@Autowired
 	private ClientDao clientDao;
 
-	public boolean emailDejaUtilise(Personne client) {
-		Optional<Personne> optional = clientDao.findByEmail(client.getEmail());
+	public boolean emailDejaUtilise(Client client) {
+		Optional<Client> optional = clientDao.findByEmail(client.getEmail());
 		if (optional.isPresent()) {
-			Personne autre = optional.get();
+			Client autre = optional.get();
 			return !Objects.equal(autre.getId(), client.getId());
 		}
 		return false;
 	}
 
 	private boolean emailDejaUtilise(String email) {
-		Optional<Personne> optional = clientDao.findByEmail(email);
+		Optional<Client> optional = clientDao.findByEmail(email);
 		return optional.isPresent();
 	}
 
@@ -77,7 +77,7 @@ public class ClientService {
 		return file;
 	}
 
-	private String string(Personne client) {
+	private String string(Client client) {
 		StringBuilder builder = new StringBuilder();
 		builder
 			.append(client.getTitre().getCode())
@@ -101,7 +101,7 @@ public class ClientService {
 				.toLocalDate());
 	}
 
-	private Optional<Personne> client(String ligne) {
+	private Optional<Client> client(String ligne) {
 		try {
 			return this.clientException(ligne);
 		}
@@ -111,14 +111,14 @@ public class ClientService {
 		return Optional.empty();
 	}
 
-	private Personne client(String[] tokens) throws BarClientException, NumberFormatException, DateTimeParseException {
+	private Client client(String[] tokens) throws BarClientException, NumberFormatException, DateTimeParseException {
 		if (tokens.length != 4) {
 			throw new BarClientException(String.format("Il y a %d éléments au lieu de 4.", tokens.length));
 		}
 		if (this.emailDejaUtilise(tokens[2])) {
 			throw new BarClientException(String.format("L’email %s est déjà utilisé.", tokens[2]));
 		}
-		Personne client = new Personne();
+		Client client = new Client();
 		client.setTitre(Titre.of(Short.valueOf(tokens[0])));
 		client.setNom(tokens[1]);
 		client.setEmail(tokens[2]);
@@ -136,11 +136,11 @@ public class ClientService {
 
 	}
 
-	public List<Personne> clients() {
+	public List<Client> clients() {
 		return clientDao.findAll();
 	}
 
-	private Optional<Personne> clientException(String ligne) throws BarClientException {
+	private Optional<Client> clientException(String ligne) throws BarClientException {
 		if (StringUtils.isNotBlank(ligne)) {
 			String[] tokens = ligne.split(";");
 			try {
