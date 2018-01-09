@@ -10,14 +10,14 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
-import fr.insee.bar.model.Salarie;
+import fr.insee.bar.model.Employe;
 
 @Component
 public class EmployeResolver implements HandlerMethodArgumentResolver {
 
 	@Override
 	public boolean supportsParameter(MethodParameter parameter) {
-		return Salarie.class.equals(parameter.getParameterType());
+		return Employe.class.equals(parameter.getParameterType());
 	}
 
 	@Override

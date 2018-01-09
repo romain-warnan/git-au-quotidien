@@ -3,7 +3,7 @@ package fr.insee.bar.controller;
 import fr.insee.bar.dao.ClientDao;
 import fr.insee.bar.exception.BarDroitException;
 import fr.insee.bar.model.Personne;
-import fr.insee.bar.model.Salarie;
+import fr.insee.bar.model.Employe;
 import fr.insee.bar.service.EmployeService;
 import fr.insee.bar.validator.ClientValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class ModificationClientController {
 	private EmployeService employeService;
 
 	@GetMapping("/modification/{client}")
-	public String modificationClient(@PathVariable("client") Personne client, Salarie salarie, Model model) throws BarDroitException {
+	public String modificationClient(@PathVariable("client") Personne client, Employe salarie, Model model) throws BarDroitException {
 		employeService.verifierResponsable(salarie);
 		model.addAttribute("client", client);
 		return "modification-client";

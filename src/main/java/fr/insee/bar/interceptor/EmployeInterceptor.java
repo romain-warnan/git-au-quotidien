@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import fr.insee.bar.model.Salarie;
+import fr.insee.bar.model.Employe;
 import fr.insee.bar.provider.EmployeProvider;
 
 @Component
@@ -21,7 +21,7 @@ public class EmployeInterceptor extends HandlerInterceptorAdapter implements Han
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		HttpSession session = request.getSession(true);
-		Salarie salarie = (Salarie) session.getAttribute("employe");
+		Employe salarie = (Employe) session.getAttribute("employe");
 		if (salarie == null) {
 			salarie = employeProvider.provide();
 			session.setAttribute("employe", salarie);

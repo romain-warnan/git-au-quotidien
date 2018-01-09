@@ -1,8 +1,8 @@
 package fr.insee.bar.provider;
 
-import fr.insee.bar.model.Salarie;
+import fr.insee.bar.model.Employe;
 
 public interface EmployeProvider {
 
-	Salarie provide();
+	Employe provide();
 }
