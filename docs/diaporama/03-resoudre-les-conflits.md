@@ -32,6 +32,18 @@ Pour revenir à l’état sans conflit et annuler la fusion :
 git merge --abort
 ```
 
+
+%%%
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Résoudre les conflits de fusion
+
+Choisir la branche distante adéquate
+<div class="center">
+    <img src="egit/fetch-rebase-3.png" class="boxed-img" />
+</div>
+
+
 ===
 
 
@@ -53,5 +65,41 @@ git rebase --abort
 
 Puis on se ramène a cas de la fusion :
 ```bash
-git pull --rebase
+git pull
 ```
+
+
+%%%
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Résoudre les conflits de rebasage
+
+Choisir la branche distante adéquate
+<div class="center">
+    <img src="egit/rebase-conflict-0.png" class="boxed-img" />
+</div>
+
+
+
+
+%%%
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Résoudre les conflits de rebasage
+
+Choisir d’annuler le rebasage *Abort rebase*
+<div class="center">
+    <img src="egit/rebase-conflict-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Résoudre les conflits de rebasage
+
+Lancer une fusion comme dans l’exemple précédent
+<div class="center">
+    <img src="egit/rebase-conflict-2.png" class="boxed-img" />
+</div>
+
