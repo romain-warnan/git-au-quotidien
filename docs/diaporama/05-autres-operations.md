@@ -108,6 +108,42 @@ git reset --hard 46e273cc54
 Seulement si le travail n’a pas été paratgé
  - Sinon, voir `git revert`
 
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Revenir en arrière (1)
+
+<div class="center">
+    <img src="egit/reset-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Revenir en arrière (2)
+
+Choisr le type de retour en arrière : *Hard* pour annuler toutes les modifications locales
+<div class="center">
+    <img src="egit/reset-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Revenir en arrière (3)
+
+Le *Reset Hard* provoque la perte des modifications non commitées
+<div class="center">
+    <img src="egit/reset-2.png" class="boxed-img" />
+</div>
+
+
 ===
 
 
