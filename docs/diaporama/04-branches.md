@@ -25,6 +25,39 @@ git checkout nom-branche
  - combiner les deux opérations grâce à `git checkout -b nom-branche`
 
 
+%%%
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Créer une nouvelle branche locale (1)
+
+On va basculer sur la nouvelle branche dans la foulée
+<div class="center">
+    <img src="egit/local-branch-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Créer une nouvelle branche locale (2)
+
+Donner un nom à la branche
+<div class="center">
+    <img src="egit/local-branch-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Créer une nouvelle branche locale (3)
+
+On est désormais sur une nouvelle branche
+<div class="center">
+    <img src="egit/local-branch-2.png" class="boxed-img" />
+</div>
+
+
 ===
 
 
