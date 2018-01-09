@@ -210,6 +210,45 @@ git branch -d nom-branche
 ```
 
 
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Fusionner une branche locale en avance rapide (1)
+
+Se positionner sur la branche de destination (souvent, *master*)
+<div class="center">
+    <img src="egit/merge-branch-ff-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Fusionner une branche locale en avance rapide (2)
+
+Choisir la branche à fusionner
+<div class="center">
+    <img src="egit/merge-branch-ff-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Fusionner une branche locale en avance rapide (3)
+
+Dans ce cas, la fusion est en avance rapide
+
+ - c’est le cas le plus simple
+ - il n’y a pas de *commit* de fusion
+
+<div class="center">
+    <img src="egit/merge-branch-ff-2.png" class="boxed-img" />
+</div>
+
 ===
 
 
