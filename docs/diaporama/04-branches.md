@@ -255,7 +255,7 @@ Dans ce cas, la fusion est en avance rapide
 <!-- .slide: class="slide" -->
 ### Fusionner une branche
 
-Cas intermédiaire : fusion à trois branchep walls
+Cas intermédiaire : fusion à trois branches
  - commit du résultat de la fusion
 
 
@@ -265,3 +265,49 @@ Cas intermédiaire : fusion à trois branchep walls
 
 Cas difficile : fusion avec conflits
  - résoudre les conflits avant de pouvoir commiter
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Fusionner des branches divergentes (1)
+
+Choisir la branche à fusionner
+<div class="center">
+    <img src="egit/merge-branch-0.png" class="boxed-img" />
+</div> 
+ 
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Fusionner des branches divergentes (2)
+
+Dans ce cas, il y aura un *commit* à deux parents résultant de la fusion
+<div class="center">
+    <img src="egit/merge-branch-1.png" class="boxed-img" />
+</div>
+ 
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Supprimer une branche fusionnée (1)
+
+<div class="center">
+    <img src="egit/delete-branch-0.png" class="boxed-img" />
+</div>
+ 
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Supprimer une branche fusionnée (2)
+
+<div class="center">
+    <img src="egit/delete-branch-1.png" class="boxed-img" />
+</div>
