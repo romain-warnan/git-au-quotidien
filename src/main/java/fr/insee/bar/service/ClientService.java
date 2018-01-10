@@ -38,7 +38,7 @@ public class ClientService {
 		return false;
 	}
 
-	private boolean emailDejaUtilise(String email) {
+	private boolean emailDejaUtiliseFast(String email) {
 		Optional<Client> optional = clientDao.findByEmail(email);
 		return optional.isPresent();
 	}
@@ -115,7 +115,7 @@ public class ClientService {
 		if (tokens.length != 4) {
 			throw new BarClientException(String.format("Il y a %d éléments au lieu de 4.", tokens.length));
 		}
-		if (this.emailDejaUtilise(tokens[2])) {
+		if (this.emailDejaUtiliseFast(tokens[2])) {
 			throw new BarClientException(String.format("L’email %s est déjà utilisé.", tokens[2]));
 		}
 		Client client = new Client();
