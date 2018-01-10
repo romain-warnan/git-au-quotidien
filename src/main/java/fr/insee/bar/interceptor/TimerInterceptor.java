@@ -22,7 +22,7 @@ public class TimerInterceptor extends HandlerInterceptorAdapter implements Handl
 	@Override
 	public void afterCompletion(HttpServletRequest request, javax.servlet.http.HttpServletResponse response, Object handler, Exception ex) throws Exception {
 		Stopwatch stopwatch = (Stopwatch) request.getAttribute("stopwatch");
-		System.out.println(request.getRequestURI() + " - " + stopwatch.toString());
+		System.out.println(request.getRequestURI() + " > " + stopwatch.toString());
 		stopwatch.stop();
 	}
 
