@@ -105,7 +105,7 @@ GitLab, onglet « Details » : copier l’url `[git@git.web…`
 <!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
 ### Cloner à partir de GitLab (2)
 
-Eclipse ne comprends pas, corriger les éléments de l’url un par un
+Eclipse ne comprend pas, corriger les éléments de l’url un par un
 
 <div class="center smaller">
     <img src="egit/clone-1.1.png" class="boxed-img" />
