@@ -256,6 +256,129 @@ Gérer des sous-modules
 …
 
 
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage interactif (1)
+
+L’historique n’est pas linéaire, il est difficile à relire
+<div class="center">
+    <img src="egit/rebase-interactive-0.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage interactif (2)
+
+Clic droit sur le *commit* à partir duquel on souhaite rebaser
+<div class="center">
+    <img src="egit/rebase-interactive-1.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+
+### Rebasage interactif (3)
+
+On peut annuler le rebasage
+<div class="center">
+    <img src="egit/rebase-interactive-2.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage interactif (4)
+
+Réorganiser les *commits* et cliquer sur *Start*
+
+ - on en garde un pour la correction du *bug* et on le place en premier
+ - on fusionne les autres *commits* en un seul
+ 
+<div class="center">
+    <img src="egit/rebase-interactive-3.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage interactif (5)
+
+Message du *commit* résultat de la fusion
+<div class="center">
+    <img src="egit/rebase-interactive-4.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage interactif (6)
+
+On écrit un message de *commit* plus lisible
+<div class="center">
+    <img src="egit/rebase-interactive-5.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage interactif (7)
+
+L’historique est devenu linéaire et plus court
+<div class="center">
+    <img src="egit/rebase-interactive-6.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage interactif (8)
+
+Reste à supprimer les branches de travail
+<div class="center">
+    <img src="egit/rebase-interactive-7.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage interactif (9)
+
+<div class="center">
+    <img src="egit/rebase-interactive-8.png" class="boxed-img" />
+</div>
+
+
+%%%
+
+
+<!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
+### Rebasage interactif (10)
+
+L’historique est devenu plus lisible
+<div class="center">
+    <img src="egit/rebase-interactive-9.png" class="boxed-img" />
+</div>
+
+
 ===
 
 
