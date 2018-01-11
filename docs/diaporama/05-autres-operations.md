@@ -105,7 +105,7 @@ Pour retourner en arrière à un commit donné :
 git reset --hard 46e273cc54
 ```
 
-Seulement si le travail n’a pas été paratgé
+Seulement si le travail n’a pas été partagé
  - Sinon, voir `git revert`
 
 

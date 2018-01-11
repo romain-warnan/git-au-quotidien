@@ -58,7 +58,7 @@ Récapitulatifs des *commits* envoyés
 ### Mettre à jour sa copie locale
 #### État initial
 
-Des commits ont été envoyés vers le serveurs par d’autres développeurs :
+Des commits ont été envoyés vers le serveur par d’autres développeurs :
 
 <div class="center">
     <img src="images/rebase-1.png" />

@@ -135,7 +135,7 @@ git checkout nom-branche-distante
 <!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
 ### Suivre une branche distante (1)
 
-On commence par un *Fetch* pour récupérer les dernières informations du dépôts distant
+On commence par un *Fetch* pour récupérer les dernières informations du dépôt distant
 <div class="center">
     <img src="egit/fetch-branch-0.png" class="boxed-img" />
 </div>

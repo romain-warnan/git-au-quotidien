@@ -38,7 +38,7 @@ git merge --abort
 <!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
 ### Résoudre les conflits de fusion (1)
 
-Pendant un *Pull* on est prévenu qu’il y a des conflits
+Pendant un *Pull*, on est prévenu qu’il y a des conflits
 <div class="center">
     <img src="egit/pull-conflict-0.png" class="boxed-img" />
 </div>
@@ -52,7 +52,7 @@ Pendant un *Pull* on est prévenu qu’il y a des conflits
 
 Double-cliquer sur le fichier en conflit
 
- - cela ouvre l’outils de résolution des conflits
+ - cela ouvre l’outil de résolution des conflits
 
 <div class="center">
     <img src="egit/pull-conflict-1.png" class="boxed-img" />
@@ -65,7 +65,7 @@ Double-cliquer sur le fichier en conflit
 <!-- .slide: data-background-image="images/eclipse-logo.png" data-background-size="700px" class="slide" -->
 ### Résoudre les conflits de fusion (3)
 
- - résoudre le conflit à l’aide de l’outils et enregister les fichiers
+ - résoudre le conflit à l’aide de l’outil et enregister les fichiers
  - glisser le fichier dans la zone d’index
  - saisir un message de *commit* et commiter
 
@@ -105,7 +105,7 @@ Pour revenir à l’état sans conflit et annuler le rebasage :
 git rebase --abort
 ```
 
-Puis on se ramène a cas de la fusion :
+Puis on se ramène au cas de la fusion :
 ```bash
 git pull
 ```
